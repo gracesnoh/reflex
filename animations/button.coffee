@@ -30,8 +30,8 @@ buttonText = new Layer
 	height: button.height
 	point: Align.center
 	style:
-		fontFamily: "Circular Std"
-		fontStyle: "Medium"
+		fontFamily: "Karla"
+		fontStyle: "Bold"
 		fontSize: "16px"
 		letterSpacing: "1px"
 		textAlign: "center"
