@@ -1,0 +1,4 @@
+reflex-app/node_modules
+reflex-app/public/styles
+reflex-app/package-lock.json
+*.DS_Store
