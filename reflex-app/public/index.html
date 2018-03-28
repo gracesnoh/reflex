@@ -2,10 +2,57 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles/index.css">
+  <script src="index.js"></script>
 </head>
 
 <body>
-  <h1>Hello, world</h1>
+  <div class="rx-container">
+    <div class="rx-notification">
+      <img
+        class="rx-notification__img"
+        src="svgs/bell-solid.svg"
+      />
+      <div class="rx-notification__badge"></div>
+    </div>
+    <button onClick="triggerNotify()">Animate</button>
+  </div>
+
+  <div class="rx-container">
+    <button class="rx-button">button</button>
+  </div>
+
+  <div class="rx-container rx-left-container">
+      <span class="rx-input-label">Email</span>
+      <input
+        class="rx-input"
+        type="text"
+        onblur="animateInputError(this)">
+      </input>
+  </div>
+
+  <div class="rx-container rx-left-container">
+    <span class="rx-input-label">First name</span>
+    <div class="rx-input-success">
+      <input
+        class="rx-input rx-input-success__input"
+        type="text"
+        onblur="animateInputSuccess(this)">
+      </input>
+      <div class="rx-input-success__img-wrapper">
+      <img
+        class="rx-input-success__img"
+        src="svgs/check-circle-line.svg"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="rx-container">
+    <div class="rx-progress-bar">
+      <div class="rx-progress-bar__progress-bar"></div>
+    </div>
+    <button onClick="startProgress()">Animate</button>
+  </div>
 </body>
 
 
