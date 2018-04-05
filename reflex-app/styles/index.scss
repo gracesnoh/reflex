@@ -154,3 +154,34 @@
     }
   }
 }
+
+// crypto kitty example
+.kitty-card-wrapper {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.kitty-card {
+  width: 250px;
+  height: 250px;
+  background-color: #fde9e4;
+}
+
+.fade-in {
+  animation: kittyCardFadeIn .25s cubic-bezier(.06,.67,.37,.99) forwards;
+}
+
+.kitty-img {
+  position: absolute;
+  top: 0;
+}
+
+.kitty-card-scale-in {
+  animation: kittyCardScaleIn 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+.kitty-card-scale-out {
+  animation: kittyCardScaleOut 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards
+}

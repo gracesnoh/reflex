@@ -42,3 +42,14 @@ function startProgress() {
     2000,
   );
 }
+
+// crypto kitty example
+document.addEventListener("DOMContentLoaded", function(event) {
+  const kittyCardWrapper = document.getElementsByClassName('kitty-card-wrapper')[0];
+  kittyCardWrapper.addEventListener('mouseover', function() {
+    kittyCardWrapper.getElementsByClassName('kitty-card')[0].classList.toggle('kitty-card-scale-in');
+  });
+  kittyCardWrapper.addEventListener('mouseout', function() {
+    kittyCardWrapper.getElementsByClassName('kitty-card')[0].classList.toggle('kitty-card-scale-out');
+  });
+});
