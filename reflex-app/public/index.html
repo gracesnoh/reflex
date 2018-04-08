@@ -1,67 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Reflex Motion</title>
+  <link rel="icon" href="./images/reflex-logo.ico" />
   <link rel="stylesheet" type="text/css" href="styles/index.css">
   <script src="index.js"></script>
 </head>
 
 <body>
-  <div class="kitty-card-wrapper fade-in">
-    <div class="kitty-card kitty-card-anim">
-  </div>
-  <img
-    class="kitty-img"
-    src="https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/508877.svg">
-  </div>
-
-  <div class="rx-container">
-    <div class="rx-notification">
-      <img
-        class="rx-notification__img"
-        src="svgs/bell-solid.svg"
-      />
-      <div class="rx-notification__badge"></div>
+  <div class="nav">
+    <a class="logo" href="">
+      <img src="./images/reflex-logo.png" alt="reflex-logo"/>
+    </a>
+    <div class="title">
+      <h4>Reflex Motion</h4>
     </div>
-    <button onClick="triggerNotify()">Animate</button>
+    <a class="github" href="https://github.com/unzunz/reflex" target="_blank">
+      <img src="./images/github.png" alt="github-logo"/>
+    </a>
   </div>
 
-  <div class="rx-container">
-    <button class="rx-button">button</button>
-  </div>
-
-  <div class="rx-container rx-left-container">
-      <span class="rx-input-label">Email</span>
-      <input
-        class="rx-input"
-        type="text"
-        onblur="animateInputError(this)">
-      </input>
-  </div>
-
-  <div class="rx-container rx-left-container">
-    <span class="rx-input-label">First name</span>
-    <div class="rx-input-success">
-      <input
-        class="rx-input rx-input-success__input"
-        type="text"
-        onblur="animateInputSuccess(this)">
-      </input>
-      <div class="rx-input-success__img-wrapper">
-      <img
-        class="rx-input-success__img"
-        src="svgs/check-circle-line.svg"
-        />
+  <div class="container">
+    <div class="origami">
+      <img src="./images/reflex-origami.gif" alt="reflex-origami" />
+    </div>
+    <div class="landing-text">
+      <h1>Bring your website to life</h1>
+      <h3>Build organic digital experiences that incorporate real world motion</h3>
+    </div>
+    <input class="search" placeholder="Search animations..."/>
+    <div class="library">
+      <div class="animation-card">
+        <h4>Notification bell</h4>
+        <div class="preview">
+          <div class="rx-notification">
+            <img
+              class="rx-notification__img"
+              src="images/bell-solid.svg"
+            />
+            <div class="rx-notification__badge"></div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button onClick="triggerNotify()" class="card-button">Animate</button>
+          <button class="card-button">View code</button>
+        </div>
+      </div>
+      <div class="animation-card">
+        <h4>Button</h4>
+        <div class="preview">
+          <button class="rx-button">button</button>
+        </div>
+        <div class="card-actions">
+          <button class="card-button">View code</button>
+        </div>
+      </div>
+      <div class="animation-card">
+        <h4>Form success</h4>
+        <div class="preview">
+          <div class="rx-input-label">Email</div>
+          <input
+            class="rx-input rx-input-error"
+            type="text"
+            onblur="animateInputError(this)">
+          </input>
+        </div>
+        <div class="card-actions">
+          <button onclick="animateInputErrorFromLanding()" class="card-button">Animate</button>
+          <button class="card-button">View code</button>
+        </div>
+      </div>
+      <div class="animation-card">
+        <h4>Form error</h4>
+        <div class="preview">
+          <div class="rx-input-label">First name</div>
+          <div class="rx-input-success">
+            <input
+              class="rx-input rx-input-success__input"
+              type="text"
+              onblur="animateInputSuccess(this)">
+            </input>
+            <div class="rx-input-success__img-wrapper">
+            <img
+              class="rx-input-success__img"
+              src="images/check-circle-line.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button onclick="animateInputSuccessFromLanding()" class="card-button">Animate</button>
+          <button class="card-button">View code</button>
+        </div>
+      </div>
+      <div class="animation-card">
+        <h4>Page loading progress</h4>
+        <div class="preview full-width">
+          <div class="rx-progress-bar">
+            <div class="rx-progress-bar__progress-bar"></div>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button onClick="startProgress()" class="card-button">Animate</button>
+          <button class="card-button">View code</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="rx-container">
-    <div class="rx-progress-bar">
-      <div class="rx-progress-bar__progress-bar"></div>
-    </div>
-    <button onClick="startProgress()">Animate</button>
-  </div>
 </body>
-
 
 </html>

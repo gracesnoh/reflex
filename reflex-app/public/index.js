@@ -21,7 +21,6 @@ function triggerNotify() {
     );
 }
 
-
 // input animation
 function animateInputError(inputField) {
   animate(inputField, 'rx-input--error');
@@ -31,6 +30,16 @@ function animateInputSuccess(inputField) {
   animate(inputField, 'rx-input--success', 1000);
   const checkImg = inputField.parentElement.getElementsByClassName('rx-input-success__img')[0];
   animate(checkImg, 'rx-input-success__img--animate', 1000);
+}
+
+function animateInputSuccessFromLanding() {
+  const input = document.getElementsByClassName('rx-input-success__input')[0];
+  animateInputSuccess(input)
+}
+
+function animateInputErrorFromLanding() {
+  const input = document.getElementsByClassName('rx-input-error')[0];
+  animateInputError(input)
 }
 
 // progress bar animation
