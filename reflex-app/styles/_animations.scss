@@ -136,6 +136,36 @@
   }
 }
 
+// load search input
+@keyframes loadSearchLine {
+  0% {
+    left: -200px;
+  }
+
+  67%, 100% {
+    left: 400px;
+  }
+}
+
+// checkbox
+@keyframes checkStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes checkboxClick {
+  100% {
+    transform: scale(.85);
+  }
+}
+
+@keyframes checkboxClickDuplicate {
+  100% {
+    transform: scale(.85);
+  }
+}
+
 // crypto kitty
 @keyframes kittyCardFadeIn {
   from {
