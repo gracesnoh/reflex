@@ -1,142 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Reflex Motion</title>
-  <link rel="icon" href="./images/reflex-logo.ico" />
-  <link rel="stylesheet" type="text/css" href="styles/index.css">
-  <script src="index.js"></script>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-<body>
-  <div class="nav">
-    <a class="logo" href="">
-      <img src="./images/reflex-logo.png" alt="reflex-logo"/>
-    </a>
-    <div class="title">
-      <h4>Reflex Motion</h4>
-    </div>
-    <a class="github" href="https://github.com/unzunz/reflex" target="_blank">
-      <img src="./images/github.png" alt="github-logo"/>
-    </a>
-  </div>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-  <div class="container">
-    <div class="origami">
-      <img src="./images/reflex-origami.gif" alt="reflex-origami" />
-    </div>
-    <div class="landing-text">
-      <h1>Bring your website to life</h1>
-      <h3>Build organic digital experiences that incorporate real world motion</h3>
-    </div>
-    <input class="search" placeholder="Search animations..."/>
-    <div class="library">
-      <div class="animation-card">
-        <h4>Notification bell</h4>
-        <div class="preview">
-          <div class="rx-notification">
-            <img
-              class="rx-notification__img"
-              src="images/bell-solid.svg"
-            />
-            <div class="rx-notification__badge"></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button onClick="triggerNotify()" class="card-button">Animate</button>
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-      <div class="animation-card">
-        <h4>Button</h4>
-        <div class="preview">
-          <button class="rx-button">button</button>
-        </div>
-        <div class="card-actions">
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-      <div class="animation-card">
-        <h4>Form success</h4>
-        <div class="preview">
-          <div class="rx-input-label">Email</div>
-          <input
-            class="rx-input rx-input-error"
-            type="text"
-            onblur="animateInputError(this)">
-          </input>
-        </div>
-        <div class="card-actions">
-          <button onclick="animateInputErrorFromLanding()" class="card-button">Animate</button>
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-      <div class="animation-card">
-        <h4>Form error</h4>
-        <div class="preview">
-          <div class="rx-input-label">First name</div>
-          <div class="rx-input-success">
-            <input
-              class="rx-input rx-input-success__input"
-              type="text"
-              onblur="animateInputSuccess(this)">
-            </input>
-            <div class="rx-input-success__img-wrapper">
-            <img
-              class="rx-input-success__img"
-              src="images/check-circle-line.svg"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button onclick="animateInputSuccessFromLanding()" class="card-button">Animate</button>
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-      <div class="animation-card">
-        <h4>Page loading progress</h4>
-        <div class="preview full-width">
-          <div class="rx-progress-bar">
-            <div class="rx-progress-bar__progress-bar"></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button onClick="startProgress()" class="card-button">Animate</button>
-          <button class="card-button">View code</button>
-        </div>
-      </div>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-      <div class="animation-card">
-        <h4>Search loading</h4>
-        <div class="preview">
-          <div class="rx-loading-search-input">
-            <input placeholder="Search" class="rx-loading-search-input--input">
-            <div class="rx-loading-search-input--line"></div>
-            <div class="rx-loading-search-input--loading-line"></div>
-          </div>
-        </div>
-        <div class="card-actions">
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-
-      <div class="animation-card">
-        <h4>Checkbox</h4>
-        <div class="preview">
-          <input class="rx-checkbox" id="rx-checkbox" type="checkbox">
-          <label for="rx-checkbox">
-            <svg class="rx-checkbox-svg" version="1.1" id="check" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            	 viewBox="0 0 16 16" xml:space="preserve">
-            <polyline id="check-line" class="st0" points="2.1,7.6 6.2,11.5 13.9,3.7 "/>
-            </svg>
-          </label>
-        </div>
-        <div class="card-actions">
-          <button class="card-button">View code</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>

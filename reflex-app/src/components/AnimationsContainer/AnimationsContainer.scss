@@ -1,0 +1,8 @@
+.animationsContainer {
+  &__library {
+    grid-area: 3 / 2 / span 1 / span 2;
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+    grid-gap: 24px;
+  }
+}
