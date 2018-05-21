@@ -1,8 +1,26 @@
 .animationsContainer {
   width: 980px;
-  margin: 0 auto;
+  margin: 24px auto;
   display: flex;
   flex-flow: column;
+
+  &__search {
+    margin-bottom: 24px;
+
+    &--input {
+      height: 24px;
+      padding: 0 6px;
+      border: none;
+      outline: none;
+    }
+
+    &--line {
+      background-color: #ccc;
+      border: none;
+      height: 1px;
+      width: 100%;
+    }
+  }
 
   &__library {
     display: grid;
