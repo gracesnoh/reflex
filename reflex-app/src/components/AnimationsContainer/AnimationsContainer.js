@@ -60,7 +60,7 @@ class AnimationsContainer extends Component {
           />
         }
         <input
-          className="search"
+          className="animationsContainer__search"
           placeholder="Search animations..."
         />
         <div className="animationsContainer__library">
