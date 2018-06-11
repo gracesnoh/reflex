@@ -1,9 +1,15 @@
 .reflexHeader {
+  width: 980px;
+  margin: 12px auto;
+  display: grid;
+  grid-gap: 24px;
+  grid-template: 1fr / 300px 1fr;
+
   &__origami-gif {
-    grid-area: 1 / 2;
+    grid-area: 1 / 1;
     justify-self: center;
     align-self: center;
-    padding: 24px;
+    // padding: 24px;
 
     img {
       width: 300px;
@@ -12,8 +18,33 @@
   }
 
   &__description-text {
-    grid-area: 1 / 3;
+    grid-area: 1 / 2;
     justify-self: start;
     align-self: center;
+
+    h3 {
+      margin-top: 12px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .reflexHeader {
+    width: auto;
+    padding: 0 24px;
+    grid-template: 150px 1fr / 1fr;
+    grid-gap: 12px;
+
+    &__origami-gif {
+
+      img {
+        width: 150px;
+      }
+    }
+
+    &__description-text {
+      grid-area: 2 / 1;
+      text-align: center;
+    }
   }
 }
