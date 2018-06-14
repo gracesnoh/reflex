@@ -1,0 +1,48 @@
+body {
+    padding: 20px;
+    font-family: Helvetica;
+}
+
+.container {
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+}
+
+.active {
+  background-color: #666;
+}
+
+.btn:hover {
+  background-color: #444;
+  color: white;
+}
+
+.marker {
+  position: absolute;
+  margin-top: 5px;
+  /* visibility: hidden; */
+  border-radius: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: #4552E3;
+  transition: transform .5s ease-in-out;
+}
+
+@keyframes slug {
+  0% {padding:0;} 
+  50% {padding:0 1%;}}
+
+@keyframes slidein {
+  from {
+    margin-right: 100%;
+  }
+
+  to {
+    margin-right: 0%;
+  }
+}
