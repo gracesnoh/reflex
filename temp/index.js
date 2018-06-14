@@ -28,27 +28,11 @@ for (let button of allButtons) {
 
 function changeMarkerPosition(center) {
   const marker = document.querySelector('.marker');
-  marker.style.animation = null;
+  marker.style.animation = null; // Force reflow for animation to work again. TODO: find most inexpensive way to do this. 
   marker.style.animation = marker.offsetWidth
   // const intervalId = setInterval(frame, 1)
   marker.style.transform = `translateX(${center - parseInt(marker.style.left)}px)`;
   marker.style.animation = `slug .5s ease-in-out`;
-
-  function frame() {
-    let currentPos = parseInt(marker.style.left);
-    let newPos;
-    if (parseInt(center) == currentPos) {
-      clearInterval(intervalId)
-      marker.style.width = '6px';
-    } else if (center < currentPos) {
-      newPos = `translateX${currentPos - 1}px`;
-      marker.style.width = '30px';
-    } else {
-      newPos = `${currentPos + 1}px`;
-      marker.style.width = '30px';
-    }
-    marker.style.left = newPos;
-  } 
 }
 
 // JS VERSION OF THE ANIMATION
