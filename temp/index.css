@@ -25,7 +25,6 @@ body {
 .marker {
   position: absolute;
   margin-top: 5px;
-  /* visibility: hidden; */
   border-radius: 6px;
   width: 6px;
   height: 6px;
@@ -35,14 +34,4 @@ body {
 
 @keyframes slug {
   0% {padding:0;} 
-  50% {padding:0 1%;}}
-
-@keyframes slidein {
-  from {
-    margin-right: 100%;
-  }
-
-  to {
-    margin-right: 0%;
-  }
-}
+  50% {padding: 0 2%;}}

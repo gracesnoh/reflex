@@ -1,39 +1,47 @@
-// Inspiration: https://codepen.io/a_akos/pen/iDfqa
-// http://jsfiddle.net/g9dn1a09/56/ 
 
-function setInitialMarkerLeftPos() {
-  const d = document.querySelector('.marker');
-  const activeElem = document.querySelector('.active')
-
-  d.style.left = activeElem.offsetLeft + activeElem.offsetWidth / 2 + "px";
-}
-setInitialMarkerLeftPos() 
-
-// TODO Use ID selectors.
-// TODO Make a function for this.  
-// Get all buttons with class="btn" inside the container
-const allButtons = document.getElementsByClassName('btn');
-
-// Loop through the buttons and add the active class to the current/clicked button
-for (let button of allButtons) {
-  button.addEventListener("click", function() {
-    const currentActive = document.getElementsByClassName('active')[0];
-    currentActive.className = currentActive.className.replace('active', '');
-    this.className += " active";
-
-    const center = this.offsetLeft + this.offsetWidth / 2;
-    changeMarkerPosition(center)
-  });
+const handleButtonClick = (clickedButton) => {
+  const activeButton = document.getElementsByClassName('active')[0];
+  activeButton.className = activeButton.className.replace('active', '');
+  clickedButton.className += ' active';
+  if (activeButton != clickedButton) {
+    changeMarkerPosition(getCenter(clickedButton))
+  }
 }
 
-function changeMarkerPosition(center) {
-  const marker = document.querySelector('.marker');
+const changeMarkerPosition = (center) => {
+  const marker = document.getElementsByClassName('marker')[0];
   marker.style.animation = null; // Force reflow for animation to work again. TODO: find most inexpensive way to do this. 
   marker.style.animation = marker.offsetWidth
-  // const intervalId = setInterval(frame, 1)
   marker.style.transform = `translateX(${center - parseInt(marker.style.left)}px)`;
-  marker.style.animation = `slug .5s ease-in-out`;
+  marker.style.animation = `slug .5s`;
 }
+
+const setButtonOnClicks =  () => {
+  const buttons = document.getElementsByClassName('btn');
+  for (let button of buttons) {
+    button.addEventListener('click', () => {handleButtonClick(button)})
+  }
+}
+
+const getCenter = (elem) => {
+  return elem.offsetLeft + elem.offsetWidth / 2; 
+}
+
+const setInitialMarkerPos = () => {
+  const marker = document.getElementsByClassName('marker')[0];
+  const activeButton = document.getElementsByClassName('active')[0]
+  const center = getCenter(activeButton);
+
+  marker.style.left = `${center}px`;
+}
+
+const initialiaze = () => {
+  setInitialMarkerPos() 
+  setButtonOnClicks()
+}
+
+initialiaze() 
+
 
 // JS VERSION OF THE ANIMATION
 // WARNING: THIS IS GROSS.
@@ -64,7 +72,7 @@ function changeMarkerPosition(center) {
 
 //  function toggleItem(elem) {
 //     for (var i = 0; i < elem.length; i++) {
-//       elem[i].addEventListener("click", function(e) {
+//       elem[i].addEventListener('click', function(e) {
 //         var current = this;
 //         for (var i = 0; i < elem.length; i++) {
 //           if (current != elem[i]) {
