@@ -13,7 +13,7 @@ const changeMarkerPosition = (center) => {
   marker.style.animation = null; // Force reflow for animation to work again. TODO: find most inexpensive way to do this. 
   marker.style.animation = marker.offsetWidth
   marker.style.transform = `translateX(${center - parseInt(marker.style.left)}px)`;
-  marker.style.animation = `slug .5s`;
+  marker.style.animation = `slug 500ms ease-in-out 5ms`;
 }
 
 const setButtonOnClicks =  () => {
