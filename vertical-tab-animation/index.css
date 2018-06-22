@@ -4,27 +4,29 @@ body {
 }
 
 .container {
-  align-items: center;
+  display: grid;
+  grid-template-columns: 6px auto;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn {
-  border: none;
-  outline: none;
-  padding: 10px 16px;
+  padding: 10px;
 }
 
 .active {
-  background-color: #666;
+  color:  #4552E3;
 }
 
 .btn:hover {
-  background-color: #444;
-  color: white;
+  color:  #4552E3;
 }
 
 .marker {
   position: absolute;
-  margin-top: 5px;
   border-radius: 6px;
   width: 6px;
   height: 6px;
@@ -34,4 +36,4 @@ body {
 
 @keyframes slug {
   0% {padding:0;} 
-  50% {padding-left: 2%;}}
+  50% {padding-top: 2%;}}

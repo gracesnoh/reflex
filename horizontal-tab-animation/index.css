@@ -1,0 +1,42 @@
+body {
+  padding: 20px;
+  font-family: Helvetica;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto;
+} 
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+}
+
+.active {
+  color: #4552E3;
+}
+
+.btn:hover {
+  color: #4552E3;
+}
+
+.marker {
+  position: absolute;
+  /* margin-top: 5px; */
+  border-radius: 6px;
+  width: 6px;
+  height: 6px;
+  background-color: #4552E3;
+  transition: transform 500ms ease-in-out 10ms;
+}
+
+@keyframes slug {
+  0% {padding:0;} 
+  50% {padding-left: 4%;}}
