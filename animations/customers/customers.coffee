@@ -25,11 +25,13 @@ seeAll.stateSwitch "hidden"
 hoverTarget.onMouseOver ->
 	hoverTarget.style.cursor = "pointer"
 	logos.animate
-			blur: 6
+		blur: 6
+		scale: 0.95
 	seeAll.animate("visible")
 
 # On mouse out, unblur logos and hide the See all customers element
 hoverTarget.onMouseOut ->
 	logos.animate
 		blur: 0
+		scale: 1
 	seeAll.animate("hidden")
