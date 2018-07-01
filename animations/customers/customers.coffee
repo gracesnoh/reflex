@@ -1,3 +1,5 @@
+ # Framer prototype link: https://framer.cloud/UhqPL
+ 
  # Use desktop cursor
 document.body.style.cursor = "auto"
 
