@@ -8,7 +8,7 @@ Framer.Defaults.Animation =
 	time: 0.4
 	curve: Bezier.easeInOut
 
-# See all customers and arrow states; text color is #737373
+# 'See all element'
 seeAll.states =
 	hidden:
 		scale: 0.9
@@ -19,19 +19,21 @@ seeAll.states =
 # Hide this by default
 seeAll.stateSwitch "hidden"
 
-# When logo div is hovered over, blur logos and show the See all customers element
-# Logo colors are #DDD
-
+# On mouse over, blur and scale up logos (200ms) and show 'See all' element
 hoverTarget.onMouseOver ->
 	hoverTarget.style.cursor = "pointer"
 	logos.animate
 		blur: 6
 		scale: 0.95
+		options: 
+			time: 0.2
 	seeAll.animate("visible")
 
-# On mouse out, unblur logos and hide the See all customers element
+# On mouse out, unblur and scale down logos (200ms) and hide 'See all' element
 hoverTarget.onMouseOut ->
 	logos.animate
 		blur: 0
 		scale: 1
+		options: 
+			time: 0.2
 	seeAll.animate("hidden")
