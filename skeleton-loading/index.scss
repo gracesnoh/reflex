@@ -52,47 +52,52 @@
     width: 100%;
     height: 100%;
     background-color: #eeeeee;
-    height: 10px;
+    height: 2px;
     overflow: hidden
 }
 
 .shimmer { 
     width: 100%; 
+    animation-delay: 500ms;
     animation-name: shimmer;
+    visibility: hidden;
     animation-duration: 2s; 
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
 }
 
 .shimmer--delay1 { 
-    animation-delay: 200ms;
+    animation-delay: 700ms;
 }
 
 .shimmer--delay2 { 
-    animation-delay: 400ms;
+    animation-delay: 900ms;
 }
 
 .shimmer--delay3 { 
-    animation-delay: 600ms;
+    animation-delay: 1100ms;
 }
 
 .shimmer--delay4 { 
-    animation-delay: 800ms;
+    animation-delay: 1300ms;
 }
 
 .shimmer__bar {
-    height: 8px;
-    width: 100px; 
-    background:#565656;
+    height: 2px;
+    width: 30%; 
+    max-width: 150px;
+    min-width: 50px;
+    background:#a2a2a2;
 }
 
 @keyframes shimmer {
     0% {
-        transform: translateX(0%);
+        transform: translateX(-25%);
     }
     
     /* Force delay between iterations */
     50%, 100% {
+        visibility: visible;
         transform: translateX(100%);
     }
   }
