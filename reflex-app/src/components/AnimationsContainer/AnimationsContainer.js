@@ -28,20 +28,21 @@ class AnimationsContainer extends Component {
     };
   }
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
+  handleOpenModal(index) {
+    this.setState({ showModal: true , selectedAnimationIndex: index});
   }
 
   handleCloseModal() {
+    console.log('closed');
     this.setState({ showModal: false });
   }
 
-  renderAnimationCard({ title, getHtmlCode, animate }, key) {
+  renderAnimationCard({ title, getHtmlCode, animate }, index) {
     return (
       <AnimationCard
-        key={key}
+        key={index}
         title={title}
-        handleShowCodeButton={this.handleOpenModal}
+        handleShowCodeButton={() => this.handleOpenModal(index)}
         handleAnimateButton={animate}>
         {getHtmlCode()}
       </AnimationCard>
@@ -49,13 +50,14 @@ class AnimationsContainer extends Component {
   }
 
   render() {
-    const { showModal } = this.state;
+    const { showModal, selectedAnimationIndex } = this.state;
     const { animations } = this.props;
 
     return (
       <div className="animationsContainer">
         { showModal &&
           <AnimationModal
+            animation={animations[selectedAnimationIndex]}
             handleCloseModal={this.handleCloseModal}
           />
         }

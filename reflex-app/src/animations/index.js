@@ -24,6 +24,10 @@ export default [
         <div className="rx-notification__badge"></div>
       </div>
     ),
+    // TODO: Write
+    getDangerousHtmlCode: () => (
+      'test'
+    ),
     animate: () => {
       const notification = document.getElementsByClassName('rx-notification')[0]
       animate(

@@ -1,4 +1,4 @@
-.animationModal {
+.animationModal__parentContainer {
   position: fixed;
   z-index: 1;
   left: 0;
@@ -6,4 +6,151 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animationModal__animationContainer {
+  display: grid;
+  grid-template-areas: "animation" "codeContainer";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100%;  
+
+  width: 80%;
+  height: 50%;
+  max-width: 700px;
+  max-height: 500px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: #565656 0 1px 10px;
+
+  animation-name: scaleAppear, blurAppear, opacityAppear; 
+  animation-duration: 400ms, 400ms, 200ms;
+  animation-timing-function: cubic-bezier-timing-function(0,.56,.12,.99); 
+}
+
+.codeParentContainer {
+  display: grid;
+  grid-template-areas: "html" "css" "js";
+  grid-template-rows: repeat(3, auto);
+
+  width: 100%;
+  height: 100%; 
+  background: #333333;
+}
+
+.animationContainer__title{
+  font-size: large;
+  font-weight: bold;
+  margin: 24px;
+}
+
+
+.animationContainer__animation {
+  grid-area: 'animation';
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.animationContainer__button {
+  width: 100px;
+  align-self: center; 
+  margin: 10%
+}
+
+.codeContainer {
+  display: grid;
+  grid-area: 'codeContainer';
+  grid-template-areas: "button" "code";
+  grid-template-rows: 25% 75%;
+
+  padding: 20px;
+
+  &:first-child {
+    border-bottom: 2px solid grey;
+  }
+
+  &:last-child {
+    border-top: 2px solid grey;
+  }
+
+}
+
+.codeContainer__button {
+  grid-area: 'button';
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+  background-color: transparent;
+  width: 80px;
+  height: 16px;
+  padding: 0px;
+
+  color: white;
+  font-family: Karla;
+  line-height: 2px;
+}
+
+.codeContainer__button__img {
+  width: 16px;
+  height: 16px;
+}
+
+.codeContainer__code {
+  grid-area: 'code';
+  padding-top: 5px;
+  font-family: Inconsolata;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 13px;
+
+  color: #BDBDBD;
+}
+
+.codeContainer__code--html {
+  color: red;
+}
+
+.codeContainer__code--css {
+  color: greenyellow;
+}
+
+.codeContainer__code--js {
+  color: lightblue;
+}
+
+
+@keyframes scaleAppear {
+  0% {
+    transform:scale(0.7);
+  }
+  95% {
+    transform: scale(1.03);
+  }
+
+  100% { 
+    transform:scale(1);
+  }
+}
+
+@keyframes blurAppear {
+  0% {
+    filter: blur(1px);
+  }
+  75% {
+    filter: blur(0);
+  }
+}
+
+@keyframes opacityAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
