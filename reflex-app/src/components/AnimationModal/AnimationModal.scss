@@ -25,8 +25,9 @@
   border-radius: 3px;
   box-shadow: #565656 0 1px 10px;
 
-  animation-name: scaleAppear, blurAppear, opacityAppear; 
-  animation-duration: 400ms, 400ms, 200ms;
+  animation: scaleAppear 400ms, opacityAppear 300ms; 
+  // Animation for closing modal
+  // animation: scaleAppear 200ms reverse, opacityAppear 200ms reverse;
   animation-timing-function: cubic-bezier-timing-function(0,.56,.12,.99); 
 }
 
@@ -38,6 +39,7 @@
   width: 100%;
   height: 100%; 
   background: #333333;
+  border-radius: 0 3px 3px 0;
 }
 
 .animationContainer__title{
@@ -128,21 +130,8 @@
   0% {
     transform:scale(0.7);
   }
-  95% {
-    transform: scale(1.03);
-  }
-
   100% { 
     transform:scale(1);
-  }
-}
-
-@keyframes blurAppear {
-  0% {
-    filter: blur(1px);
-  }
-  75% {
-    filter: blur(0);
   }
 }
 
@@ -154,3 +143,16 @@
     opacity: 1;
   }
 }
+
+// Removed blur filter animations bc they are too slow
+
+// @keyframes blurAppear {
+//   0% {
+//     filter: blur(2px);
+//     -webkit-filter: blur(2px);
+//   }
+//   100% {
+//     filter: blur(0);
+//     -webkit-filter: blur(0);
+//   }
+// }
