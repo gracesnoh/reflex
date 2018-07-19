@@ -1,7 +1,15 @@
 img {
-  width: 500px;
-  height: 500px;
+  height: 60px;
+  max-width: 120px;
   align-self: center; 
+}
+
+.customers {
+  display: flex;
+  text-align: center;
+  width: 900px;
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .customers__overlay {
@@ -9,35 +17,34 @@ img {
   z-index: 1;
   position: absolute;
   opacity: 0;
-  left: 0;
+  margin: auto;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #737373;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   text-align: center;
-  top: 30%;
-  width: 100%;
+
+  display: flex;
 }
 
 .customers__logos {
-  display: grid;
-  grid-gap: 100px;
-  grid-template-columns: repeat(4, 1000px);
-  grid-template-rows:  repeat(2, 500px);
-  grid-template-areas: 
-    "top top top top "
-    "bottom bottom bottom bottom";
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
   justify-content: center;
+  align-items: center;
 }
 
 .logo {
-  padding: 100px;
+  padding: 24px;
 }
 
-.customers__logos__top {
-  grid-area: top;
-  justify-self: center;
-}
-
-.customers__logos__bottom { 
-  grid-area: bottom;
-  justify-self: center;
+.arrow {
+  height: 22px;
+  width: 22px;
+  padding: 0 6px;
 }
 
 .blurring {
