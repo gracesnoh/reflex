@@ -1,41 +1,19 @@
-// // TODO: Change these customers
-// const customers = [
-//     'airbnb', 
-//     'bank-of-america', 
-//     'facebook',
-//     'lyft',
-//     'starbucks-coffee',
-//     'tesla', 
-// ]
-
-// for(let customer of customers) {
-//     const img = new Image();
-//     img.src = `./images/${customer}.svg`;
-//     img.onload = function() {
-//         document.getElementsByClassName("customersContainer")[0].appendChild(this);
-//     };
-// }
-
-
 const onMouseEnter = () => { 
+    const logoContainer = document.getElementsByClassName('customers__logos')[0];
+    logoContainer.classList.remove('growing');
+    logoContainer.classList.add('shrinking');
+
     const overlay = document.getElementsByClassName('customers__overlay')[0];
     overlay.classList.remove('hiding');
     overlay.classList.add('showing');
-
-    const logos = document.getElementsByClassName('logo');
-    for(let logo of logos) {
-        logo.classList.remove('focusing');
-        logo.classList.add('blurring');
-    }
 }
 
 const onMouseLeave = () => { 
+    const logoContainer = document.getElementsByClassName('customers__logos')[0];
+    logoContainer.classList.remove('shrinking');
+    logoContainer.classList.add('growing');
+
     const overlay = document.getElementsByClassName('customers__overlay')[0];
     overlay.classList.remove('showing');
     overlay.classList.add('hiding');
-
-    const logos = document.getElementsByClassName('logo');
-    for(let logo of logos) {
-        logo.classList.add('focusing');
-    }
 }

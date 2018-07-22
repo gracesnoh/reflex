@@ -6,9 +6,8 @@ img {
 
 .customers {
   display: flex;
-  text-align: center;
-  width: 900px;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -29,14 +28,6 @@ img {
   display: flex;
 }
 
-.customers__logos {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
 .logo {
   padding: 24px;
 }
@@ -47,25 +38,38 @@ img {
   padding: 0 6px;
 }
 
+.shrinking { 
+  animation: shrink 200ms ease-in-out forwards, blur 200ms ease-in-out forwards;
+}
+
+@keyframes shrink {
+  100% {
+    transform: scale(.95);
+  }
+}
+
+.growing {
+  animation: grow 200ms ease-in-out forwards, focus 500ms ease-in-out forwards; 
+}
+
+@keyframes grow {
+  100% {
+    transform: scale(1);
+  }
+}
+
 .blurring {
-  animation-name: blur;
-  animation-duration: 200ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  animation: blur 200ms ease-in-out forwards;
 }
 
 @keyframes blur { 
   100% {
     filter: blur(5px);
-    transform: scale(.95);
   }
 }
 
 .focusing {
-  animation-name: focus;
-  animation-duration: 500ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
+  animation: focus 500ms ease-in-out forwards;
 }
 
 @keyframes focus { 
@@ -80,9 +84,7 @@ img {
 }
 
 .showing { 
-  animation-name: show;
-  animation-duration: 200ms;
-  animation-fill-mode: forwards;
+  animation: show 200ms forwards;
 }
 
 @keyframes show { 
@@ -97,8 +99,7 @@ img {
 }
 
 .hiding { 
-  animation-name: hide;
-  animation-duration: 200ms;
+  animation: hide 200ms;
 }
 
 @keyframes hide { 
