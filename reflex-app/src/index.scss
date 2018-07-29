@@ -11,6 +11,11 @@ body {
   line-height: 1.2
 }
 
+a {
+  text-decoration: none;
+  color: $dark-gray;
+}
+
 ::selection, ::-moz-selection {
   background: $purple-25;
 }
@@ -45,6 +50,12 @@ h4 {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
+
+.app__container {
+  height: 100vh;
+  width: 100vw;
+}
+
 
 button {
   padding: 12px;

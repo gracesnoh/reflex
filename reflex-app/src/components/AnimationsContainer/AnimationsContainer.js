@@ -59,13 +59,6 @@ class AnimationsContainer extends Component {
             handleCloseModal={this.handleCloseModal}
           />
         }
-        <div className="animationsContainer__search">
-          <input
-            className="animationsContainer__search--input"
-            placeholder="Search animations..."
-          />
-          <div className="animationsContainer__search--line"></div>
-        </div>
         <div className="animationsContainer__library">
           { animations.map((animation, index) => this.renderAnimationCard(animation, index) )}
         </div>
