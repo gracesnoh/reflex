@@ -1,11 +1,9 @@
 .carousel__container {
   display: flex;
   background-color: #4552E3;
-  /* margin: 300px;  */
   width: 1000px;
   align-items: center;
   justify-content: center;
-  /* min-height: 24em; */
   overflow: hidden;
   flex-direction: column;
   margin: 0 auto;
@@ -13,7 +11,6 @@
 
 .carousel {
   display: flex;
-  /* margin-left: 800px; */
   transition: transform 500ms ease-in-out;
 }
 
@@ -29,8 +26,7 @@
 }
 
 .carousel__button--selected {
-    transition: transform 500ms ease-in-out;
-    background-color: white !important;
+    background-color: white !important
 }
 
 .carousel__buttons__container {
@@ -56,36 +52,4 @@
     box-shadow: 0 1px 3px #737373;
     cursor: pointer;
     transition: transform 500ms ease-in-out;
-    /* font-size: 80px;
-    font-weight: bold;
-    color: white;
-    text-align: center; */
-    /* transition: transform 1s, opacity 1s; */
   }
-/* 
-  .carousel__cell:first-child {
-      margin-left:0px;
-  }
-  
-  .carousel__cell:last-child {
-      margin-right:0px;
-  } */
-  /* .carousel__cell:nth-child(9n+1) { background: hsla(  0, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+2) { background: hsla( 40, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+3) { background: hsla( 80, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+4) { background: hsla(120, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+5) { background: hsla(160, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+6) { background: hsla(200, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+7) { background: hsla(240, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+8) { background: hsla(280, 100%, 50%, 0.8); }
-  .carousel__cell:nth-child(9n+0) { background: hsla(320, 100%, 50%, 0.8); }
-   */
-  /* .carousel__cell:nth-child(1) { transform: rotateY(  0deg);}
-  .carousel__cell:nth-child(2) { transform: rotateY( 40deg);}
-  .carousel__cell:nth-child(3) { transform: rotateY( 80deg);}
-  .carousel__cell:nth-child(4) { transform: rotateY(120deg);}
-  .carousel__cell:nth-child(5) { transform: rotateY(160deg);} */
-  /* .carousel__cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
-  .carousel__cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); }
-  .carousel__cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
-  .carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); } */

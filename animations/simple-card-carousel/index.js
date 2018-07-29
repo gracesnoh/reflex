@@ -1,4 +1,4 @@
-
+// TODO: Refactor me. 
 const setCardOnClicks =  () => {
     const cards = document.getElementsByClassName('carousel__cell');
     Array.prototype.forEach.call(cards, (card, index) => {
@@ -25,7 +25,6 @@ const handleButtonClick = (index) => {
 
     const selectedButton = document.getElementsByClassName('carousel__button')[index];
     selectedButton.className += ' carousel__button--selected';
-    // TODO: Make the buttons able to move the cards.
 }
 
 const handleCardClick = (index) => {
