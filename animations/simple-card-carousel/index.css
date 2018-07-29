@@ -8,11 +8,12 @@
   /* min-height: 24em; */
   overflow: hidden;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .carousel {
   display: flex;
-  margin-left: 800px;
+  /* margin-left: 800px; */
   transition: transform 500ms ease-in-out;
 }
 
@@ -20,23 +21,30 @@
     transform: translate(100px);
 }
 
-.selected { 
+.carousel__cell--selected { 
     transition: transform 500ms ease-in-out;
     transform: scale(1.1);
     background-color: white !important;
+    margin: 30px;
 }
 
-.buttons {
+.carousel__button--selected {
+    transition: transform 500ms ease-in-out;
+    background-color: white !important;
+}
+
+.carousel__buttons__container {
     display: flex;
-
 }
 
-.button {
+.carousel__button {
     width: 5px;
     height: 5px;
     border-radius: 10px;
     background-color: rgba(255,255,255,0.5);
     margin: 4px;
+    cursor: pointer;
+    transition: transform 500ms ease-in-out;
 }
 
   .carousel__cell {
@@ -47,13 +55,21 @@
     height: 240px;
     box-shadow: 0 1px 3px #737373;
     cursor: pointer;
+    transition: transform 500ms ease-in-out;
     /* font-size: 80px;
     font-weight: bold;
     color: white;
     text-align: center; */
     /* transition: transform 1s, opacity 1s; */
   }
+/* 
+  .carousel__cell:first-child {
+      margin-left:0px;
+  }
   
+  .carousel__cell:last-child {
+      margin-right:0px;
+  } */
   /* .carousel__cell:nth-child(9n+1) { background: hsla(  0, 100%, 50%, 0.8); }
   .carousel__cell:nth-child(9n+2) { background: hsla( 40, 100%, 50%, 0.8); }
   .carousel__cell:nth-child(9n+3) { background: hsla( 80, 100%, 50%, 0.8); }
