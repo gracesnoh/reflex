@@ -22,25 +22,12 @@ function AnimationCard(props) {
   } = props;
 
   return(
-    <div className="animationCard">
+    <div onMouseOver={handleAnimateButton} className="animationCard">
       <h4 className="animationCard__header ">
         {title}
       </h4>
       <div className="animationCard__preview">
         {children}
-      </div>
-      <div className="animationCard__card-actions">
-        {handleAnimateButton &&
-        <button
-          className="card-button"
-          onClick={handleAnimateButton}>
-          Animate
-        </button>}
-        {handleShowCodeButton &&
-          <button
-            onClick={handleShowCodeButton}>
-            View code
-          </button>}
       </div>
     </div>
   );

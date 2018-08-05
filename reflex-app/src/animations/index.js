@@ -7,7 +7,8 @@ function animate(element, className, removeClassDelay=0) {
   element.classList.add(className);
   element.addEventListener('animationend', function(event) {
     setTimeout(function () {
-        event.srcElement.classList.remove(className);
+        var target = event.target.classList || event.srcElement.classList ;
+        target.remove(className);
     }, removeClassDelay);
   });
 }

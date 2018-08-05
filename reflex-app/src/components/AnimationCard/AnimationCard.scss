@@ -1,20 +1,24 @@
 .animationCard {
   width: 100%;
   height: 100%;
-  border-radius: 3px;
+  border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: white;
-  border-top: solid 3px $purple;
+  border-top: solid 5px #4552E3;
+  padding-bottom: 24px;
+  cursor: pointer !important;
 
   &__header {
     padding: 18px;
   }
 
   &__preview {
-   align-self: center;
+    align-self: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
 
   &__card-actions {
@@ -25,13 +29,19 @@
     justify-content: space-between;
   }
 
-  ::before {
-    content: '';
-    height: 5px;
-    background-color: #3ecf8e;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: block;
+}
+
+.animationCard:hover {
+  animation: cardScale 0.3s ease-in-out forwards;
+}
+
+@keyframes cardScale {
+  0% {
+    transform: scale(1);
+    border-radius: 5px;
+  }
+  100% {
+    transform: scale(0.98);
+    border-radius: 3px;
   }
 }
