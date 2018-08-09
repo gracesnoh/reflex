@@ -9,9 +9,8 @@ import '../animations/styles.css';
 
 function App() {
   return (
-    <div>
+    <div className="app__container">
       <NavigationBar />
-      <ReflexHeader />
       <AnimationsContainer animations={bloop}/>
     </div>
   );
