@@ -4,7 +4,7 @@
   overflow: auto;
   display: flex;
   flex-flow: column;
-  background-color: #B4ABFF;
+  background-color: #f9f9f9;
 
   &__search {
     margin-bottom: 24px;
@@ -30,7 +30,26 @@
     grid-auto-rows: minmax(200px, auto);
     grid-gap: 48px;
   }
+
+  > .animationCard {
+    animation: kittyCardFadeIn 1s ease-in-out forwards;
+  }
 }
+
+
+// crypto kitty
+@keyframes kittyCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 @media (max-width: 980px) {
   .animationsContainer {
