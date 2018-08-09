@@ -29,13 +29,19 @@
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-auto-rows: minmax(200px, auto);
     grid-gap: 48px;
-  }
 
-  > .animationCard {
-    animation: kittyCardFadeIn 1s ease-in-out forwards;
+    > .animationCard {
+      animation: kittyCardFadeIn 0.3s ease-in-out forwards;
+    }
   }
 }
 
+@for $i from 0 through 10 {
+  .animationCard:nth-child(#{$i}n) {
+      animation-delay: #{$i * 0.05}s;
+      opacity: 0;
+  }
+}
 
 // crypto kitty
 @keyframes kittyCardFadeIn {
