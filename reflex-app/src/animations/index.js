@@ -44,7 +44,7 @@ export default [
     getHtmlCode: () => <button className="rx-button">button</button>
   },
   {
-    title: 'Form success',
+    title: 'Form Error',
     getHtmlCode: () => (
       <div className="preview">
         <div className="rx-input-label">Email</div>
@@ -61,7 +61,7 @@ export default [
     }
   },
   {
-    title: 'Form Error',
+    title: 'Form Success',
     getHtmlCode: () => (
       <div className="preview">
         <div className="rx-input-label">First name</div>
