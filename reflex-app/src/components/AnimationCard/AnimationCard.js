@@ -17,17 +17,19 @@ function AnimationCard(props) {
   const {
     title,
     children,
-    handleShowCodeButton,
+    // handleShowCodeButton, removed modal
     handleAnimateButton,
   } = props;
 
   return(
-    <div onMouseOver={handleAnimateButton} className="animationCard">
-      <h4 className="animationCard__header ">
-        {title}
-      </h4>
-      <div className="animationCard__preview">
-        {children}
+    <div className="animationCard__container">
+      <div onMouseOver={handleAnimateButton} className="animationCard">
+        <h4 className="animationCard__header ">
+          {title}
+        </h4>
+        <div className="animationCard__preview">
+          {children}
+        </div>
       </div>
     </div>
   );

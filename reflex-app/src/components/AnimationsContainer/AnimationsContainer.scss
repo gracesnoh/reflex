@@ -30,16 +30,15 @@
     grid-auto-rows: minmax(200px, auto);
     grid-gap: 48px;
 
-    > .animationCard {
+    > .animationCard__container {
       animation: kittyCardFadeIn 0.3s ease-in-out forwards;
     }
   }
 }
 
 @for $i from 0 through 10 {
-  .animationCard:nth-child(#{$i}n) {
+  .animationCard__container:nth-child(#{$i}n) {
       animation-delay: #{$i * 0.05}s;
-      opacity: 0;
   }
 }
 
@@ -55,7 +54,6 @@
     transform: translateY(0);
   }
 }
-
 
 @media (max-width: 980px) {
   .animationsContainer {
