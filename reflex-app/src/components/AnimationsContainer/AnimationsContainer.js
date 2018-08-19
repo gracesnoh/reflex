@@ -4,17 +4,20 @@ import PropTypes from 'prop-types';
 import AnimationCard from '../AnimationCard/AnimationCard';
 import AnimationModal from '../AnimationModal/AnimationModal';
 
+import bloop from '../../animations/index';
+
 import './AnimationsContainer.css';
 import '../../animations/styles.css';
 
 const propTypes = {
-  animations: PropTypes.array,
+  animations: PropTypes.arrayOf(Object)
 };
 
 const defaultProps = {
-  animations: [],
+  animations: bloop
 };
 
+// TODO: move this component logic into Home.js
 class AnimationsContainer extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +27,7 @@ class AnimationsContainer extends Component {
     this.renderAnimationCard = this.renderAnimationCard.bind(this);
 
     this.state = {
-      showModal: false,
+      showModal: false
     };
   }
 
@@ -42,7 +45,8 @@ class AnimationsContainer extends Component {
         key={key}
         title={title}
         handleShowCodeButton={this.handleOpenModal}
-        handleAnimateButton={animate}>
+        handleAnimateButton={animate}
+      >
         {getHtmlCode()}
       </AnimationCard>
     );
@@ -54,13 +58,9 @@ class AnimationsContainer extends Component {
 
     return (
       <div className="animationsContainer">
-        { showModal &&
-          <AnimationModal
-            handleCloseModal={this.handleCloseModal}
-          />
-        }
+        {showModal && <AnimationModal handleCloseModal={this.handleCloseModal} />}
         <div className="animationsContainer__library">
-          { animations.map((animation, index) => this.renderAnimationCard(animation, index) )}
+          {animations.map((animation, index) => this.renderAnimationCard(animation, index))}
         </div>
       </div>
     );
