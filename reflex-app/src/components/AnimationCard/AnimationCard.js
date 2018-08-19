@@ -6,31 +6,20 @@ import './AnimationCard.css';
 const propTypes = {
   title: PropTypes.string.isRequired,
   handleShowCodeButton: PropTypes.func.isRequired,
-  handleAnimateButton: PropTypes.func,
+  handleAnimateButton: PropTypes.func
 };
 
 const defaultProps = {
-  handleAnimateButton: null,
+  handleAnimateButton: null
 };
 
 function AnimationCard(props) {
-  const {
-    title,
-    children,
-    // handleShowCodeButton, removed modal
-    handleAnimateButton,
-  } = props;
+  const { title, children, handleShowCodeButton, handleAnimateButton } = props;
 
-  return(
-    <div className="animationCard__container">
-      <div onMouseOver={handleAnimateButton} className="animationCard">
-        <h4 className="animationCard__header ">
-          {title}
-        </h4>
-        <div className="animationCard__preview">
-          {children}
-        </div>
-      </div>
+  return (
+    <div onMouseOver={handleAnimateButton} className="animationCard">
+      <h4 className="animationCard__header ">{title}</h4>
+      <div className="animationCard__preview">{children}</div>
     </div>
   );
 }
