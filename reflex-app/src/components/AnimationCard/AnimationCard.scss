@@ -10,12 +10,11 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  border-top: solid 5px #4552E3;
-  padding-bottom: 24px;
+  padding: 24px;
   cursor: pointer !important;
 
   &__header {
-    padding: 18px;
+    font-size: 18px;
     font-weight: 400;
   }
 
