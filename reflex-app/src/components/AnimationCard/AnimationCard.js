@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import './AnimationCard.css';
 
-const propTypes = {
-  title: PropTypes.string.isRequired,
-  handleShowCodeButton: PropTypes.func.isRequired,
-  handleAnimateButton: PropTypes.func
-};
+//TODO: Should this be in scenes/Home?
+class AnimationCard extends Component {
+  state = {
+    hover: false
+  };
+  static propTypes = {
+    title: PropTypes.string.isRequired
+  };
 
-const defaultProps = {
-  handleAnimateButton: null
-};
+  render() {
+    const { title, children } = this.props;
 
-function AnimationCard(props) {
-  const { title, children, handleShowCodeButton, handleAnimateButton } = props;
-
-  return (
-    <div onMouseOver={handleAnimateButton} className="animationCard">
-      <h4 className="animationCard__header ">{title}</h4>
-      <div className="animationCard__preview">{children}</div>
-    </div>
-  );
+    //TODO: Change me to styled components
+    return (
+      <div
+        className="animationCard"
+        onMouseEnter={() => this.setState({ hover: true })}
+        onMouseLeave={() => this.setState({ hover: false })}
+      >
+        <h4 className="animationCard__header ">{title}</h4>
+        <div className="animationCard__preview">{children(this.state.hover)}</div>
+      </div>
+    );
+  }
 }
-
-AnimationCard.propTypes = propTypes;
-AnimationCard.defaultProps = defaultProps;
 
 export default AnimationCard;
