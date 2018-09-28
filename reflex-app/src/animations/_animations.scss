@@ -43,54 +43,6 @@
   }
 }
 
-// input error
-@keyframes inputErrorShake {
-  15.79% {
-    transform: translateX(3px);
-  }
-
-  31.58% {
-    transform: translateX(-5px);
-  }
-
-  47.37% {
-    transform: translateX(4px);
-  }
-
-  63.18% {
-    transform: translateX(-3px);
-  }
-  78.95% {
-    transform: translateX(2px);
-  }
-  100% {
-    transform: translateX(-1px);
-  }
-}
-
-// input success
-@keyframes inputSuccessPopUp {
-  37.5% {
-    transform: translateY(-3px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes inputSuccessPopIn {
-  80% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 // progress bar
 @keyframes opacityPulse {
   50% {
