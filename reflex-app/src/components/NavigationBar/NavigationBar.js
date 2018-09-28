@@ -2,8 +2,10 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
-import githubLogo from '../../images/github.png';
-import reflexLogo from '../../images/reflex-logo.png';
+import githubLogo from './images/github.png';
+import reflexLogo from './images/reflex-logo.png';
+import hamburger from './images/bars-line.svg';
+
 
 import './NavigationBar.css';
 
@@ -70,6 +72,17 @@ const Right = styled.div`
   align-items: center;
 `;
 
+const Hamburger = styled.img`
+  width: 16px;
+  height: auto;
+  margin-right: 6px;
+  visibility: hidden;
+
+  @media ${device.mobileL} {
+    visibility: visible;
+  }
+`;
+
 const NavItem = styled.a`
   margin: 18px;
   text-align: center;
@@ -105,6 +118,7 @@ export default class NavigationBar extends Component {
             <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
               <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
             </NavItem>
+            <Hamburger src={hamburger} />
           </Right>
         </Nav>
       </Container>
