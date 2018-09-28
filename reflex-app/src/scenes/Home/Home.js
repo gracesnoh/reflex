@@ -25,6 +25,7 @@ const Title = styled.div`
 const Subtitle = styled.div`
   font-size: 14px;
   margin-bottom: 45px;
+  line-height: 2;
 `;
 
 const AnimationContainer = styled.div`
@@ -42,7 +43,7 @@ export default class Home extends Component {
         <Title> Reflex Motion </Title>
         <Subtitle>
           Reflex motion is an animation library based in React that mirrors real-world, natural
-          motion. See our Getting Started page to get started!
+          motion. See our <a href="">Getting Started</a> page to get started!
         </Subtitle>
         <AnimationContainer>
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
