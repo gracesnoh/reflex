@@ -6,9 +6,6 @@ import githubLogo from './images/github.png';
 import reflexLogo from './images/reflex-logo.png';
 import hamburger from './images/bars-line.svg';
 
-
-import './NavigationBar.css';
-
 // TODO Make media queries into global styles
 const size = {
   mobileL: '425px',
@@ -21,6 +18,17 @@ export const device = {
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
 };
+//
+
+const mobileSlideDown = keyframes`
+  0% {
+    transform: translateY(-100);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -60,7 +68,7 @@ const Title = styled.div`
   font-size: 16px;
 
   @media ${device.mobileL} {
-    visibility: hidden;
+    display: none;
   }
 `;
 
@@ -70,12 +78,15 @@ const Right = styled.div`
   color: #979797;
   display: flex;
   align-items: center;
+
+  @media ${device.mobileL} {
+    padding: 12px;
+  }
 `;
 
 const Hamburger = styled.img`
   width: 16px;
   height: auto;
-  margin-right: 6px;
   visibility: hidden;
 
   @media ${device.mobileL} {
@@ -89,8 +100,13 @@ const NavItem = styled.a`
   color: ${props => props.theme.purple};
 
   @media ${device.mobileL} {
-    visibility: hidden;
+    display: none;
   }
+
+  ${props => props.mobileMenu && `
+    animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
+
+  `}
 `;
 
 const GithubLogo = styled.img`
@@ -100,7 +116,7 @@ const GithubLogo = styled.img`
   vertical-align: middle;
 
   @media ${device.mobileL} {
-    visibility: hidden;
+    display: none;
   }
 `;
 

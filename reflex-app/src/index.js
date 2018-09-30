@@ -4,23 +4,85 @@ import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import {ThemeProvider, injectGlobal} from "styled-components";
-
-injectGlobal`
-    body {
-        margin: 0;
-    }
-`;
+import { ThemeProvider, injectGlobal } from "styled-components";
 
 const theme = {
     // Colors
-    darkGray: "#565656",
-    lightGray: "#EEEEEE",
-    
-    purple: "#4552E3",
-    fontStack: "Inter UI','Helvetica', sans-serif",
-    monospace: "Inconsolata', monospace",
+    colors: {
+      darkGray : "#4F4F4F",
+      lightGray : "#EEEEEE",
+
+      purple : "#7567F7",
+      purple25 : "rgba(117,103,247,.25)",
+
+      pink : "#FF52EE",
+      red : "#EE4444",
+      green : "#66BB66",
+      white : "#FFFFFF",
+    },
+
+    // Fonts
+    fonts: {
+      fontStack : "'Inter UI','Helvetica', sans-serif",
+      monospace : "Inconsolata', monospace",
+    }
+
 }
+
+injectGlobal`
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: ${theme.fonts.fontStack};
+      font-weight: 400;
+      color:  ${theme.colors.darkGray};
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    a {
+      text-decoration: none;
+      color: ${theme.colors.darkGray};
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+    }
+      
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    
+    h3 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    ::selection {
+      background: ${theme.colors.purple25};
+    }
+
+    ::-moz-selection {
+      background: ${theme.colors.purple25};
+    }
+`;
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
