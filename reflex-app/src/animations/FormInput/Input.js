@@ -34,24 +34,14 @@ const inputSuccessPopUp = keyframes`
   }
 `;
 
-const inputSuccessPopIn = keyframes`
-  80% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-`;
-
 const Input = styled.input`
-  border-radius: 2px;
-  color: rgb(85, 85, 85);
+  border-radius: 3px;
+  border: 1px solid #BDBDBD;
+  color: #4f4f4f;
   line-height: 40px;
   height: 36px;
   padding: 0 12px;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -62,9 +52,8 @@ const Input = styled.input`
   ${props =>
     props.onSuccess &&
     `
-    color: rgb(255, 0, 0);
-    border: 1px solid $green;
-    animation: ${inputSuccessPopUp} .16s ease-out; 
+    border: 1px solid #66BB66;
+    animation: ${inputSuccessPopUp} .2s ease-out; 
     
   `} 
     // TODO: Make me a constant
@@ -72,8 +61,7 @@ const Input = styled.input`
 ${props =>
   props.onError &&
   `
-    color: rgb(255, 0, 0); 
-    border: 1px solid $red;
+    border: 1px solid #EE4444;
     animation: ${inputErrorShake} .5s ease-in-out forwards;
   `};
 `;

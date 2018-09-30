@@ -7,7 +7,7 @@ const FormInputSuccessDemo = hover => (
   <FormInput>
     <FormInput.Label>Email</FormInput.Label>
     <FormInput.Image onSuccess={hover} src={checkCircle} />
-    <FormInput.Input onSuccess={hover} />
+    <FormInput.Input onSuccess={hover} value="johndoe@email.com" disabled/>
   </FormInput>
 );
 

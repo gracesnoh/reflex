@@ -6,7 +6,9 @@ import Image from './Image';
 import Label from './Label';
 import Input from './Input';
 
-const FormInput = styled.div``;
+const FormInput = styled.div`
+  position: relative;
+`;
 
 // There should be some way of inporting all of the props for these components b default rathern than hand e.g. placeholder, etc.
 FormInput.Image = Image;
