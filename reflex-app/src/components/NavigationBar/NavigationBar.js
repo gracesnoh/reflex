@@ -86,6 +86,7 @@ const Hamburger = styled.img`
 const NavItem = styled.a`
   margin: 18px;
   text-align: center;
+  color: ${props => props.theme.purple};
 
   @media ${device.mobileL} {
     visibility: hidden;
