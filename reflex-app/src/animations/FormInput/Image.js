@@ -56,6 +56,7 @@ const Image = styled.img`
   right: 6px;
   height: 24px;
   width: 24px;
+  z-index: 2;
 
   ${props =>
     props.onSuccess &&
@@ -67,7 +68,7 @@ const Image = styled.img`
     props.onError &&
     `
     visibility: visible;
-    animation: ${inputErrorShake} .5s ease-out, ${inputImagePopIn} .25s ease-in-out;
+    animation: ${inputImagePopIn} .25s ease-in-out forwards;
   `};
 `;
 
