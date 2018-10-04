@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
-import animations from '../../animations/index';
+import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
 
 const renderAnimationCard = ({ title, render }, key) => {

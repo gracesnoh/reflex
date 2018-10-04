@@ -72,7 +72,7 @@ const Title = styled.div`
   }
 `;
 
-const Right = styled.div`
+const DesktopRight = styled.div`
   grid-template-columns: 1fr 1fr;
   font-size: 14px;
   color: #979797;
@@ -92,6 +92,10 @@ const Hamburger = styled.img`
   @media ${device.mobileL} {
     visibility: visible;
   }
+
+  ${props => props.clicked && `
+    width: 24px;
+  `}
 `;
 
 const NavItem = styled.a`
@@ -99,9 +103,9 @@ const NavItem = styled.a`
   text-align: center;
   color: ${props => props.theme.purple};
 
-  @media ${device.mobileL} {
-    display: none;
-  }
+  // @media ${device.mobileL} {
+  //   display: none;
+  // }
 
   ${props => props.mobileMenu && `
     animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
@@ -120,9 +124,70 @@ const GithubLogo = styled.img`
   }
 `;
 
-//TODO: Change to Pure Component?
+// const NavigationBar = click => (
+//   <Container>
+//   <Nav>
+//     <Left href="">
+//       <ReflexLogo src={reflexLogo} alt="reflex-logo"/>
+//       <Title>Reflex Motion</Title>
+//     </Left>
+//     <Right>
+//       <NavItem href="">Getting Started</NavItem>
+//       <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
+//         <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
+//       </NavItem>
+//       <Hamburger src={hamburger} />
+//     </Right>
+//   </Nav>
+// </Container>
+// );
+
+// export default {
+//   title: 'Navigation Bar',
+//   render: NavigationBar
+// };
+
+
+// //TODO: Change to Pure Component?
 export default class NavigationBar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMobile: false,
+      showMobileMenu: false,
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }
+
+  resize() {
+    console.log(window.innerWidth);
+    this.setState({isMobile: window.innerWidth <= 425});
+  }
+
+  renderDesktopRight() { 
+    return (
+      <Fragment>
+        <NavItem href="">Getting Started</NavItem>
+        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
+          <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
+        </NavItem>
+      </Fragment>
+    );
+  }
+
+  renderMobileRight = () => {
+    return (
+      <Hamburger onClick={() => {}} src={hamburger} />
+    );
+  }
+
   render() {
+    console.log(this.state);
     return (
       <Container>
         <Nav>
@@ -131,11 +196,7 @@ export default class NavigationBar extends Component {
             <Title>Reflex Motion</Title>
           </Left>
           <Right>
-            <NavItem href="">Getting Started</NavItem>
-            <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
-              <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
-            </NavItem>
-            <Hamburger src={hamburger} />
+            {this.state.isMobile ? this.renderMobileRight() : this.renderDesktopRight() }
           </Right>
         </Nav>
       </Container>

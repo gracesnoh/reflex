@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -30,6 +29,9 @@ const theme = {
 }
 
 injectGlobal`
+    @import url('https://rsms.me/inter/inter-ui.css');
+    @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
     * {
       box-sizing: border-box;
       -webkit-font-smoothing: antialiased;
