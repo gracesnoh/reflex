@@ -1,0 +1,41 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/reflex-app/src/animations/NotificationBell/NotificationBell.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/animations/NotificationBell/index.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/animations/TabSwitch/TabSwitch.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/animations/TabSwitch/index.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/animations/index.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/components/AnimationCard/AnimationCard.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/components/App.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/components/NavigationBar/NavigationBar.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/scenes/Home/Home.js" />
+        <item url="file://$PROJECT_DIR$/reflex-app/src/scenes/Home/index.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/reflex-app/src/components/AnimationsContainer/AnimationsContainer.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInput/Form.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInput/Image.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInput/Input.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInput/Label.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInput/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInputErrorDemo/FormInputErrorDemo.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInputErrorDemo/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInputSuccessDemo/FormInputSuccessDemo.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/FormInputSuccessDemo/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/NotificationBell/NotificationBell.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/NotificationBell/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/TabSwitch/TabSwitch.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/TabSwitch/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/animations/index.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/components/AnimationCard/AnimationCard.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/components/App.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/components/NavigationBar/NavigationBar.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/scenes/Home/Home.js" />
+      <root url="file://$PROJECT_DIR$/reflex-app/src/scenes/Home/index.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
