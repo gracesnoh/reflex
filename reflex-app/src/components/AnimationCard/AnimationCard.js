@@ -9,6 +9,7 @@ class AnimationCard extends Component {
   };
   static propTypes = {
     title: PropTypes.string.isRequired
+    // Children should be explicit props, or named something else
   };
 
   render() {
