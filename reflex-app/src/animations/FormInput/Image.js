@@ -62,7 +62,7 @@ const Image = styled.img`
     props.onSuccess &&
     `
     visibility: visible;
-    animation: ${inputSuccessPopUp} .2s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
+    animation: ${inputSuccessPopUp} .2s ease-out forwards, ${inputImagePopIn} .25s ease-in-out forwards;
   `};
   ${props =>
     props.onError &&
