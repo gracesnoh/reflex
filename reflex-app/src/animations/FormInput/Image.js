@@ -30,7 +30,7 @@ const inputSuccessPopUp = keyframes`
   }
 
   100% {
-    transform: translateY(0.2);
+    transform: translateY(0);
   }
 `;
 
@@ -62,13 +62,13 @@ const Image = styled.img`
     props.onSuccess &&
     `
     visibility: visible;
-    animation: ${inputSuccessPopUp} .2s ease-out forwards, ${inputImagePopIn} .25s ease-in-out forwards;
+    animation: ${inputSuccessPopUp} .25s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
   `};
   ${props =>
     props.onError &&
     `
     visibility: visible;
-    animation: ${inputImagePopIn} .25s ease-in-out forwards;
+    animation: ${inputImagePopIn} .25s ease-in-out forwards, ${inputErrorShake} .5s ease-in-out forwards;
   `};
 `;
 

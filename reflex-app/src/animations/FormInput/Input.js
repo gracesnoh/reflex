@@ -53,7 +53,7 @@ const Input = styled.input`
     props.onSuccess &&
     `
     border: 1px solid #66BB66;
-    animation: ${inputSuccessPopUp} .2s ease-out; 
+    animation: ${inputSuccessPopUp} .25s ease-out; 
     
   `} 
     // TODO: Make me a constant
