@@ -103,6 +103,10 @@ const SocialLineIcons = hover => (
         c-0.4,0.3-0.6,0.8-0.5,1.3v32.8c-0.1,0.5,0.1,1,0.5,1.3l4.5,4.5v1H36.2v-1l4.7-4.6c0.5-0.5,0.5-0.6,0.5-1.3V19.8L28.3,53.1h-1.8
         L11.2,19.8v22.3c-0.1,0.9,0.2,1.9,0.8,2.6l6.1,7.4v1H0.8v-1L7,44.6C7.6,44,7.9,43,7.7,42.1V16.3z"/>
     </Md>
+    {/* 
+    TODO: Instagram - See social-icons.html for instagram svg and gradients 
+    <Ig></Ig> 
+    */}
   </Wrapper>
 );
 
