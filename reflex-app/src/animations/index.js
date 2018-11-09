@@ -1,19 +1,13 @@
 import NotificationBell from './NotificationBell';
 import FormInputErrorDemo from './FormInputErrorDemo';
 import FormInputSuccessDemo from './FormInputSuccessDemo';
-import LineIconFB from './LineIconFB';
-import LineIconTW from './LineIconTW';
-import LineIconMD from './LineIconMD';
-import LineIconIG from './LineIconIG';
+import SocialLineIcons from './SocialLineIcons';
 
 export default [
   NotificationBell, 
   FormInputErrorDemo, 
   FormInputSuccessDemo, 
-  LineIconFB, 
-  LineIconTW, 
-  LineIconMD,
-  LineIconIG
+  SocialLineIcons
 ];
 
 // TODO: Delete all below once reactified.
