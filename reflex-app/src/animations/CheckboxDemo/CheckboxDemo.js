@@ -27,7 +27,7 @@ const Checkbox = styled.div`
   width: 36px;
   height: 36px;
 
-  > input {
+  input {
     display: none;
 
     & + label .checkbox-svg {
