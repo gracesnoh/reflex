@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
 import PropTypes from 'prop-types';
 import './AnimationCard.css';
 
@@ -17,14 +19,17 @@ class AnimationCard extends Component {
 
     //TODO: Change me to styled components
     return (
-      <div
-        className="animationCard"
-        onMouseEnter={() => this.setState({ hover: true })}
-        onMouseLeave={() => this.setState({ hover: false })}
-      >
-        <div className="animationCard__preview">{children(this.state.hover)}</div>
-        <h4 className="animationCard__header ">{title}</h4>
-      </div>
+      // TODO: handle spaces of title
+      <Link to={title}> 
+        <div
+          className="animationCard"
+          onMouseEnter={() => this.setState({ hover: true })}
+          onMouseLeave={() => this.setState({ hover: false })}
+        >
+          <div className="animationCard__preview">{children(this.state.hover)}</div>
+          <h4 className="animationCard__header ">{title}</h4>
+        </div>
+      </Link>
     );
   }
 }

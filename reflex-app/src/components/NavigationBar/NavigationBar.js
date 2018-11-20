@@ -9,7 +9,7 @@ import './NavigationBar.css';
 function NavigationBar() {
   return (
     <div className="nav">
-      <a className="nav__left" href="">
+      <a className="nav__left" href="/">
         <div className="logo">
           <img src={reflexLogo} alt="reflex-logo" />
         </div>
