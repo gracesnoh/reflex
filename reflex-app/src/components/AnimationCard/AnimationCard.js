@@ -20,7 +20,7 @@ class AnimationCard extends Component {
     //TODO: Change me to styled components
     return (
       // TODO: handle spaces of title
-      <Link to={{title}}> 
+      <Link to={title}> 
         <div
           className="animationCard"
           onMouseEnter={() => this.setState({ hover: true })}
