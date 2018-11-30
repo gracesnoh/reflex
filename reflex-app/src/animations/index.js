@@ -1,6 +1,7 @@
 import NotificationBell from './NotificationBell';
+import TabSwitchDemo from './TabSwitchDemo';
 
-export default [NotificationBell];
+export default [NotificationBell, TabSwitchDemo];
 
 // TODO: Delete all below once reactified.
 // export default [

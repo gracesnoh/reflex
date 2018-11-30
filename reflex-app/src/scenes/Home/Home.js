@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
 import animations from '../../animations/index';
+import TabSwitchDemo from '../../animations/TabSwitchDemo';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
 
 const renderAnimationCard = ({ title, render }, key) => {
@@ -39,6 +40,7 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
+      {TabSwitchDemo.render()}
         <Title> Reflex Motion </Title>
         <Subtitle>
           Reflex motion is an animation library based in React that mirrors real-world, natural

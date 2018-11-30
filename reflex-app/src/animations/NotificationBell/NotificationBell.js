@@ -18,6 +18,7 @@ const notifyShake = keyframes`
   62.24% {
     transform: rotate(-4deg); }
   77.8% {
+  
     transform: rotate(3deg); }
   100% {
     transform: rotate(0deg); 
