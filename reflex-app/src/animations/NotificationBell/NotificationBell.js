@@ -1,6 +1,6 @@
 import React, { Fragment, Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import bellImg from '../../images/bell-solid.svg';
 
@@ -65,19 +65,21 @@ const Badge = styled.div`
   background-color: #ee4444;
 `;
 
+
+
 const Wrapper = styled.div`
   position: relative;
   width: 36px;
   height: 36px;
 
   ${Image} {
-    animation: ${props => props.hover && `${notifyShake} ease-out 0.68s`};
+    animation: ${props => props.hover && css`${notifyShake} ease-out 0.68s;`};
   }
   
   ${Badge} { 
    animation: ${props =>
      props.hover &&
-     `${badgePopIn} ease-in-out .1s forwards, 
+     css`${badgePopIn} ease-in-out .1s forwards, 
      ${badgeDisappear} ease-in-out .1s 1s forwards;
    `}
 `;

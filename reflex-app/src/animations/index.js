@@ -1,7 +1,8 @@
 import NotificationBell from './NotificationBell';
-import TabSwitchDemo from './TabSwitchDemo';
 
-export default [NotificationBell, TabSwitchDemo];
+
+// TODO: Insert TabAnimation Gif.
+export default [NotificationBell];
 
 // TODO: Delete all below once reactified.
 // export default [
