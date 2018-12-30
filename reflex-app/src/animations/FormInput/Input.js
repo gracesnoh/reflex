@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const inputErrorShake = keyframes`
   15.79% {
@@ -49,18 +49,15 @@ const Input = styled.input`
 
  // TODO: Have a way to enumerate props?
  // Remember input success pop in 
-  ${props =>
-    props.onSuccess &&
-    `
+  ${({onSuccess}) =>
+    onSuccess && css`
     border: 1px solid #66BB66;
     animation: ${inputSuccessPopUp} .25s ease-out; 
-    
-  `} 
+  `};
     // TODO: Make me a constant
 
-${props =>
-  props.onError &&
-  `
+${({onError}) =>
+  onError && css`
     border: 1px solid #EE4444;
     animation: ${inputErrorShake} .5s ease-in-out forwards;
   `};
