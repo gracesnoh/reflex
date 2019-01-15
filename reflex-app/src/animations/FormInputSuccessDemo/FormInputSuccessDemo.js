@@ -1,4 +1,4 @@
-import React, { Fragment, Component, PureComponent } from 'react';
+import React from 'react';
 
 import FormInput from '../FormInput';
 import checkCircle from './check-circle-line.svg';
@@ -13,5 +13,6 @@ const FormInputSuccessDemo = hover => (
 
 export default {
   title: 'Form Input Success',
-  render: FormInputSuccessDemo
+  render: FormInputSuccessDemo,
+  detailTitle: 'FormValidations',
 };

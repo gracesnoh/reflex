@@ -41,14 +41,14 @@ const Input = styled.input`
   line-height: 40px;
   height: 36px;
   padding: 0 12px;
-  cursor: pointer;
+  //cursor: pointer;
 
   &:focus {
     outline: none;
   }
-
+  
  // TODO: Have a way to enumerate props?
- // Remember input success pop in 
+ // Remember input success pop in animation
   ${({onSuccess}) =>
     onSuccess && css`
     border: 1px solid #66BB66;
@@ -56,10 +56,10 @@ const Input = styled.input`
   `};
     // TODO: Make me a constant
 
-${({onError}) =>
-  onError && css`
-    border: 1px solid #EE4444;
-    animation: ${inputErrorShake} .5s ease-in-out forwards;
+  ${({onFail}) =>
+    onFail && css`
+      border: 1px solid #EE4444;
+      animation: ${inputErrorShake} .5s ease-in-out forwards;
   `};
 `;
 

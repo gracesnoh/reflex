@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import animationDetails from './animations';
 
 const Wrapper = styled.div`
   max-width: 80vw;
@@ -11,7 +10,6 @@ const Wrapper = styled.div`
 
 const Back = styled.div`
   font-size: 16px;
-  text-transform: normal;
   margin-top: 30px;
 `;
 
@@ -31,36 +29,22 @@ const Example = styled.div`
   align-items: center;
 `;
 
-// TODO: Pass in animation as a prop
+const Detail = ({ match }) => {
+  const animationTitle = match.params.animationTitle;
+  const {detailTitle, mainDemo, inspiration} = animationDetails[animationTitle];
 
-// class Detail extends React.Component {
-//   componentDidMount () {
-//     const { match } = this.props.match.params
-//     const { child } = this.props.location.state
-//   }
-//   render () {
-//     <Wrapper>
-//       <Link to="/">
-//         <Back>Back to all animations</Back>
-//       </Link>
-//       <Title>{match.params.animationTitle}</Title>
-//       <Example></Example>
-//     </Wrapper>
-//   }
-// }
-
-function Detail({ match }) {
   return (
     <Wrapper>
       <Link to="/">
         <Back>Back to all animations</Back>
       </Link>
       <Title>
-        {match.params.animationTitle}
+        {detailTitle}
       </Title>
       <Example>
-        <span>hi</span>
+        {React.createElement(mainDemo)}
       </Example>
+      {inspiration}
     </Wrapper>
   )
 }

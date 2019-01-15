@@ -15,12 +15,11 @@ class AnimationCard extends Component {
   };
 
   render() {
-    const { title, children } = this.props;
+    const { title, children, detailTitle} = this.props;
 
     //TODO: Change me to styled components
     return (
-      // TODO: handle spaces of title
-      <Link to={title}> 
+      <Link to={detailTitle}>
         <div
           className="animationCard"
           onMouseEnter={() => this.setState({ hover: true })}

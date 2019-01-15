@@ -62,14 +62,12 @@ const Image = styled.img`
     onSuccess && css`
       visibility: visible;
       animation: ${inputSuccessPopUp} .25s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
-    `}
-  ${({onError}) => 
-     onError && css`
+  `}
+  ${({onFail}) => 
+     onFail && css`
       visibility: visible;
       animation: ${inputImagePopIn} .25s ease-in-out forwards, ${inputErrorShake} .5s ease-in-out forwards;
-    `};  
-};
-
+  `};  
 `;
 
 export default Image;

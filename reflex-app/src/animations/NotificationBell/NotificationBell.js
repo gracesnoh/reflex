@@ -91,5 +91,6 @@ const NotificationBell = hover => (
 // TODO: Is there a better way to do this?
 export default {
   title: 'Notification Bell',
-  render: NotificationBell
+  render: NotificationBell,
+  detailTitle: 'NotificationBell'
 };
