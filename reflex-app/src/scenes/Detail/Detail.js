@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import animationDetails from './animations';
+
+import FormInput from './FormInput';
+import NotificationBell from './NotificationBell'
+
+const animationDetails = {
+  // title: json object
+  'FormValidations': FormInput,
+  'NotificationBell': NotificationBell,
+};
+
 
 const Wrapper = styled.div`
   max-width: 80vw;

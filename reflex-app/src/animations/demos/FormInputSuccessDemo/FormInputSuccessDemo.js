@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FormInput from '../FormInput';
+import FormInput from '../../FormInput';
 import checkCircle from './check-circle-line.svg';
 
 const FormInputSuccessDemo = hover => (

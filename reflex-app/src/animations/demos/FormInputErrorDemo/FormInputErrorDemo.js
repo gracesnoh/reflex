@@ -1,6 +1,6 @@
 import React from 'react';
 
-import FormInput from '../FormInput';
+import FormInput from '../../FormInput';
 import exclamationCircle from './exclamation-circle-line.svg';
 
 const FormInputErrorDemo = hover => (
