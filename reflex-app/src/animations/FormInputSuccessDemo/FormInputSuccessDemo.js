@@ -6,8 +6,8 @@ import checkCircle from './check-circle-line.svg';
 const FormInputSuccessDemo = hover => (
   <FormInput>
     <FormInput.Label>Email</FormInput.Label>
-    <FormInput.Image onSuccess={hover} src={checkCircle} />
-    <FormInput.Input onSuccess={hover} value="johndoe@email.com" disabled/>
+    <FormInput.Image isComplete={hover} onSuccess={hover} src={checkCircle} />
+    <FormInput.Input isComplete={hover} onSuccess={hover} value="johndoe@email.com" disabled/>
   </FormInput>
 );
 

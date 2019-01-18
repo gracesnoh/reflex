@@ -48,16 +48,17 @@ const Input = styled.input`
   }
   
  // TODO: Have a way to enumerate props?
- // Remember input success pop in animation
-  ${({onSuccess}) =>
-    onSuccess && css`
+ // TODO: Remember input success pop in animation
+ // TODO: Why is the text disappearing?
+  ${({isComplete, onSuccess}) =>
+    isComplete && onSuccess && css`
     border: 1px solid #66BB66;
     animation: ${inputSuccessPopUp} .25s ease-out; 
   `};
     // TODO: Make me a constant
 
-  ${({onFail}) =>
-    onFail && css`
+  ${({isComplete, onFailure}) =>
+    isComplete && onFailure && css`
       border: 1px solid #EE4444;
       animation: ${inputErrorShake} .5s ease-in-out forwards;
   `};

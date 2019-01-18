@@ -6,8 +6,8 @@ import exclamationCircle from './exclamation-circle-line.svg';
 const FormInputErrorDemo = hover => (
   <FormInput>
     <FormInput.Label>Email</FormInput.Label>
-    <FormInput.Image onFail={hover} src={exclamationCircle} />
-    <FormInput.Input onFail={hover} value="johndoe" disabled/>
+    <FormInput.Image isComplete={hover} onFailure={hover} src={exclamationCircle} />
+    <FormInput.Input isComplete={hover} onFailure={hover} value="johndoe" disabled/>
   </FormInput>
 );
 

@@ -58,13 +58,13 @@ const Image = styled.img`
   width: 24px;
   z-index: 2;
 
-  ${({onSuccess}) => 
-    onSuccess && css`
+  ${({isComplete, onSuccess}) => 
+    isComplete && onSuccess && css`
       visibility: visible;
       animation: ${inputSuccessPopUp} .25s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
   `}
-  ${({onFail}) => 
-     onFail && css`
+  ${({isComplete, onFailure}) => 
+     isComplete && onFailure && css`
       visibility: visible;
       animation: ${inputImagePopIn} .25s ease-in-out forwards, ${inputErrorShake} .5s ease-in-out forwards;
   `};  
