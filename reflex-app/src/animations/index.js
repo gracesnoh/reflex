@@ -1,6 +1,6 @@
-import NotificationBell from './NotificationBell';
-import FormInputErrorDemo from './FormInputErrorDemo';
-import FormInputSuccessDemo from './FormInputSuccessDemo';
+import NotificationBell from './demos/NotificationBellDemo';
+import FormInputErrorDemo from './demos/FormInputErrorDemo';
+import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
 
 export default [NotificationBell, FormInputErrorDemo, FormInputSuccessDemo];
 

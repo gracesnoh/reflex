@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const inputErrorShake = keyframes`
   15.79% {
@@ -41,28 +41,26 @@ const Input = styled.input`
   line-height: 40px;
   height: 36px;
   padding: 0 12px;
-  cursor: pointer;
+  //cursor: pointer;
 
   &:focus {
     outline: none;
   }
-
+  
  // TODO: Have a way to enumerate props?
- // Remember input success pop in 
-  ${props =>
-    props.onSuccess &&
-    `
+ // TODO: Remember input success pop in animation
+ // TODO: Why is the text disappearing?
+  ${({isComplete, onSuccess}) =>
+    isComplete && onSuccess && css`
     border: 1px solid #66BB66;
     animation: ${inputSuccessPopUp} .25s ease-out; 
-    
-  `} 
+  `};
     // TODO: Make me a constant
 
-${props =>
-  props.onError &&
-  `
-    border: 1px solid #EE4444;
-    animation: ${inputErrorShake} .5s ease-in-out forwards;
+  ${({isComplete, onFailure}) =>
+    isComplete && onFailure && css`
+      border: 1px solid #EE4444;
+      animation: ${inputErrorShake} .5s ease-in-out forwards;
   `};
 `;
 

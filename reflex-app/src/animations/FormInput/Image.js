@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const inputErrorShake = keyframes`
   15.79% {
@@ -58,18 +58,16 @@ const Image = styled.img`
   width: 24px;
   z-index: 2;
 
-  ${props =>
-    props.onSuccess &&
-    `
-    visibility: visible;
-    animation: ${inputSuccessPopUp} .25s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
-  `};
-  ${props =>
-    props.onError &&
-    `
-    visibility: visible;
-    animation: ${inputImagePopIn} .25s ease-in-out forwards, ${inputErrorShake} .5s ease-in-out forwards;
-  `};
+  ${({isComplete, onSuccess}) => 
+    isComplete && onSuccess && css`
+      visibility: visible;
+      animation: ${inputSuccessPopUp} .25s ease-out, ${inputImagePopIn} .25s ease-in-out forwards;
+  `}
+  ${({isComplete, onFailure}) => 
+     isComplete && onFailure && css`
+      visibility: visible;
+      animation: ${inputImagePopIn} .25s ease-in-out forwards, ${inputErrorShake} .5s ease-in-out forwards;
+  `};  
 `;
 
 export default Image;
