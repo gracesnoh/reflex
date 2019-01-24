@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 import FormInput from './FormInput';
 import NotificationBell from './NotificationBell'
+import Checkbox from './Checkbox'
 
 const animationDetails = {
   // title: json object
   'FormValidations': FormInput,
   'NotificationBell': NotificationBell,
+  'Checkbox': Checkbox,
 };
 
 

@@ -1,11 +1,12 @@
-import React, { Fragment, Component, PureComponent } from 'react';
+import React from 'react';
 
 import Checkbox from '../Checkbox';
 
+// TODO: Should make the SVG a component too
 const CheckboxDemo = hover => (
   <Checkbox>
     <Checkbox.Input id="input"/>
-    <Checkbox.Label for="input" checked={hover}>
+    <Checkbox.Label isChecked={hover} backgroundColor="#7567F7">
       <svg 
         className="checkbox-svg" 
         version="1.1" 
@@ -23,5 +24,6 @@ const CheckboxDemo = hover => (
 
 export default {
   title: 'Checkbox',
-  render: CheckboxDemo
+  render: CheckboxDemo,
+  detailTitle: 'Checkbox',
 };
