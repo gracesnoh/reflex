@@ -72,7 +72,7 @@ const Title = styled.div`
   }
 `;
 
-const DesktopRight = styled.div`
+const Right = styled.div`
   grid-template-columns: 1fr 1fr;
   font-size: 14px;
   color: #979797;
