@@ -1,6 +1,8 @@
-import NotificationBell from './NotificationBell';
+import NotificationBell from './demos/NotificationBellDemo';
+import FormInputErrorDemo from './demos/FormInputErrorDemo';
+import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
 
-export default [NotificationBell];
+export default [NotificationBell, FormInputErrorDemo, FormInputSuccessDemo];
 
 // TODO: Delete all below once reactified.
 // export default [

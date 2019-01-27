@@ -1,10 +1,8 @@
-import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import Badge from './Badge';
-import Image from './Image';
 
 // TODO: This should just specify the size....Why transform?
+
 const notifyShake = keyframes`
   15.56% {
     transform: rotate(7deg); }
@@ -36,24 +34,21 @@ const badgePopIn = keyframes`
     transform: scale(1); }
 `;
 
-const NotificationBell = styled.div`
+const Wrapper = styled.div`
   position: relative;
   width: 36px;
   height: 36px;
 
   ${Image} {
-    animation: ${props => props.notify && `${notifyShake} ease-out 0.68s`};
+    animation: ${props => props.onMouseOver() && `${notifyShake} ease-out 0.68s`};
   }
   
   ${Badge} { 
    animation: ${props =>
-     props.notify &&
+     props.onMouseOver &&
      `${badgePopIn} ease-in-out .1s forwards, 
      ${badgeDisappear} ease-in-out .1s 1s forwards;
    `}
 `;
 
-NotificationBell.Image = Image;
-NotificationBell.Badge = Badge;
-
-export default NotificationBell;
+export default Wrapper;

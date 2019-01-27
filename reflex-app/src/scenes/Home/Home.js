@@ -4,10 +4,12 @@ import styled, { keyframes } from 'styled-components';
 
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
+import FormError from '../../animations/demos/FormInputErrorDemo';
+import Form from '../../animations/FormInput';
 
-const renderAnimationCard = ({ title, render }, key) => {
+const renderAnimationCard = ({ title, render, detailTitle }, key) => {
   return (
-    <AnimationCard key={'key'} title={title}>
+    <AnimationCard key={key} title={title} detailTitle={detailTitle}>
       {render}
     </AnimationCard>
   );
