@@ -32,8 +32,9 @@ const mobileSlideDown = keyframes`
 
 const Container = styled.div`
   width: 100%;
-  // box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
-  // background-color: #FAFAFA;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 `;
 
 const Nav = styled.div`
@@ -52,7 +53,7 @@ const Nav = styled.div`
 const Left = styled.a`
   display: flex;
   align-items: center;
-  margin-left: 18px;
+  padding-left: 18px;
 `;
 
 const ReflexLogo = styled.img`
@@ -74,8 +75,6 @@ const Title = styled.div`
 
 const Right = styled.div`
   grid-template-columns: 1fr 1fr;
-  font-size: 14px;
-  color: ${props => props.theme.purple};
   display: flex;
   align-items: center;
 
@@ -93,60 +92,40 @@ const Hamburger = styled.img`
     visibility: visible;
   }
 
-  ${props => props.clicked && `
-    width: 24px;
-  `}
 `;
 
 const NavItem = styled.a`
-  margin: 18px;
+  padding: 12px 15px;
   text-align: center;
-  color: ${props => props.theme.purple};
+  // color: ${props => props.theme.purple};
+  color: #7567F7;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
 
-  // @media ${device.mobileL} {
-  //   display: none;
-  // }
+  :hover {
+    background-color: rgba(117,103,247,.15)
+  }
+
+  @media ${device.mobileL} {
+    display: none;
+  }
 
   ${props => props.mobileMenu && `
     animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
-
   `}
 `;
 
 const GithubLogo = styled.img`
   width: 16px;
   height: auto;
-  margin-right: 6px;
+  margin: -1px 6px 0 0;
   vertical-align: middle;
 
   @media ${device.mobileL} {
     display: none;
   }
 `;
-
-// const NavigationBar = click => (
-//   <Container>
-//   <Nav>
-//     <Left href="">
-//       <ReflexLogo src={reflexLogo} alt="reflex-logo"/>
-//       <Title>Reflex Motion</Title>
-//     </Left>
-//     <Right>
-//       <NavItem href="">Getting Started</NavItem>
-//       <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
-//         <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
-//       </NavItem>
-//       <Hamburger src={hamburger} />
-//     </Right>
-//   </Nav>
-// </Container>
-// );
-
-// export default {
-//   title: 'Navigation Bar',
-//   render: NavigationBar
-// };
-
 
 // //TODO: Change to Pure Component?
 export default class NavigationBar extends Component {
@@ -166,7 +145,7 @@ export default class NavigationBar extends Component {
 
   resize() {
     console.log(window.innerWidth);
-    this.setState({isMobile: window.innerWidth <= 425});
+    this.setState({isMobile: window.innerWidth <= 462});
   }
 
   renderDesktopRight() { 
@@ -193,7 +172,7 @@ export default class NavigationBar extends Component {
         <Nav>
           <Left href="">
             <ReflexLogo src={reflexLogo} alt="reflex-logo"/>
-            <Title>Reflex Motion</Title>
+            {/* <Title>Reflex Motion</Title> */}
           </Left>
           <Right>
             {this.state.isMobile ? this.renderMobileRight() : this.renderDesktopRight() }
@@ -203,36 +182,3 @@ export default class NavigationBar extends Component {
     );
   }
 }
-
-
-// // TODO: Change me to styled components
-// function NavigationBar() {
-//   return (
-//     <div className="nav__container">
-//       <div className="nav">
-//         <a className="nav__left" href="">
-//           <div className="logo">
-//             <img src={reflexLogo} alt="reflex-logo" />
-//           </div>
-//           <span className="title">Reflex Motion</span>
-//         </a>
-//         <div className="nav__right">
-//           <a className="nav__item" href="">
-//             <span>Getting Started</span>
-//           </a>
-//           <a
-//             className="nav__item"
-//             href="https://github.com/gracesnoh/reflex"
-//             target="_blank"
-//             rel="noopener noreferrer"
-//           >
-//             <img src={githubLogo} alt="github-logo" />
-//             <span>View on Github</span>
-//           </a>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default NavigationBar;
