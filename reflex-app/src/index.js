@@ -88,7 +88,7 @@ injectGlobal`
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
-        <App />
+      <App />
     </ThemeProvider>, 
     document.getElementById('root'));
 registerServiceWorker();
