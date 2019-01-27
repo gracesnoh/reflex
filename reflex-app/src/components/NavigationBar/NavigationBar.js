@@ -8,7 +8,7 @@ import hamburger from './images/bars-line.svg';
 
 // TODO Make media queries into global styles
 const size = {
-  mobileL: '425px',
+  mobileL: '462px',
   tablet: '768px',
   laptop: '1024px',
 }
