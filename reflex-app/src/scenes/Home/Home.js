@@ -13,18 +13,37 @@ const renderAnimationCard = ({ title, render, detailTitle }, key) => {
 };
 
 const Wrapper = styled.div`
-  margin: 0px 120px;
+  margin: 120px auto;
+  max-width: 80vw;
+  padding: 18px;
+
 `;
 
 const Title = styled.div`
-  font-size: 30px;
-  margin: 36px 0px;
+  font-size: 42px;
+  font-weight: 500;
+  color: #7567F7; //CONSTANT
+  margin: 24px 0;
 `;
 
 const Subtitle = styled.div`
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF52EE; //CONSTANT
+  margin-bottom: 48px;
+  line-height: 1.5;
+  width: 36vw;
+`;
+
+const CTA = styled.button`
+  padding: 10px 15px;
   font-size: 14px;
-  margin-bottom: 45px;
-  line-height: 2;
+  font-weight: 700;
+  color: white;
+  background-color: #FF52EE; //CONSTANT
+  border: none;
+  border-radius: 3px;
+
 `;
 
 const AnimationContainer = styled.div`
@@ -39,11 +58,12 @@ export default class Home extends Component {
   render() {
     return (
       <Wrapper>
-        <Title> Reflex Motion </Title>
+        <Title> Reflex </Title>
         <Subtitle>
           Reflex motion is an animation library based in React that mirrors real-world, natural
-          motion. See our <a href="">Getting Started</a> page to get started!
+          motion.
         </Subtitle>
+        <CTA>Get npm package</CTA>
         <AnimationContainer>
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
