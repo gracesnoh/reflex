@@ -32,8 +32,8 @@ const mobileSlideDown = keyframes`
 
 const Container = styled.div`
   width: 100%;
-  box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
-  background-color: #FAFAFA;
+  // box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
+  // background-color: #FAFAFA;
 `;
 
 const Nav = styled.div`
@@ -75,7 +75,7 @@ const Title = styled.div`
 const Right = styled.div`
   grid-template-columns: 1fr 1fr;
   font-size: 14px;
-  color: #979797;
+  color: ${props => props.theme.purple};
   display: flex;
   align-items: center;
 
