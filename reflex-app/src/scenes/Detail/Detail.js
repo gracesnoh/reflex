@@ -4,11 +4,13 @@ import styled from 'styled-components';
 
 import FormInput from './FormInput';
 import NotificationBell from './NotificationBell'
+import Starburst from './Starburst'
 
 const animationDetails = {
   // title: json object
   'FormValidations': FormInput,
   'NotificationBell': NotificationBell,
+  'Starburst': Starburst
 };
 
 
