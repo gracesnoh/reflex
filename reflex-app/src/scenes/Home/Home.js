@@ -13,10 +13,17 @@ const renderAnimationCard = ({ title, render, detailTitle }, key) => {
 };
 
 const Wrapper = styled.div`
-  margin: 120px auto;
+  margin: auto;
   max-width: 80vw;
   padding: 18px;
+  height: 100%;
+`;
 
+const Landing = styled.div`
+  display: flex;
+  height: 100vh;
+  flex-flow: column wrap;
+  justify-content: center;
 `;
 
 const Title = styled.div`
@@ -36,6 +43,7 @@ const Subtitle = styled.div`
 `;
 
 const CTA = styled.button`
+  max-width: 150px;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: 700;
@@ -43,7 +51,6 @@ const CTA = styled.button`
   background-color: #FF52EE; //CONSTANT
   border: none;
   border-radius: 3px;
-
 `;
 
 const AnimationContainer = styled.div`
@@ -53,18 +60,47 @@ const AnimationContainer = styled.div`
   grid-gap: 1em;
 `;
 
+
 //TODO: Change to Pure Component?
 export default class Home extends Component {
+
+  isTop(e) {
+    return e.getBoundingClientRect().top <= window.innerHeight;
+  }
+  
+  componentDidMount() {
+    document.addEventListener('scroll', this.trackScrolling);
+  }
+  
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.trackScrolling);
+  }
+
+  trackScrolling = () => {
+    const wrappedElement = document.getElementById('animationsCont');
+    const backgroundTest = document.getElementById('bgtest');
+    var mystyle = document.createElement('style');
+    mystyle.type = 'text/css';
+    mystyle.innerHTML = '.cssClass { margin: 0; }';
+    if (this.isTop(wrappedElement)) {
+      console.log('animations top reached')
+      backgroundTest.classList.add("mystyle")
+      document.removeEventListener('scroll', this.trackScrolling);
+    }
+  };
+
   render() {
     return (
-      <Wrapper>
-        <Title> Reflex </Title>
-        <Subtitle>
-          Reflex motion is an animation library based in React that mirrors real-world, natural
-          motion.
-        </Subtitle>
-        <CTA>Get npm package</CTA>
-        <AnimationContainer>
+      <Wrapper id="bgtest">
+        <Landing>
+          <Title> Reflex </Title>
+          <Subtitle>
+            Reflex motion is an animation library based in React that mirrors real-world, natural
+            motion.
+          </Subtitle>
+          <CTA>Get npm package</CTA>
+        </Landing>
+        <AnimationContainer id="animationsCont">
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
       </Wrapper>
