@@ -1,7 +1,14 @@
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import lottie from "lottie-web";
 import * as animationData from './starburst.json' ;
 
+
+
+const Button = styled.button`
+  background: transparent;
+  width: 401px;
+`;
 class Starburst extends PureComponent {
  constructor(props) {
    super(props);
@@ -48,8 +55,9 @@ class Starburst extends PureComponent {
     this.animation = this.createAnimation();
   }
 
+
   render() {
-    return <button onClick={this.handleOnClick} ref={this.starburstRef}> test</button>;
+    return <Button onClick={this.handleOnClick} ref={this.starburstRef} />;
   }
 }
 
