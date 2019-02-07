@@ -43,7 +43,7 @@ const Subtitle = styled.div`
 `;
 
 const CTA = styled.button`
-  max-width: 150px;
+  max-width: 180px;
   padding: 10px 15px;
   font-size: 14px;
   font-weight: 700;
