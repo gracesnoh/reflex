@@ -1,13 +1,15 @@
 import NotificationBell from './demos/NotificationBellDemo';
 import FormInputErrorDemo from './demos/FormInputErrorDemo';
 import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
+import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
 
 export default [
   NotificationBell, 
   FormInputErrorDemo, 
   FormInputSuccessDemo, 
-  SocialLineIcons
+  SocialLineIcons,
+  CheckboxDemo
 ];
 
 // TODO: Delete all below once reactified.

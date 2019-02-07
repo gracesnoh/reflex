@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Checkbox from '../Checkbox';
+import Checkbox from '../../Checkbox/index';
 
 // TODO: Should make the SVG a component too
 const CheckboxDemo = hover => (
