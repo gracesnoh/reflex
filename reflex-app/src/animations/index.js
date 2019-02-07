@@ -1,6 +1,6 @@
-import NotificationBell from './NotificationBell';
-import FormInputErrorDemo from './FormInputErrorDemo';
-import FormInputSuccessDemo from './FormInputSuccessDemo';
+import NotificationBell from './demos/NotificationBellDemo';
+import FormInputErrorDemo from './demos/FormInputErrorDemo';
+import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
 import SocialLineIcons from './SocialLineIcons';
 
 export default [
