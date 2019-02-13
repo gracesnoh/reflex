@@ -5,12 +5,14 @@ import styled from 'styled-components';
 import FormInput from './FormInput';
 import NotificationBell from './NotificationBell'
 import Starburst from './Starburst'
+import Checkbox from './Checkbox'
 
 const animationDetails = {
   // title: json object
   'FormValidations': FormInput,
   'NotificationBell': NotificationBell,
   'Starburst': Starburst
+  'Checkbox': Checkbox,
 };
 
 

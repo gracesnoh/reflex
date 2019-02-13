@@ -4,6 +4,16 @@ import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
 import StarburstDemo from './demos/StarburstDemo';
 
 export default [NotificationBell, FormInputErrorDemo, FormInputSuccessDemo, StarburstDemo];
+import CheckboxDemo from './demos/CheckboxDemo';
+import SocialLineIcons from './SocialLineIcons';
+
+export default [
+  NotificationBell, 
+  FormInputErrorDemo, 
+  FormInputSuccessDemo, 
+  SocialLineIcons,
+  CheckboxDemo
+];
 
 // TODO: Delete all below once reactified.
 // export default [
