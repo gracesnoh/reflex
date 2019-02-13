@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled  from 'styled-components';
+import styled from 'styled-components';
 
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
