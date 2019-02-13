@@ -11,7 +11,7 @@ const animationDetails = {
   // title: json object
   'FormValidations': FormInput,
   'NotificationBell': NotificationBell,
-  'Starburst': Starburst
+  'Starburst': Starburst,
   'Checkbox': Checkbox,
 };
 
