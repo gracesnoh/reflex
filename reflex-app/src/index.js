@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { ThemeProvider, injectGlobal } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 const theme = {
     // Colors
@@ -26,9 +26,9 @@ const theme = {
       monospace : "Inconsolata', monospace",
     }
 
-}
+};
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
     @import url('https://rsms.me/inter/inter-ui.css');
     @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 
@@ -88,7 +88,10 @@ injectGlobal`
 
 ReactDOM.render(
     <ThemeProvider theme={theme}>
-      <App />
+      <Fragment>
+        <App />
+        <GlobalStyle />
+      </Fragment>
     </ThemeProvider>, 
     document.getElementById('root'));
 registerServiceWorker();
