@@ -1,71 +1,71 @@
-.nav {
-  box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
-  display: flex;
-  background-color: #FAFAFA;
-  justify-content: space-between;
+.nav__container {
   width: 100%;
-  grid-area: nav;
+  box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
+  background-color: #FAFAFA;
 
-  .nav__left {
+  .nav {
     display: flex;
-    padding: 24px;
-    align-items: center;
-    margin-left: 115px;
+    justify-content: space-between;
+    max-width: 80vw;
+    height: 60px;
+    grid-area: nav;
+    margin: auto;
 
-    .logo img {
-      width: 24px;
-      height: auto;
-      margin-right: 12px;
-    }
+    .nav__left {
+      display: flex;
+      align-items: center;
+      margin-left: 18px;
 
-    .title {
-      margin-right: auto;
-      padding-left: 6px;
-      font-weight: 400;
-      font-size: 16px;
-    }
-  }
-
-  .nav__right {
-    grid-template-columns: 1fr 1fr;
-    font-size: 16px;
-    color: #979797;
-    display: flex;
-    align-items: center;
-
-    .github {
-      cursor: pointer;
-      padding: 18px;
-      border-right: solid 1px #E0E0E0;
-      text-align: center;
-
-      img {
-        width: 20px;
+      .logo img {
+        width: 24px;
         height: auto;
-        margin-right: 6px;
-        vertical-align: middle;
+        margin-right: 12px;
+      }
+
+      .title {
+        margin-right: auto;
+        padding-left: 6px;
+        font-weight: 400;
+        font-size: 16px;
       }
     }
 
-    .about {
-      cursor: pointer;
-      padding: 18px;
-      text-align: center;
+    .nav__right {
+      grid-template-columns: 1fr 1fr;
+      font-size: 14px;
+      color: #979797;
+      display: flex;
+      align-items: center;
+
+      .nav__item {
+        cursor: pointer;
+        margin: 18px;
+        text-align: center;
+
+        img {
+          width: 16px;
+          height: auto;
+          margin-right: 6px;
+          vertical-align: middle;
+        }
+      }
     }
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 576px) {
   .nav {
-    z-index: 2;
-    height: 80px;
-    flex-direction: row;
-    width: 100%;
-    background-color: #FFF;
-    align-items: center;
-    
-    .nav__footer {
+    .title {
       visibility: hidden;
     }
+    .nav__right {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    width: 100%
   }
 }
