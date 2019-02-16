@@ -83,7 +83,6 @@ export default class Home extends Component {
     mystyle.type = 'text/css';
     mystyle.innerHTML = '.cssClass { margin: 0; }';
     if (this.isTop(wrappedElement)) {
-      console.log('animations top reached')
       backgroundTest.classList.add("mystyle")
       document.removeEventListener('scroll', this.trackScrolling);
     }
