@@ -1,5 +1,5 @@
 .nav {
-  box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
+  // box-shadow: 0 3px 8px rgba(130, 130, 130, .25);
   display: flex;
   background-color: #FAFAFA;
   justify-content: space-between;
@@ -29,7 +29,7 @@
   .nav__right {
     grid-template-columns: 1fr 1fr;
     font-size: 16px;
-    color: #979797;
+    color: #4552E3;
     display: flex;
     align-items: center;
 
