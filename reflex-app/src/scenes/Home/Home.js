@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import lottie from "lottie-web";
+import { Link } from 'react-scroll';
+import ScrollingColorBackground from 'react-scrolling-color-background'
 
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
+import * as animationData from '../../animations/LandingBG/data.json';
 
 const renderAnimationCard = ({ title, render, detailTitle }, key) => {
   return (
@@ -19,7 +23,7 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const Landing = styled.div`
+const LandingContainer = styled.div`
   display: flex;
   height: 100vh;
   flex-flow: column wrap;
@@ -60,46 +64,64 @@ const AnimationContainer = styled.div`
   grid-gap: 1em;
 `;
 
+const ScrollButton = styled.button`` // TODO: Syyle me please
 
+const colorTransitionStyle = {
+    position: 'fixed',
+    top: '0px',
+    left: '0px',
+    bottom: '0px',
+    right: '0px',
+    zIndex: '-1',
+};
 //TODO: Change to Pure Component?
 export default class Home extends Component {
-
-  isTop(e) {
-    return e.getBoundingClientRect().top <= window.innerHeight;
+  constructor(props) {
+    super(props);
+    this.landingTopSectionRef = React.createRef();
+    this.createAnimation = this.createAnimation.bind(this);
   }
-  
+
+  createAnimation() {
+   const animationParams = {
+     container: this.landingTopSectionRef.current,
+     animationData: animationData,
+     ...this.props.animationParams,
+    };
+
+    const animation = lottie.loadAnimation(animationParams);
+    return animation;
+  }
+
   componentDidMount() {
-    document.addEventListener('scroll', this.trackScrolling);
+    this.animation = this.createAnimation();
   }
-  
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.trackScrolling);
-  }
-
-  trackScrolling = () => {
-    const wrappedElement = document.getElementById('animationsCont');
-    const backgroundTest = document.getElementById('bgtest');
-    var mystyle = document.createElement('style');
-    mystyle.type = 'text/css';
-    mystyle.innerHTML = '.cssClass { margin: 0; }';
-    if (this.isTop(wrappedElement)) {
-      backgroundTest.classList.add("mystyle")
-      document.removeEventListener('scroll', this.trackScrolling);
-    }
-  };
 
   render() {
     return (
       <Wrapper id="bgtest">
-        <Landing>
+        <ScrollingColorBackground
+            selector='.js-color-stop[data-background-color]'
+            colorDataAttribute='data-background-color'
+            initialRgb='white'
+            style={colorTransitionStyle}/>
+        <LandingContainer
+          data-background-color='white'
+          className='js-color-stop'
+          ref={this.landingTopSectionRef}>
+          <section style={{ height: '20px'}} data-background-color='rgb(234, 77, 237)'  className='js-color-stop' />
           <Title> Reflex </Title>
           <Subtitle>
             Reflex motion is an animation library based in React that mirrors real-world, natural
             motion.
           </Subtitle>
           <CTA>Get npm package</CTA>
-        </Landing>
-        <AnimationContainer id="animationsCont">
+          <Link smooth="easeOutCubic" duration={1000} to="animationsCont" >
+            <ScrollButton>Scroll down to see animations /insert arrow here</ScrollButton>
+          </Link>
+        </LandingContainer>
+        <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
+          I need to be styled :(
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
       </Wrapper>
