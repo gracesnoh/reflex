@@ -34,3 +34,6 @@ class AnimationCard extends Component {
 }
 
 export default AnimationCard;
+
+
+

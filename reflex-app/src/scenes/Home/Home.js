@@ -4,7 +4,8 @@ import lottie from "lottie-web";
 import { Link } from 'react-scroll';
 import ScrollingColorBackground from 'react-scrolling-color-background'
 
-import animations from '../../animations';
+import animations from '../../animations/index';
+import TabSwitchDemo from '../../animations/TabSwitchDemo';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
 import * as animationData from '../../animations/LandingBG/data.json';
 
@@ -120,6 +121,7 @@ export default class Home extends Component {
             <ScrollButton>Scroll down to see animations /insert arrow here</ScrollButton>
           </Link>
         </LandingContainer>
+        {TabSwitchDemo.render()}
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
           I need to be styled :(
           {animations.map((animation, index) => renderAnimationCard(animation, index))}

@@ -24,46 +24,64 @@ const Marker = styled.div.attrs({
    background-color: #4552E3;
 `
 
+const getCenter = (elem) => {
+  const elemBoundingClientRect = elem.getBoundingClientRect();
+  return elemBoundingClientRect.left + elemBoundingClientRect.width/2;
+};
+
 class TabSwitch extends Component {
+  constructor(props) {
+    super(props);
+    this.childrenRefs = [];
+  }
+
   state = {
-    children: [],
-    currentIndex: null,
+    indexOfFocusedChildRef: 0,
     to: 0,
     from: 0,
   };
 
-  onSelect = (index) => {
-    const elem = this.state.children[index];
-    const elemBoundingClientRect = elem.getBoundingClientRect();
-    const center = elemBoundingClientRect.left + elemBoundingClientRect.width/2;
+  componentDidMount() {
+    // Set the marker to the correct initial position: this.state.indexOfFocusedChildRef
+    const selectedElem = this.childrenRefs[this.state.indexOfFocusedChildRef];
     this.setState({
-      currentIndex: index,
-      from: this.state.to,
-      to: center,
-    });
+      to: getCenter(selectedElem),
+    })
   }
 
-// TODO: Should be able to apply the TabSwitch animation even when children are wrapped with container div / Fragment. This is necessary to support the vertical version of this animation.
+
+  onSelect = (index) => {
+    const selectedElem = this.childrenRefs[index];
+    this.setState({
+      indexOfFocusedChildRef: index,
+      from: this.state.to,
+      to: getCenter(selectedElem),
+    });
+  };
+
+  // TODO: Should be able to apply the TabSwitch animation even when children are wrapped with container div / Fragment. This is necessary to support the vertical version of this animation.
   render() {
+    const clonedChildren = React.Children.map(this.props.children, (child, index) =>
+      // TODO: Is there a better alternative to cloning this every time the state changes? How slow is this?
+      React.cloneElement(child, {
+       // Using index is bad. But, it is unlikely the user will use this animation on a list that will be mutated.
+        key: index,
+        onClick: () => this.onSelect(index),
+        // TODO: use innerRef for styled components? Shouldn't need to but there is something weird with versioning
+        ref: (node) => {
+         this.childrenRefs.push(node);
+          // Call the original ref, if any.... but commenting out because I don't think we need it.
+          // const {ref} = child;
+          // if (typeof ref === 'function') {
+          //   ref(node);
+          // }
+        }
+      })
+    );
     return (
       <Container>
        <TabContainer>
-          {React.Children.map(this.props.children, (child, index) =>
-            // Using index is bad. But, it is unlikely the user will use this animation on a list that will be mutated.
-            React.cloneElement(child, {
-              key: index,
-              onClick: () => this.onSelect(index),
-              // TODO: use innerRef for styled components? Shouldn't need to but there issomething weird with versioning
-              ref: (node) => {
-                this.state.children.push(node);
-                // Call the original ref, if any
-                const {ref} = child;
-                if (typeof ref === 'function') {
-                  ref(node);
-                }
-              }
-            })
-          )}
+          {clonedChildren}
        </ TabContainer>
        <Spring from={{ left: this.state.from }} to={{ left: this.state.to }}>
           {({left}) => <Marker left={left} />}
