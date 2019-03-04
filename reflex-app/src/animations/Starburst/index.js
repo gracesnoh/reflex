@@ -37,12 +37,6 @@ class Starburst extends PureComponent {
 
   }
 
-  handleAnimationComplete = (e) => {
-    // Do not use the .destroy method.
-    // It deletes the ref DOM element entirely.
-    // this.animation.goToAndStop(0, false);
-  };
-
   createAnimation() {
    const animationParams = {
      container: this.starburstRef.current,
@@ -63,7 +57,6 @@ class Starburst extends PureComponent {
   componentDidMount() {
     this.animation = this.createAnimation();
   }
-
 
   render() {
     return <Button onClick={this.handleOnClick} ref={this.starburstRef} />;
