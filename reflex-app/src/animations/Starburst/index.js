@@ -3,35 +3,44 @@ import styled from 'styled-components';
 import lottie from "lottie-web";
 import * as animationData from './starburst.json' ;
 
-
-
 const Button = styled.button`
   background: transparent;
-  width: 401px;
+  width: 60px;
+  height: 60px;
+  border: none;
 `;
+
 class Starburst extends PureComponent {
  constructor(props) {
    super(props);
    this.starburstRef = React.createRef();
    this.animation = null;
+   this.state = {isStarred: false};
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
   }
 
   handleOnClick() {
-   this.animation.play();
+    if (this.props.onClick) {
+      this.props.onClick();
+    }
+ 
+    this.setState({ isStarred: !this.state.isStarred });
+ 
+    if (this.state.isStarred) {
+      // lottie.destroy(this.animation);
+      this.animation.goToAndStop(0);
+    } else { 
+      this.animation.play(); 
+    }
 
-   if (this.props.onClick) {
-     this.props.onClick();
-   }
   }
 
   handleAnimationComplete = (e) => {
     // Do not use the .destroy method.
     // It deletes the ref DOM element entirely.
-    // lottie.destroy(this.animation);
-    this.animation.goToAndStop(0, false);
+    // this.animation.goToAndStop(0, false);
   };
 
   createAnimation() {

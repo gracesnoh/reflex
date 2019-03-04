@@ -7,7 +7,6 @@ const Button = styled.button`
   background: transparent;
   width: 54px;
   border: none;
-  outline: none;
 `;
 
 class Toggle extends PureComponent {
@@ -17,11 +16,11 @@ class Toggle extends PureComponent {
    this.animation = null;
    this.state = {isToggled: false};
 
-   this.toggleSwitch = this.toggleSwitch.bind(this);
+   this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
   }
 
-  toggleSwitch() {
+  handleOnClick() {
    if (this.props.onClick) {
      this.props.onClick();
    }
@@ -64,7 +63,7 @@ class Toggle extends PureComponent {
 
 
   render() {
-    return <Button onClick={this.toggleSwitch} ref={this.toggleRef} />;
+    return <Button onClick={this.handleOnClick} ref={this.toggleRef} />;
   }
 }
 
