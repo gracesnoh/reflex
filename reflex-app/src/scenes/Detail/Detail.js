@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import FormInput from './FormInput';
 import NotificationBell from './NotificationBell'
+import LoadingLines from './LoadingLines'
 import Starburst from './Starburst'
 import Checkbox from './Checkbox'
 import Toggle from './Toggle'
@@ -12,6 +13,7 @@ const animationDetails = {
   // title: json object
   'FormValidations': FormInput,
   'NotificationBell': NotificationBell,
+  'LoadingLines': LoadingLines,
   'Starburst': Starburst,
   'Checkbox': Checkbox,
   'Toggle': Toggle
