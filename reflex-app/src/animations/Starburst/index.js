@@ -29,7 +29,6 @@ class Starburst extends PureComponent {
     this.setState({ isStarred: !this.state.isStarred });
  
     if (this.state.isStarred) {
-      // lottie.destroy(this.animation);
       this.animation.goToAndStop(0);
     } else { 
       this.animation.play(); 
@@ -50,7 +49,6 @@ class Starburst extends PureComponent {
     };
 
     const animation = lottie.loadAnimation(animationParams);
-    animation.addEventListener('complete', this.handleAnimationComplete);
     return animation;
   }
 

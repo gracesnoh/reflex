@@ -36,10 +36,6 @@ class Toggle extends PureComponent {
    this.animation.play(); 
   }
 
-  handleAnimationComplete = (e) => {
-    lottie.destroy(this.animation);
-  };
-
   createAnimation() {
    const animationParams = {
      container: this.toggleRef.current,
@@ -53,7 +49,6 @@ class Toggle extends PureComponent {
     };
 
     const animation = lottie.loadAnimation(animationParams);
-    animation.addEventListener('complete', this.handleAnimationComplete);
     return animation;
   }
 
