@@ -10,7 +10,7 @@ class ToggleDemo extends Component {
 
   componentDidUpdate() {
     if (this.props.hover) {
-      this.toggleRef.current.toggleSwitch()
+      this.toggleRef.current.handleOnClick()
     }
   }
 
