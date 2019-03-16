@@ -5,6 +5,7 @@ import StarburstDemo from './demos/StarburstDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
 import ToggleDemo from './demos/ToggleDemo';
+import HamburgerDemo from './demos/HamburgerDemo';
 
 export default [
   NotificationBell, 
@@ -13,7 +14,8 @@ export default [
   SocialLineIcons,
   CheckboxDemo,
   StarburstDemo,
-  ToggleDemo
+  ToggleDemo,
+  HamburgerDemo
 ];
 
 // TODO: Delete all below once reactified.
