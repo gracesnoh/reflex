@@ -8,6 +8,7 @@ const Button = styled.button`
   width: 60px;
   height: 60px;
   border: none;
+  cursor: pointer;
 `;
 
 class Starburst extends PureComponent {
