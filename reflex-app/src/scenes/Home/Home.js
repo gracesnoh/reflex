@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
-import ScrollingColorBackground from 'react-scrolling-color-background'
+import ScrollingColorBackground from 'react-scrolling-color-background';
+import arrow from './images/arrow-line.svg';
 
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard/AnimationCard';
@@ -64,7 +65,32 @@ const AnimationContainer = styled.div`
   grid-gap: 1em;
 `;
 
-const ScrollButton = styled.button`` // TODO: Syyle me please
+const ScrollButton = styled.button`
+  background: none;
+  border: none;
+  color: #7567F7;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 60px;
+  padding: 0;
+  cursor: pointer;
+  
+`;
+
+const Arrow = styled.img`
+  transform: rotate(180deg);
+  width: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+`;
+
+const Floating = styled.div`
+  position: absolute;
+  min-height: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+`;
 
 const colorTransitionStyle = {
     position: 'fixed',
@@ -74,6 +100,7 @@ const colorTransitionStyle = {
     right: '0px',
     zIndex: '-1',
 };
+
 //TODO: Change to Pure Component?
 export default class Home extends Component {
   constructor(props) {
@@ -85,6 +112,8 @@ export default class Home extends Component {
   createAnimation() {
    const animationParams = {
      container: this.landingTopSectionRef.current,
+     loop: true,
+     autoplay: true,
      animationData: animationData,
      ...this.props.animationParams,
     };
@@ -105,10 +134,11 @@ export default class Home extends Component {
             colorDataAttribute='data-background-color'
             initialRgb='white'
             style={colorTransitionStyle}/>
+        <Floating ref={this.landingTopSectionRef}></Floating>
         <LandingContainer
           data-background-color='white'
           className='js-color-stop'
-          ref={this.landingTopSectionRef}>
+          >
           <section style={{ height: '20px'}} data-background-color='rgb(234, 77, 237)'  className='js-color-stop' />
           <Title> Reflex </Title>
           <Subtitle>
@@ -117,7 +147,8 @@ export default class Home extends Component {
           </Subtitle>
           <CTA>Get npm package</CTA>
           <Link smooth="easeOutCubic" duration={1000} to="animationsCont" >
-            <ScrollButton>Scroll down to see animations /insert arrow here</ScrollButton>
+            <ScrollButton>Scroll down to see animations</ScrollButton>
+            <Arrow src={arrow}></Arrow>
           </Link>
         </LandingContainer>
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
