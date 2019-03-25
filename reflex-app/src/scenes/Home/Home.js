@@ -6,7 +6,7 @@ import ScrollingColorBackground from 'react-scrolling-color-background';
 import arrow from './images/arrow-line.svg';
 
 import animations from '../../animations';
-import AnimationCard from '../../components/AnimationCard/AnimationCard';
+import AnimationCard from '../../components/AnimationCard';
 import * as animationData from '../../animations/LandingBG/data.json';
 
 const renderAnimationCard = ({ title, render, detailTitle }, key) => {
@@ -59,10 +59,9 @@ const CTA = styled.button`
 `;
 
 const AnimationContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 270px);
-  grid-template-rows: repeat(4, 270px);
-  grid-gap: 1em;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 `;
 
 const ScrollButton = styled.button`
@@ -74,7 +73,6 @@ const ScrollButton = styled.button`
   margin-top: 60px;
   padding: 0;
   cursor: pointer;
-  
 `;
 
 const Arrow = styled.img`
@@ -84,21 +82,21 @@ const Arrow = styled.img`
   cursor: pointer;
 `;
 
-const Floating = styled.div`
+const Animation = styled.div`
   position: absolute;
   min-height: 100%;
   z-index: -1;
   top: 0;
-  right: 0;
+  left: 0;
 `;
 
 const colorTransitionStyle = {
-    position: 'fixed',
-    top: '0px',
-    left: '0px',
-    bottom: '0px',
-    right: '0px',
-    zIndex: '-1',
+  position: 'fixed',
+  top: '0px',
+  left: '0px',
+  bottom: '0px',
+  right: '0px',
+  zIndex: '-1',
 };
 
 //TODO: Change to Pure Component?
@@ -134,7 +132,7 @@ export default class Home extends Component {
             colorDataAttribute='data-background-color'
             initialRgb='white'
             style={colorTransitionStyle}/>
-        <Floating ref={this.landingTopSectionRef}></Floating>
+        <Animation ref={this.landingTopSectionRef}></Animation>
         <LandingContainer
           data-background-color='white'
           className='js-color-stop'
@@ -152,7 +150,6 @@ export default class Home extends Component {
           </Link>
         </LandingContainer>
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
-          I need to be styled :(
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
       </Wrapper>

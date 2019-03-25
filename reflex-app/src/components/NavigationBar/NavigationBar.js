@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 import githubLogo from './images/github.png';
 import reflexLogo from './images/reflex-logo.png';
+import reflexLogoWhite from './images/reflex-logo-white.png';
 import hamburger from './images/bars-line.svg';
 
 // TODO Make media queries into global styles
@@ -18,7 +19,6 @@ export const device = {
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
 };
-//
 
 const mobileSlideDown = keyframes`
   0% {
@@ -60,17 +60,6 @@ const ReflexLogo = styled.img`
   width: 24px;
   height: auto;
   margin-right: 12px;
-`;
-
-const Title = styled.div`
-  margin-right: auto;
-  padding-left: 6px;
-  font-weight: 400;
-  font-size: 16px;
-
-  @media ${device.mobileL} {
-    display: none;
-  }
 `;
 
 const Right = styled.div`
@@ -144,7 +133,6 @@ export default class NavigationBar extends Component {
   }
 
   resize() {
-    console.log(window.innerWidth);
     this.setState({isMobile: window.innerWidth <= 462});
   }
 
@@ -172,7 +160,6 @@ export default class NavigationBar extends Component {
         <Nav>
           <Left href="">
             <ReflexLogo src={reflexLogo} alt="reflex-logo"/>
-            {/* <Title>Reflex Motion</Title> */}
           </Left>
           <Right>
             {this.state.isMobile ? this.renderMobileRight() : this.renderDesktopRight() }
