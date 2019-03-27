@@ -99,6 +99,10 @@ const colorTransitionStyle = {
   zIndex: '-1',
 };
 
+const linkStyle = {
+  display: 'inline-block'
+};
+
 //TODO: Change to Pure Component?
 export default class Home extends Component {
   constructor(props) {
@@ -144,14 +148,17 @@ export default class Home extends Component {
             motion.
           </Subtitle>
           <CTA>Get npm package</CTA>
-          <Link smooth="easeOutCubic" duration={1000} to="animationsCont" >
-            <ScrollButton>Scroll down to see animations</ScrollButton>
-            <Arrow src={arrow}></Arrow>
-          </Link>
+          <div>
+            <Link style={linkStyle} smooth="easeOutCubic" duration={1000} to="animationsCont" >
+              <ScrollButton>Scroll down to see animations</ScrollButton>
+              <Arrow src={arrow}></Arrow>
+            </Link>
+          </div>
         </LandingContainer>
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
+        <div id="testfooter"></div>
       </Wrapper>
     );
   }

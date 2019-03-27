@@ -3,25 +3,29 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Card = styled.div`
-  width: 50vw;
+  width: 50%;
   min-height: 360px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  padding: 60px;
+  margin: 60px;
 `;
 
 const Title = styled.div`
   font-size: 18px;
   font-weight: 400;
   color: white;
+  margin-bottom: 12px;
 `;
 
 const Preview = styled.div`
-  align-self: center;
   flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
 `;
 
 //TODO: Should this be in scenes/Home since it's used there?
