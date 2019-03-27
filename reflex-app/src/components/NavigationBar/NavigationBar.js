@@ -7,6 +7,7 @@ import githubLogoWhite from './images/github-white.png';
 import reflexLogo from './images/reflex-logo.png';
 import reflexLogoWhite from './images/reflex-logo-white.png';
 import hamburger from './images/bars-line.svg';
+import hamburgerWhite from './images/bars-line-white.svg';
 
 // TODO Make media queries into global styles
 const size = {
@@ -167,7 +168,7 @@ export default class NavigationBar extends Component {
 
   renderMobileRight = () => {
     return (
-      <Hamburger onClick={() => {}} src={hamburger} />
+      <Hamburger onClick={() => {}} src={ this.state.isTop ? hamburger : hamburgerWhite } />
     );
   }
 
