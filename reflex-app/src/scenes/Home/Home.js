@@ -9,11 +9,9 @@ import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard';
 import * as animationData from '../../animations/LandingBG/data.json';
 
-const renderAnimationCard = ({ title, render, detailTitle }, key) => {
+const renderAnimationCard = ({ title, render, mainDemo, onHover }, key) => {
   return (
-    <AnimationCard key={key} title={title} detailTitle={detailTitle}>
-      {render}
-    </AnimationCard>
+    <AnimationCard key={key} title={title} mainDemo={mainDemo} onHover={onHover}/>
   );
 };
 

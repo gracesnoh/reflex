@@ -41,14 +41,18 @@ export default class Home extends Component {
   };
 
   render() {
-    const { title, children, detailTitle} = this.props;
+    const { title, mainDemo, onHover} = this.props;
     return (
       <Card>
         <Title>{title}</Title>
-        <Preview
-          onMouseEnter={() => this.setState({ hover: true })}
-          onMouseLeave={() => this.setState({ hover: false })}
-        >{children(this.state.hover)}</Preview>
+        {onHover ?
+          <Preview
+            onMouseEnter={() => this.setState({ hover: true })}
+            onMouseLeave={() => this.setState({ hover: false })}
+          >{mainDemo(this.state.hover)}</Preview>
+          :
+          <Preview>{React.createElement(mainDemo)}</Preview>}
+
       </Card>
     );
   }

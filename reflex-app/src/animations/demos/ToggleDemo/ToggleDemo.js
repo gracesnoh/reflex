@@ -23,6 +23,5 @@ class ToggleDemo extends Component {
 
 export default {
   title: 'Toggle',
-  render: (hover) => <ToggleDemo hover={hover}/>,
-  detailTitle: 'Toggle'
+  mainDemo: ToggleDemo,
 };

@@ -1,6 +1,5 @@
-// import NotificationBell from './demos/NotificationBellDemo'; ADD BACK
-import FormInputErrorDemo from './demos/FormInputErrorDemo';
-import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
+import NotificationBell from './demos/NotificationBellDemo';
+import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
@@ -10,10 +9,9 @@ import HamburgerDemo from './demos/HamburgerDemo';
 export default [
   HamburgerDemo,
   ToggleDemo,
-  FormInputSuccessDemo, 
-  FormInputErrorDemo, 
+  FormInputSuccessDemo,
   SocialLineIcons,
-  // NotificationBell, ADD BACK
+  NotificationBell,
   CheckboxDemo,
   StarburstDemo,
 ];
