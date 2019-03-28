@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Spring } from 'react-spring'
+import styled, { keyframes, css } from 'styled-components';
+import { Spring, Trail } from 'react-spring/renderprops';
 
 // TODO: Follow the BEM format of FormInput when creating demos.
 const Container = styled.div`
@@ -13,15 +13,31 @@ const TabContainer = styled.div`
   flex-direction: row;
 `
 
+const slug = (from, to) => keyframes`
+	  30% { 
+	    width: ${(from < to) ? 1+((from/to) * to)/from : 1+1/((to/from) * from)}vh; // Keep 
+	  }
+`;
+
+
 // TODO: Take in custom styles.
-const Marker = styled.div.attrs({
-  style: ({ left }) => ({ left: left + 'px'})
-})`
-   position: absolute;
+const Marker = styled.div`
    border-radius: 6px;
    width: 6px;
+   //right: 0;
+   //display: inline-block;
    height: 6px;
    background-color: #4552E3;
+   animation: ${({animate, from, to}) => animate && css`${slug(from, to)} 500ms ease-in-out 20ms`};
+ `
+
+const MarkerContainer = styled.div.attrs({
+  style: ({ left }) => ({ left: left + 'px'})
+})`
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
 `
 
 const getCenter = (elem) => {
@@ -70,7 +86,7 @@ class TabSwitch extends Component {
         // TODO: use innerRef for styled components? Shouldn't need to but there is something weird with versioning
         ref: (node) => {
          this.childrenRefs.push(node);
-          // Call the original ref, if any.... but commenting out because I don't think we need it.
+          // Call the original ref, if any.... but commenting out because I don't think we need
           // const {ref} = child;
           // if (typeof ref === 'function') {
           //   ref(node);
@@ -78,13 +94,23 @@ class TabSwitch extends Component {
         }
       })
     );
+    // MOVE THE CONTAINER AND THEN FLOAT THE MARKER RIGHT LEFT DEPENDING ON DIRECTION!
+    console.log(this.state.from < this.state.to);
+
     return (
       <Container>
        <TabContainer>
           {clonedChildren}
        </ TabContainer>
-       <Spring from={{ left: this.state.from }} to={{ left: this.state.to }}>
-          {({left}) => <Marker left={left} />}
+       <Spring config={{precision: 5}}
+               from={{ left: this.state.from }}
+               to={{ left: this.state.to }}
+               onStart={() => this.setState({animate: true})}
+               onRest={() => this.setState({animate: false})}>
+         {({left}) =>
+                <MarkerContainer left={left}>
+                <Marker animate={this.state.animate} from={this.state.from} to={this.state.to} />
+                </MarkerContainer>}
         </Spring>
      </ Container>
     )

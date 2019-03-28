@@ -9,7 +9,7 @@ const Button = styled.div`
   padding: 10px 16px;
 `
 
-const test = (
+const test = () => (
   <TabSwitch>
     <Button> This is a test </Button>
     <Button> This is a test </Button>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
@@ -112,6 +112,8 @@ export default class Home extends Component {
           ref={this.landingTopSectionRef}>
           <section style={{ height: '20px'}} data-background-color='rgb(234, 77, 237)'  className='js-color-stop' />
           <Title> Reflex </Title>
+          <Fragment>        {TabSwitchDemo.render()}
+</Fragment>
           <Subtitle>
             Reflex motion is an animation library based in React that mirrors real-world, natural
             motion.
@@ -121,7 +123,6 @@ export default class Home extends Component {
             <ScrollButton>Scroll down to see animations /insert arrow here</ScrollButton>
           </Link>
         </LandingContainer>
-        {TabSwitchDemo.render()}
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
           I need to be styled :(
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
