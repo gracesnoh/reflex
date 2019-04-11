@@ -18,7 +18,7 @@ const renderAnimationCard = ({ title, render, mainDemo, onHover }, key) => {
 
 const renderAnimationLink = ({title, render, mainDemo, onHover}) => {
   return (
-    <Link activeClass="test" spy={true} smooth="easeOutCubic" duration={1000} style={linkStyle2} to={title}>
+    <Link activeClass="selected" spy={true} smooth="easeOutCubic" duration={1000} style={linkStyle2} to={title}>
       {title}
     </Link>
   );
