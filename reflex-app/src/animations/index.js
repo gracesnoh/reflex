@@ -1,6 +1,7 @@
 import NotificationBell from './demos/NotificationBellDemo';
 import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
+import LoadingLinesDemo from './demos/LoadingLinesDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
 import ToggleDemo from './demos/ToggleDemo';
@@ -13,6 +14,7 @@ export default [
   SocialLineIcons,
   NotificationBell,
   CheckboxDemo,
+  LoadingLinesDemo,
   StarburstDemo,
 ];
 
