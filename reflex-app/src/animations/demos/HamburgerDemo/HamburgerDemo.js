@@ -23,6 +23,5 @@ class HamburgerDemo extends Component {
 
 export default {
   title: 'Hamburger',
-  render: (hover) => <HamburgerDemo hover={hover}/>,
-  detailTitle: 'Hamburger'
+  mainDemo: HamburgerDemo,
 };

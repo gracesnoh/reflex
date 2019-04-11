@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
-import ScrollingColorBackground from 'react-scrolling-color-background'
+import ScrollingColorBackground from 'react-scrolling-color-background';
+import arrow from './images/arrow-line.svg';
 
 import animations from '../../animations';
-import AnimationCard from '../../components/AnimationCard/AnimationCard';
+import AnimationCard from '../../components/AnimationCard';
 import * as animationData from '../../animations/LandingBG/data.json';
 
-const renderAnimationCard = ({ title, render, detailTitle }, key) => {
+const renderAnimationCard = ({ title, render, mainDemo, onHover }, key) => {
   return (
-    <AnimationCard key={key} title={title} detailTitle={detailTitle}>
-      {render}
-    </AnimationCard>
+    <AnimationCard key={key} title={title} mainDemo={mainDemo} onHover={onHover}/>
   );
 };
 
@@ -58,22 +57,50 @@ const CTA = styled.button`
 `;
 
 const AnimationContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 270px);
-  grid-template-rows: repeat(4, 270px);
-  grid-gap: 1em;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 `;
 
-const ScrollButton = styled.button`` // TODO: Syyle me please
+const ScrollButton = styled.button`
+  background: none;
+  border: none;
+  color: #7567F7;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 60px;
+  padding: 0;
+  cursor: pointer;
+`;
+
+const Arrow = styled.img`
+  transform: rotate(180deg);
+  width: 24px;
+  vertical-align: middle;
+  cursor: pointer;
+`;
+
+const Animation = styled.div`
+  position: absolute;
+  min-height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+`;
 
 const colorTransitionStyle = {
-    position: 'fixed',
-    top: '0px',
-    left: '0px',
-    bottom: '0px',
-    right: '0px',
-    zIndex: '-1',
+  position: 'fixed',
+  top: '0px',
+  left: '0px',
+  bottom: '0px',
+  right: '0px',
+  zIndex: '-1',
 };
+
+const linkStyle = {
+  display: 'inline-block'
+};
+
 //TODO: Change to Pure Component?
 export default class Home extends Component {
   constructor(props) {
@@ -85,6 +112,8 @@ export default class Home extends Component {
   createAnimation() {
    const animationParams = {
      container: this.landingTopSectionRef.current,
+     loop: true,
+     autoplay: true,
      animationData: animationData,
      ...this.props.animationParams,
     };
@@ -105,10 +134,11 @@ export default class Home extends Component {
             colorDataAttribute='data-background-color'
             initialRgb='white'
             style={colorTransitionStyle}/>
+        <Animation ref={this.landingTopSectionRef}></Animation>
         <LandingContainer
           data-background-color='white'
           className='js-color-stop'
-          ref={this.landingTopSectionRef}>
+          >
           <section style={{ height: '20px'}} data-background-color='rgb(234, 77, 237)'  className='js-color-stop' />
           <Title> Reflex </Title>
           <Subtitle>
@@ -116,14 +146,17 @@ export default class Home extends Component {
             motion.
           </Subtitle>
           <CTA>Get npm package</CTA>
-          <Link smooth="easeOutCubic" duration={1000} to="animationsCont" >
-            <ScrollButton>Scroll down to see animations /insert arrow here</ScrollButton>
-          </Link>
+          <div>
+            <Link style={linkStyle} smooth="easeOutCubic" duration={1000} to="animationsCont" >
+              <ScrollButton>Scroll down to see animations</ScrollButton>
+              <Arrow src={arrow}></Arrow>
+            </Link>
+          </div>
         </LandingContainer>
         <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
-          I need to be styled :(
           {animations.map((animation, index) => renderAnimationCard(animation, index))}
         </AnimationContainer>
+        <div id="testfooter"></div>
       </Wrapper>
     );
   }

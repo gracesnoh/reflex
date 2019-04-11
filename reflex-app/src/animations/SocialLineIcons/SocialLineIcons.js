@@ -203,6 +203,6 @@ c-5,0-9.1,4.1-9.1,9.1s4.1,9.1,9.1,9.1s9.1-4.1,9.1-9.1S35,20.9,30,20.9z"/>
 
 export default {
   title: 'Social Line Icons',
-  render: SocialLineIcons,
-  detailTitle: 'SocialLineIcons',
+  mainDemo: SocialLineIcons,
+  onHover: true,
 };

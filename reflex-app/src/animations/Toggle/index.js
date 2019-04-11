@@ -7,6 +7,7 @@ const Button = styled.button`
   background: transparent;
   width: 54px;
   border: none;
+  outline: none;
 `;
 
 class Toggle extends PureComponent {

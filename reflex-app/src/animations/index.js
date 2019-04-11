@@ -1,6 +1,5 @@
 import NotificationBell from './demos/NotificationBellDemo';
-import FormInputErrorDemo from './demos/FormInputErrorDemo';
-import FormInputSuccessDemo from './demos/FormInputSuccessDemo';
+import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
@@ -8,14 +7,13 @@ import ToggleDemo from './demos/ToggleDemo';
 import HamburgerDemo from './demos/HamburgerDemo';
 
 export default [
-  NotificationBell, 
-  FormInputErrorDemo, 
-  FormInputSuccessDemo, 
+  HamburgerDemo,
+  ToggleDemo,
+  FormInputSuccessDemo,
   SocialLineIcons,
+  NotificationBell,
   CheckboxDemo,
   StarburstDemo,
-  ToggleDemo,
-  HamburgerDemo
 ];
 
 // TODO: Delete all below once reactified.
