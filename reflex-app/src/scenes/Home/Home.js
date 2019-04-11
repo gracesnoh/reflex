@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.css';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
@@ -12,6 +13,14 @@ import * as animationData from '../../animations/LandingBG/data.json';
 const renderAnimationCard = ({ title, render, mainDemo, onHover }, key) => {
   return (
     <AnimationCard key={key} title={title} mainDemo={mainDemo} onHover={onHover}/>
+  );
+};
+
+const renderAnimationLink = ({title, render, mainDemo, onHover}) => {
+  return (
+    <Link activeClass="test" spy={true} smooth="easeOutCubic" duration={1000} style={linkStyle2} to={title}>
+      {title}
+    </Link>
   );
 };
 
@@ -56,9 +65,28 @@ const CTA = styled.button`
   border-radius: 3px;
 `;
 
-const AnimationContainer = styled.div`
+
+const ContentContainer = styled.div`
+  display: grid; 
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "m c c c" "m c c c" "m c c c";
+  grid-gap: 15px 20px;
+`
+
+const TableOfContents = styled.div`
+  height: 100vh; // ???
+  margin-top: 60px;
+  margin-left: 10px;
+  left: 0px;
+  grid-area: m;
+  position: sticky;
+  top: 150px;
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
+`
+
+const AnimationContainer = styled.div`
+  grid-area: c;
   align-items: center;
 `;
 
@@ -99,6 +127,10 @@ const colorTransitionStyle = {
 
 const linkStyle = {
   display: 'inline-block'
+};
+
+const linkStyle2 = {
+  padding: '10px 0',
 };
 
 //TODO: Change to Pure Component?
@@ -153,9 +185,14 @@ export default class Home extends Component {
             </Link>
           </div>
         </LandingContainer>
-        <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
-          {animations.map((animation, index) => renderAnimationCard(animation, index))}
-        </AnimationContainer>
+        <ContentContainer>
+          <TableOfContents>
+            {animations.map((animation) => renderAnimationLink(animation))}
+          </TableOfContents>
+          <AnimationContainer data-background-color='rgba(117,103,247,.25)'  className='js-color-stop' id="animationsCont">
+            {animations.map((animation, index) => renderAnimationCard(animation, index))}
+          </AnimationContainer>
+        </ContentContainer>
         <div id="testfooter"></div>
       </Wrapper>
     );
