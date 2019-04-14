@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './index.css';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
@@ -69,31 +68,39 @@ const CTA = styled.button`
 const ContentContainer = styled.div`
   display: grid; 
   grid-template-columns: 1fr 4fr;
-  grid-template-areas: "m c c c" "m c c c" "m c c c";
+  grid-template-rows: auto;
+  grid-template-areas:
+    "table carousel carousel carousel";
   grid-gap: 15px 20px;
 `
 
 const TableOfContents = styled.div`
-  height: 100vh; // ???
-  margin-top: 60px;
-  margin-left: 10px;
-  left: 0px;
-  grid-area: m;
-  position: sticky;
-  top: 150px;
+  grid-area: table;
   display: flex;
   flex-direction: column;
+  position: sticky;
+  height: 100vh;
+  margin-top: 60px;
+  top: 140px;
+
+  a {
+    color: rgba(255, 255, 255, .5);
+  }
+  
+  a.selected {
+    color: white !important;
+  }
 `
 
 const AnimationContainer = styled.div`
-  grid-area: c;
+  grid-area: carousel;
   align-items: center;
 `;
 
 const ScrollButton = styled.button`
   background: none;
   border: none;
-  color: #7567F7;
+  color: #7567F7; //CONSTANT
   font-weight: 600;
   font-size: 14px;
   margin-top: 60px;
@@ -160,7 +167,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <Wrapper id="bgtest">
+      <Wrapper>
         <ScrollingColorBackground
             selector='.js-color-stop[data-background-color]'
             colorDataAttribute='data-background-color'
