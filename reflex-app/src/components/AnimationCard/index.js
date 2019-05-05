@@ -9,6 +9,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   margin: 60px;
+  
+  ${({ isActive }) => isActive && `
+    background: blue;
+  `}
 `;
 
 const Title = styled.div`
@@ -41,9 +45,9 @@ export default class Home extends Component {
   };
 
   render() {
-    const { title, mainDemo, onHover} = this.props;
+    const { isActive, title, mainDemo, onHover} = this.props;
     return (
-      <Card id={title}>
+      <Card id={title} isActive={isActive}>
         <Title id={title}>{title}</Title>
         {onHover ?
           <Preview
