@@ -15,10 +15,17 @@ class Toggle extends PureComponent {
    super(props);
    this.toggleRef = React.createRef();
    this.animation = null;
-   this.state = {isToggled: false};
+
+   if (props.isToggled) {
+     this.state = { isToggled: true }
+   } else {
+     this.state = { isToggled: false }
+   }
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
+
+
   }
 
   handleOnClick() {
@@ -43,9 +50,9 @@ class Toggle extends PureComponent {
      renderer: 'svg',
      autoplay: false,
      animationData: animationData,
-     rendererSettings: {
-       progressiveLoad: true,
-     },
+     // rendererSettings: {
+     //   progressiveLoad: true,
+     // },
      ...this.props.animationParams,
     };
 
@@ -55,6 +62,10 @@ class Toggle extends PureComponent {
 
   componentDidMount() {
     this.animation = this.createAnimation();
+    if (this.state.isToggled) {
+      // Couldn't find any other way to start at the last animation
+      this.animation.goToAndStop(this.animation.firstFrame + this.animation.totalFrames-1, true);
+    }
   }
 
 

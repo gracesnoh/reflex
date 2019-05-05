@@ -16,11 +16,8 @@ const scaleUp = keyframes`
 `;
 
 const Card = styled.div`
-  width: 50%;
   min-height: 360px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   margin: 60px;
   opacity: 0.5;
   
@@ -34,29 +31,18 @@ const Title = styled.div`
   font-weight: 400;
   color: white;
   margin-bottom: 12px;
+  display: block;
 `;
 
 const DemosContainer = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: row;
 `
 
-const ExamplesHeader = styled.div`
-  font-size: 14px;
-  font-weight: 500;
-  color: white;
-  margin-bottom: 12px;
-`
-
-const ExamplesContainer = styled.div`
-  display:flex;
-  flex-direction: column;
-`;
-
 const MainDemo = styled.div`
   display: flex;
-  width: 400px;
-  height: 350px;
+  min-width: 300px;
+  height: 300px;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -64,6 +50,21 @@ const MainDemo = styled.div`
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,.25);
 `;
+
+const ExamplesContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+`;
+
+const ExamplesHeader = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 12px;
+  flex: 0 1 auto;
+`;
+
 
 //TODO: Should this be in scenes/Home since it's used there?
 export default class AnimationCard extends Component {

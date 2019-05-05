@@ -59,7 +59,7 @@ const ContentContainer = styled.div`
   grid-template-columns: 1fr 4fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "table carousel carousel carousel";
+    "table carousel";
   grid-gap: 15px 20px;
 `
 
