@@ -8,6 +8,7 @@ import Starburst from './Starburst'
 import Checkbox from './Checkbox'
 import Toggle from './Toggle'
 import PlayPause from './PlayPause'
+import Hamburger from './Hamburger'
 
 const animationDetails = {
   // title: json object
@@ -16,7 +17,8 @@ const animationDetails = {
   'Starburst': Starburst,
   'Checkbox': Checkbox,
   'Toggle': Toggle,
-  'PlayPause': PlayPause
+  'PlayPause': PlayPause,
+  'Hamburger': Hamburger
 };
 
 

@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
 import githubLogo from './images/github.png';
+import githubLogoWhite from './images/github-white.png';
 import reflexLogo from './images/reflex-logo.png';
+import reflexLogoWhite from './images/reflex-logo-white.png';
 import hamburger from './images/bars-line.svg';
+import hamburgerWhite from './images/bars-line-white.svg';
 
 // TODO Make media queries into global styles
 const size = {
@@ -18,7 +21,6 @@ export const device = {
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
 };
-//
 
 const mobileSlideDown = keyframes`
   0% {
@@ -62,17 +64,6 @@ const ReflexLogo = styled.img`
   margin-right: 12px;
 `;
 
-const Title = styled.div`
-  margin-right: auto;
-  padding-left: 6px;
-  font-weight: 400;
-  font-size: 16px;
-
-  @media ${device.mobileL} {
-    display: none;
-  }
-`;
-
 const Right = styled.div`
   grid-template-columns: 1fr 1fr;
   display: flex;
@@ -82,6 +73,14 @@ const Right = styled.div`
     padding: 12px;
   }
 `;
+
+const purpleStyle = {
+  color: '#7567F7'
+};
+
+const whiteStyle = {
+  color: 'white'
+};
 
 const Hamburger = styled.img`
   width: 16px;
@@ -135,25 +134,33 @@ export default class NavigationBar extends Component {
     this.state = {
       isMobile: false,
       showMobileMenu: false,
+      isTop: true
     };
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
+    window.addEventListener('resize', this.resize.bind(this));
     this.resize();
+
+    window.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 30;
+      if (isTop !== this.state.isTop) {
+          this.setState({ isTop })
+      }
+    });
   }
 
   resize() {
-    console.log(window.innerWidth);
     this.setState({isMobile: window.innerWidth <= 462});
   }
 
   renderDesktopRight() { 
     return (
       <Fragment>
-        <NavItem href="">Getting Started</NavItem>
-        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer">
-          <GithubLogo src={githubLogo} alt="github-logo"/>View on Github
+        <NavItem href="" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
+        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
+        style={ this.state.isTop ? purpleStyle : whiteStyle }>
+          <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
         </NavItem>
       </Fragment>
     );
@@ -161,18 +168,16 @@ export default class NavigationBar extends Component {
 
   renderMobileRight = () => {
     return (
-      <Hamburger onClick={() => {}} src={hamburger} />
+      <Hamburger onClick={() => {}} src={ this.state.isTop ? hamburger : hamburgerWhite } />
     );
   }
 
   render() {
-    console.log(this.state);
     return (
       <Container>
         <Nav>
           <Left href="">
-            <ReflexLogo src={reflexLogo} alt="reflex-logo"/>
-            {/* <Title>Reflex Motion</Title> */}
+            <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
           </Left>
           <Right>
             {this.state.isMobile ? this.renderMobileRight() : this.renderDesktopRight() }

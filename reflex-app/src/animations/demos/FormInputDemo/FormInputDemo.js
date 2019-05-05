@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import FormInput from '../../../../../animations/FormInput';
-import exclamationCircle from '../../../../../animations/demos/FormInputDemo/exclamation-circle-line.svg';
-import checkCircle from '../../../../../animations/demos/FormInputDemo/check-circle-line.svg';
+import FormInput from '../../FormInput';
+import checkCircle from './check-circle-line.svg';
+import exclamationCircle from './exclamation-circle-line.svg';
 
 class FormInputMainDemo extends Component {
   constructor(props) {
@@ -58,4 +58,7 @@ class FormInputMainDemo extends Component {
   }
 }
 
-export default FormInputMainDemo;
+export default {
+  title: 'Form Input',
+  mainDemo: FormInputMainDemo,
+};
