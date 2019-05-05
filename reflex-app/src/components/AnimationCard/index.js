@@ -11,7 +11,7 @@ const Card = styled.div`
   margin: 60px;
   
   ${({ isActive }) => isActive && `
-    background: blue;
+    scale: .5;
   `}
 `;
 
