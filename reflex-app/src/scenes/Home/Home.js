@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
@@ -8,6 +8,7 @@ import arrow from './images/arrow-line.svg';
 
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard';
+
 import * as animationData from '../../animations/LandingBG/data.json';
 
 
