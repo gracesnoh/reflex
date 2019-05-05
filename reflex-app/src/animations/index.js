@@ -5,6 +5,7 @@ import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
 import ToggleDemo from './demos/ToggleDemo';
 import PlayPauseDemo from './demos/PlayPauseDemo';
+import HamburgerDemo from './demos/HamburgerDemo';
 
 export default [
   HamburgerDemo,

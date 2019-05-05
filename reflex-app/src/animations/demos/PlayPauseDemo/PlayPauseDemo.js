@@ -23,6 +23,5 @@ class PlayPauseDemo extends Component {
 
 export default {
   title: 'Play Pause',
-  render: (hover) => <PlayPauseDemo hover={hover}/>,
-  detailTitle: 'PlayPause'
+  mainDemo: PlayPauseDemo,
 };
