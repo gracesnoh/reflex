@@ -153,7 +153,7 @@ export default class Home extends Component {
   renderAnimationCard = ({ title, render, mainDemo, onHover, examples }, key) => {
     return (
       <VisibilitySensor onChange={isVisible => this.isAnimationVisible(isVisible, title)}>
-        <AnimationCard key={key} title={title} mainDemo={mainDemo} onHover={onHover} examples={examples}/>
+        <AnimationCard isActive={this.state.currentAnimation === title} key={key} title={title} mainDemo={mainDemo} onHover={onHover} examples={examples}/>
       </VisibilitySensor>
     );
   };
