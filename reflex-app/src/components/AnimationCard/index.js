@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 import PropTypes from 'prop-types';
+
+const scaleUp = keyframes`
+  0% { 
+    opacity: 0.5;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+   }
+  100% { 
+    opacity: 1; 
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
+`;
 
 const Card = styled.div`
   width: 50%;
@@ -9,6 +22,11 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   margin: 60px;
+  opacity: 0.5;
+  
+  animation: ${({ isActive }) => isActive && 
+    css`${scaleUp} .5s forwards;
+    `}
 `;
 
 const Title = styled.div`
@@ -41,9 +59,9 @@ export default class Home extends Component {
   };
 
   render() {
-    const { title, mainDemo, onHover} = this.props;
+    const { isActive, title, mainDemo, onHover} = this.props;
     return (
-      <Card id={title}>
+      <Card id={title} isActive={isActive}>
         <Title id={title}>{title}</Title>
         {onHover ?
           <Preview
