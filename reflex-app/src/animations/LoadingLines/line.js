@@ -41,12 +41,10 @@ const animationRule = css`
 const Line = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 5px;
   border-radius: 25px;
   transform-origin: left;
   background-color: black;
   animation: ${props => props.clicked ? animationRule : ""};
 `
-// animation: ${props => ExpandContainerWithProps(props.scaleSizes)} 4.5s linear infinite;
-
 export default Line;
