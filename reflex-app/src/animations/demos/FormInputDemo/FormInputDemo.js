@@ -61,4 +61,5 @@ class FormInputMainDemo extends Component {
 export default {
   title: 'Form Input',
   mainDemo: FormInputMainDemo,
+  codePen: ""
 };

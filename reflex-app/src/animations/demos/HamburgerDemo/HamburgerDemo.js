@@ -24,4 +24,5 @@ class HamburgerDemo extends Component {
 export default {
   title: 'Hamburger',
   mainDemo: HamburgerDemo,
+  codePen: ""
 };

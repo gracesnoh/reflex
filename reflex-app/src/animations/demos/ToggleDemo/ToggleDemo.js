@@ -24,4 +24,5 @@ class ToggleDemo extends Component {
 export default {
   title: 'Toggle',
   mainDemo: ToggleDemo,
+  codePen: ""
 };

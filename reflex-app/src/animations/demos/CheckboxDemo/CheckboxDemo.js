@@ -44,4 +44,5 @@ class CheckboxMainDemo extends Component {
 export default {
   title: 'Checkbox',
   mainDemo: CheckboxMainDemo,
+  codePen: ""
 };

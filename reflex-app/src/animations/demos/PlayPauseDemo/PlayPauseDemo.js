@@ -24,4 +24,5 @@ class PlayPauseDemo extends Component {
 export default {
   title: 'Play Pause',
   mainDemo: PlayPauseDemo,
+  codePen: ""
 };

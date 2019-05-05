@@ -44,4 +44,5 @@ class NotificationBellMainDemo extends Component {
 export default {
   title: 'Notification Bell',
   mainDemo: NotificationBellMainDemo,
+  codePen: ""
 };

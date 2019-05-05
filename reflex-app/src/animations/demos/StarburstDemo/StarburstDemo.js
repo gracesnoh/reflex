@@ -4,5 +4,6 @@ import Starburst from '../../Starburst'
 
 export default {
   title: 'Starburst',
-  mainDemo: Starburst
+  mainDemo: Starburst,
+  codePen: ""
 };
