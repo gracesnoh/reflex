@@ -6,6 +6,9 @@ import FormInput from './FormInput';
 import NotificationBell from './NotificationBell'
 import Starburst from './Starburst'
 import Checkbox from './Checkbox'
+import Toggle from './Toggle'
+import PlayPause from './PlayPause'
+import Hamburger from './Hamburger'
 
 const animationDetails = {
   // title: json object
@@ -13,6 +16,9 @@ const animationDetails = {
   'NotificationBell': NotificationBell,
   'Starburst': Starburst,
   'Checkbox': Checkbox,
+  'Toggle': Toggle,
+  'PlayPause': PlayPause,
+  'Hamburger': Hamburger
 };
 
 

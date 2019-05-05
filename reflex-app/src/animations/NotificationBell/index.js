@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, {css,  keyframes } from 'styled-components';
 
 import Badge from './Badge';
 import Image from './Image';
@@ -42,13 +42,13 @@ const NotificationBell = styled.div`
   height: 36px;
 
   ${Image} {
-    animation: ${props => props.notify && `${notifyShake} ease-out 0.68s`};
+    animation: ${props => props.notify && css`${notifyShake} ease-out 0.68s`};
   }
   
   ${Badge} { 
    animation: ${props =>
      props.notify &&
-     `${badgePopIn} ease-in-out .1s forwards, 
+     css`${badgePopIn} ease-in-out .1s forwards, 
      ${badgeDisappear} ease-in-out .1s 1s forwards;
    `}
 `;
