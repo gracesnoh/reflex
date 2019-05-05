@@ -43,8 +43,9 @@ const HamburgerBox = styled.div.attrs({
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   display: flex;
-  align-items: center;  
+  align-items: center; 
   justify-content: center;
+  position: relative;
 `;
 
 const Feed = styled.div`
@@ -78,7 +79,32 @@ const Skeleton = styled.img`
   margin-top: 12px;
 `;
 
+const Menu = styled.div`
+  background: white;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  animation: {()}
+`;
+
 class HamburgerExamples extends Component {
+  constructor() {
+    super(props);
+    this.state = {
+      isMenuExpanded = false
+    }; 
+
+    this.handleOnClick = this.handleOnClick.bind(this)
+  }
+
+  handleOnClick() {
+    this.setState({
+      isMenuExpanded: !isMenuExpanded
+    })
+  }
   render() {
     return (
       <ExamplesContainer>
@@ -97,13 +123,12 @@ class HamburgerExamples extends Component {
           </HamburgerBox>
         </Grid>
         <Feed>
-          <Header>
-            <Title>Good Morning!</Title>
-            <Hamburger/>
-          </Header>
+          <Hamburger onClick={this.handleOnClick}/>
+          <Title>Good Morning!</Title>
           <Date>Sunday, May 5</Date>
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
+          <Menu isToggled={this.state.isMenuExpanded}></Menu>
         </Feed>
       </ExamplesContainer>
     );
