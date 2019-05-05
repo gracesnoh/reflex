@@ -11,7 +11,7 @@ import TabSwitchDemo from './demos/TabSwitchDemo';
 
 export default [
   HamburgerDemo,
-  // ToggleDemo,
+  ToggleDemo,
   // FormInputSuccessDemo,
   // SocialLineIcons,
   // NotificationBell,

@@ -24,7 +24,7 @@ class HamburgerDemo extends Component {
 
 const ExamplesContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 132px 1fr;
   align-items: start;
 `;
 
@@ -49,6 +49,7 @@ const HamburgerBox = styled.div.attrs({
 `;
 
 const Feed = styled.div`
+  position: relative;
   background-color: #F2F2F2;
   margin-left: 18px;
   border-radius: 3px;
@@ -70,6 +71,7 @@ const Title = styled.span`
 `;
 
 const Date = styled.span`
+  margin-top: 12px;
   font-size: 10px;
 `;
 
@@ -87,14 +89,25 @@ const Menu = styled.div`
   top: 0;
   left: 0;
 
-  animation: {()}
+  //animation: {()}
+`;
+
+const HamburgerWrapper = styled.div`
+  position: absolute;
+  right: 12px;
+  top: 12px;
+`
+
+const HeaderContainer = styled.div`
+  display:flex;
+  flex-direction: column;
 `;
 
 class HamburgerExamples extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
     this.state = {
-      isMenuExpanded = false
+      isMenuExpanded: false
     }; 
 
     this.handleOnClick = this.handleOnClick.bind(this)
@@ -102,7 +115,7 @@ class HamburgerExamples extends Component {
 
   handleOnClick() {
     this.setState({
-      isMenuExpanded: !isMenuExpanded
+      isMenuExpanded: !this.state.isMenuExpanded
     })
   }
   render() {
@@ -123,9 +136,13 @@ class HamburgerExamples extends Component {
           </HamburgerBox>
         </Grid>
         <Feed>
-          <Hamburger onClick={this.handleOnClick}/>
-          <Title>Good Morning!</Title>
-          <Date>Sunday, May 5</Date>
+          <HamburgerWrapper>
+            <Hamburger onClick={this.handleOnClick}/>
+          </HamburgerWrapper>
+          <HeaderContainer>
+            <Title>Good Morning!</Title>
+            <Date>Sunday, May 5</Date>
+          </HeaderContainer>
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
           <Menu isToggled={this.state.isMenuExpanded}></Menu>
