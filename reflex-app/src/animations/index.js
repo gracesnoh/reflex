@@ -11,14 +11,14 @@ import TabSwitchDemo from './demos/TabSwitchDemo';
 
 export default [
   HamburgerDemo,
-  ToggleDemo,
-  FormInputSuccessDemo,
-  SocialLineIcons,
-  NotificationBell,
-  CheckboxDemo,
-  StarburstDemo,
-  PlayPauseDemo,
-  TabSwitchDemo
+  // ToggleDemo,
+  // FormInputSuccessDemo,
+  // SocialLineIcons,
+  // NotificationBell,
+  // CheckboxDemo,
+  // StarburstDemo,
+  // PlayPauseDemo,
+  // TabSwitchDemo
 ];
 
 

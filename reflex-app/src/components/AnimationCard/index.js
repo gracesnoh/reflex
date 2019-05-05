@@ -18,18 +18,37 @@ const Title = styled.div`
   margin-bottom: 12px;
 `;
 
-const Preview = styled.div`
-  flex-grow: 1;
+const DemosContainer = styled.div`
+  display:flex;
+  flex-direction: row;
+`
+
+const ExamplesHeader = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 12px;
+`
+
+const ExamplesContainer = styled.div`
+  display:flex;
+  flex-direction: column;
+`;
+
+const MainDemo = styled.div`
   display: flex;
+  width: 400px;
+  height: 350px;
   align-items: center;
   justify-content: center;
   background-color: white;
+  margin-right: 24px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,.25);
 `;
 
 //TODO: Should this be in scenes/Home since it's used there?
-export default class Home extends Component {
+export default class AnimationCard extends Component {
   constructor(props) {
     super(props);
     this.state = {hover: false};
@@ -41,19 +60,26 @@ export default class Home extends Component {
   };
 
   render() {
-    const { title, mainDemo, onHover} = this.props;
+    const { title, mainDemo, onHover, examples} = this.props;
     return (
       <Card id={title}>
         <Title id={title}>{title}</Title>
-        {onHover ?
-          <Preview
+        <DemosContainer>
+          {onHover ?
+          <MainDemo
             id={title}
             onMouseEnter={() => this.setState({ hover: true })}
             onMouseLeave={() => this.setState({ hover: false })}
-          >{mainDemo(this.state.hover)}</Preview>
+          >{mainDemo(this.state.hover)}</MainDemo>
           :
-          <Preview>{React.createElement(mainDemo)}</Preview>}
-
+          <MainDemo>{React.createElement(mainDemo)}</MainDemo>}
+          <ExamplesContainer>
+            <ExamplesHeader>Examples</ExamplesHeader>
+            <div>
+              {React.createElement(examples)}
+            </div>
+          </ExamplesContainer>
+        </DemosContainer>
       </Card>
     );
   }

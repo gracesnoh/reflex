@@ -27,4 +27,5 @@ class TabSwitchDemo extends Component {
 export default {
   title: 'Tab Switch',
   mainDemo: TabSwitchDemo,
+  examples: TabSwitchDemo,
 }
