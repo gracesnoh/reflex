@@ -105,7 +105,7 @@ const Arrow = styled.img`
 
 const Animation = styled.div`
   position: absolute;
-  min-height: 100%;
+  width: 100vw;
   z-index: -1;
   top: 0;
   left: 0;
