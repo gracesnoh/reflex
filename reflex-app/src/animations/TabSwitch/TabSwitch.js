@@ -15,7 +15,7 @@ const TabContainer = styled.div`
 
 const slug = (from, to) => keyframes`
 	  30% { 
-	    width: ${(from < to) ? 1+((from/to) * to)/from : 1+1/((to/from) * from)}vh; // Keep 
+	    width: ${1 + 3*Math.abs(from-to)/500}%; 
 	  }
 `;
 
