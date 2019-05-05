@@ -63,17 +63,6 @@ const SlideAcrossPageWithProps = (fadeTime) => keyframes`
 	}
 `
 
-// Add a class to the styled component such that the class itself contains the animation
-// const LineContainer = styled.div`
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 100%;
-// 	top: ${props => props.top || "0px"};
-// 	left: ${props => props.left || "0%"};
-// 	animation: ${props => SlideAcrossPageWithProps(props.fadeTime)} 4.5s linear infinite;
-// 	animation-fill-mode: forwards;
-// `
-
 const animationRule = css`
 	${props => SlideAcrossPageWithProps(props.fadeTime)} 4.5s linear infinite;
 `
