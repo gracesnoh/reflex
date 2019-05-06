@@ -12,12 +12,12 @@ import TabSwitchDemo from './demos/TabSwitchDemo';
 export default [
   HamburgerDemo,
   ToggleDemo,
+  PlayPauseDemo,
   // FormInputSuccessDemo,
   // SocialLineIcons,
   // NotificationBell,
   // CheckboxDemo,
   // StarburstDemo,
-  // PlayPauseDemo,
   // TabSwitchDemo
 ];
 
