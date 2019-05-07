@@ -81,8 +81,9 @@ class PlayPauseExamples extends Component {
           3:03
         </Player>
         <VideoPlayerContainer>
-          <VideoPlayer controls>
+          <VideoPlayer controls autoplay>
             <source src={exampleVideo}></source>
+            <PlayPause id="play-pause"/>
           </VideoPlayer>
         </VideoPlayerContainer>
       </ExamplesContainer>
