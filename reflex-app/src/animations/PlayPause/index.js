@@ -5,9 +5,13 @@ import * as animationData from './data.json' ;
 
 const Button = styled.button`
   background: transparent;
-  width: 36px;
+  width: ${props => props.size || "36px"};
   border: none;
   outline: none;
+
+  path {
+    fill: ${props => props.color || "#4F4F4F"};
+  }
 `;
 
 class PlayPause extends PureComponent {
@@ -16,6 +20,8 @@ class PlayPause extends PureComponent {
    this.playPauseRef = React.createRef();
    this.animation = null;
    this.state = {isPaused: false};
+   this.color = '';
+   this.size = '';
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
@@ -64,7 +70,7 @@ class PlayPause extends PureComponent {
 
 
   render() {
-    return <Button onClick={this.handleOnClick} ref={this.playPauseRef} />;
+    return <Button color={this.props.color} size={this.props.size} onClick={this.handleOnClick} ref={this.playPauseRef} />;
   }
 }
 
