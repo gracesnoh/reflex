@@ -1,4 +1,4 @@
-import NotificationBell from './demos/NotificationBellDemo';
+import NotificationBellDemo from './demos/NotificationBellDemo';
 import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
@@ -9,14 +9,13 @@ import HamburgerDemo from './demos/HamburgerDemo';
 import TabSwitchDemo from './demos/TabSwitchDemo';
 import LoadingLinesDemo from './demos/LoadingLinesDemo';
 
-
 export default [
   HamburgerDemo,
   ToggleDemo,
   PlayPauseDemo,
   // FormInputSuccessDemo,
   // SocialLineIcons,
-  // NotificationBell,
+  NotificationBellDemo,
   // CheckboxDemo,
   StarburstDemo,
   // TabSwitchDemo,

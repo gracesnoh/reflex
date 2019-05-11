@@ -6,6 +6,7 @@ const Image = styled.img.attrs({
   src: props => props.src || bellImg,
 })`
   transform-origin: 50% 0;
+  width: 30px;
 `;
 
 export default Image;

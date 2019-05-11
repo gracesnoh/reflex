@@ -3,13 +3,13 @@ import styled from 'styled-components';
 const Badge = styled.div`
   position: absolute;
   opacity: 0;
-  top: -1.25px;
-  right: -2px;
-  width: 14px;
-  height: 14px;
-  border-radius: 12px;
-  border: 3px solid #ffffff;
-  background-color: #ee4444;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  background-color: #FF5050;
 `;
 
 export default Badge;
