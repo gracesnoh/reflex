@@ -5,10 +5,10 @@ import * as animationData from './starburst.json' ;
 
 const Button = styled.button`
   background: transparent;
-  width: 60px;
-  height: 60px;
+  width: ${props => props.size || "60px"};
   border: none;
   cursor: pointer;
+  outline: none;
 `;
 
 class Starburst extends PureComponent {
@@ -17,6 +17,7 @@ class Starburst extends PureComponent {
    this.starburstRef = React.createRef();
    this.animation = null;
    this.state = {isStarred: false};
+   this.size = '';
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
@@ -58,7 +59,7 @@ class Starburst extends PureComponent {
   }
 
   render() {
-    return <Button onClick={this.handleOnClick} ref={this.starburstRef} />;
+    return <Button size={this.props.size} onClick={this.handleOnClick} ref={this.starburstRef} />;
   }
 }
 
