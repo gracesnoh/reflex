@@ -17,7 +17,7 @@ export default [
   // SocialLineIcons,
   // NotificationBell,
   // CheckboxDemo,
-  // StarburstDemo,
+  StarburstDemo,
   // TabSwitchDemo
 ];
 
