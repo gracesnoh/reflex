@@ -20,8 +20,6 @@ class PlayPause extends PureComponent {
    this.playPauseRef = React.createRef();
    this.animation = null;
    this.state = {isPaused: false};
-   this.color = '';
-   this.size = '';
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);

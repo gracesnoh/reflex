@@ -17,7 +17,6 @@ class Starburst extends PureComponent {
    this.starburstRef = React.createRef();
    this.animation = null;
    this.state = {isStarred: false};
-   this.size = '';
 
    this.handleOnClick = this.handleOnClick.bind(this);
    this.createAnimation = this.createAnimation.bind(this);
