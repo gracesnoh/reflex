@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import styled from 'styled-components';
 import Checkbox from '../../Checkbox/index';
 
 class CheckboxMainDemo extends Component {
@@ -41,7 +41,39 @@ class CheckboxMainDemo extends Component {
     )
   }
 }
+
+const List = styled.div`
+  display: flex;
+  background-color: white;
+  width: 290px;
+  border-radius: 3px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);  
+`;
+
+const Title = styled.h4``;
+
+const CheckboxItem = styled.div`
+
+`;
+
+class CheckboxExamples extends Component {
+  render() {
+    return (
+      <List>
+        <Title>Todo List</Title>
+        <CheckboxItem>
+          <Checkbox></Checkbox>
+          Write Jeff's birthday card
+        </CheckboxItem>
+      </List>
+    )
+  }
+}
+
 export default {
   title: 'Checkbox',
   mainDemo: CheckboxMainDemo,
+  examples: CheckboxExamples,
 };
