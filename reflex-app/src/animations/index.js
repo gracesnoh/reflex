@@ -16,7 +16,7 @@ export default [
   // FormInputSuccessDemo,
   // SocialLineIcons,
   // NotificationBell,
-  // CheckboxDemo,
+  CheckboxDemo,
   StarburstDemo,
   // TabSwitchDemo
 ];
