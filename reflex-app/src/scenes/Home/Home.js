@@ -11,7 +11,6 @@ import AnimationCard from '../../components/AnimationCard';
 
 import * as animationData from '../../animations/LandingBG/data.json';
 
-
 const Wrapper = styled.div`
   margin: auto;
   max-width: 80vw;
@@ -42,6 +41,10 @@ const Subtitle = styled.div`
   width: 36vw;
 `;
 
+const CTAcontainer = styled.div`
+  position: relative;
+`;
+
 const CTA = styled.button`
   max-width: 180px;
   padding: 10px 15px;
@@ -50,7 +53,29 @@ const CTA = styled.button`
   color: white;
   background-color: #FF52EE; //CONSTANT
   border: none;
+  outline: none;
   border-radius: 3px;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+  
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
+
+  &:active {
+    transform: translate(3px, 3px);
+  }
+`;
+
+const CTAshadow = styled.div`
+  position: absolute;
+  width: 150px;
+  height: 37px;
+  background-color: #C8ADC0;
+  border-radius: 3px;
+  top: 3px;
+  left: 3px;
+  z-index: -1;
 `;
 
 
@@ -209,7 +234,9 @@ export default class Home extends Component {
             Reflex motion is an animation library based in React that mirrors real-world, natural
             motion.
           </Subtitle>
-          <CTA>Get npm package</CTA>
+          <CTAcontainer>
+            <CTA>Get npm package</CTA><CTAshadow></CTAshadow>
+          </CTAcontainer>
           <div>
             <Link style={linkStyle} smooth="easeOutCubic" duration={1000} to="animationsCont" >
               <ScrollButton>Scroll down to see animations</ScrollButton>
