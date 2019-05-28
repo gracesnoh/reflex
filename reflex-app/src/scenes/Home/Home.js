@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
 import VisibilitySensor from "react-visibility-sensor";
@@ -53,7 +53,6 @@ const CTA = styled.button`
   color: white;
   background-color: #FF52EE; //CONSTANT
   border: none;
-  outline: none;
   border-radius: 3px;
   cursor: pointer;
   transition: transform 200ms ease-in-out;
@@ -118,15 +117,25 @@ const ScrollButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   margin-top: 60px;
-  padding: 0;
+  padding: 0 6px 0 0;
   cursor: pointer;
 `;
 
+const move = keyframes`
+  0% {
+    transform: translate(0,1px) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0,-3px) rotate(180deg);
+  }
+`;
+
 const Arrow = styled.img`
-  transform: rotate(180deg);
   width: 24px;
   vertical-align: middle;
   cursor: pointer;
+  animation: ${move} 1s ease-in-out infinite alternate;
 `;
 
 const Animation = styled.div`
