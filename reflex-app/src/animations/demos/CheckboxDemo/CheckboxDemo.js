@@ -64,7 +64,7 @@ class CheckboxExamples extends Component {
       <List>
         <Title>Todo List</Title>
         <CheckboxItem>
-          <Checkbox></Checkbox>
+          <CheckboxMainDemo></CheckboxMainDemo>
           Write Jeff's birthday card
         </CheckboxItem>
       </List>

@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import lottie from "lottie-web";
 import * as animationData from './data.json' ;
 
-const Button = styled.button`
+const Button = styled.button.attrs(({width}) => ({
+  width: width || "54px",
+}))`
   background: transparent;
-  width: 54px;
   border: none;
   cursor: pointer;
+  width: ${props => props.width};
 `;
 
 class Hamburger extends PureComponent {
@@ -58,7 +60,7 @@ class Hamburger extends PureComponent {
   }
 
   render() {
-    return <Button onClick={this.handleOnClick} ref={this.burgerRef} />;
+    return <Button width={this.props.width} onClick={this.handleOnClick} ref={this.burgerRef} />;
   }
 }
 
