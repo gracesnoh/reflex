@@ -81,21 +81,35 @@ const Skeleton = styled.img`
   margin-top: 12px;
 `;
 
-const Menu = styled.div`
-  background: white;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
+const testAnimation = keyframes`
+    0% {
+      opacity: 0;
+      top: 250px;
+      //transform:  translate(0px, 250px)  ; // This achieves the same effect 
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+      //transform:  translate(0px,0px)  ;
+      
+    }
+`
 
-  //animation: {()}
+const Menu = styled.div`
+  right: 0;
+  background: black;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  
 `;
 
 const HamburgerWrapper = styled.div`
   position: absolute;
   right: 12px;
   top: 12px;
+  z-index: 2;
 `
 
 const HeaderContainer = styled.div`
@@ -103,10 +117,13 @@ const HeaderContainer = styled.div`
   flex-direction: column;
 `;
 
+// const HamburgerTest = Hamburger.attrs(({width}) => ({ width: width }));
+
 class HamburgerExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isMenuClicked: false,
       isMenuExpanded: false
     }; 
 
@@ -115,6 +132,7 @@ class HamburgerExamples extends Component {
 
   handleOnClick() {
     this.setState({
+      isMenuClicked: true,
       isMenuExpanded: !this.state.isMenuExpanded
     })
   }
@@ -137,7 +155,7 @@ class HamburgerExamples extends Component {
         </Grid>
         <Feed>
           <HamburgerWrapper>
-            <Hamburger onClick={this.handleOnClick}/>
+            <Hamburger width="40px" onClick={this.handleOnClick}/>
           </HamburgerWrapper>
           <HeaderContainer>
             <Title>Good Morning!</Title>
@@ -145,7 +163,7 @@ class HamburgerExamples extends Component {
           </HeaderContainer>
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
-          <Menu isToggled={this.state.isMenuExpanded}></Menu>
+          {this.state.isMenuClicked &&  <Menu isToggled={this.state.isMenuExpanded}> test </Menu>}
         </Feed>
       </ExamplesContainer>
     );
