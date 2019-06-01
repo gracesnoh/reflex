@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
 import VisibilitySensor from "react-visibility-sensor";
@@ -10,7 +10,6 @@ import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard';
 
 import * as animationData from '../../animations/LandingBG/data.json';
-
 
 const Wrapper = styled.div`
   margin: auto;
@@ -42,6 +41,10 @@ const Subtitle = styled.div`
   width: 36vw;
 `;
 
+const CTAcontainer = styled.div`
+  position: relative;
+`;
+
 const CTA = styled.button`
   max-width: 180px;
   padding: 10px 15px;
@@ -51,6 +54,27 @@ const CTA = styled.button`
   background-color: #FF52EE; //CONSTANT
   border: none;
   border-radius: 3px;
+  cursor: pointer;
+  transition: transform 200ms ease-in-out;
+  
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
+
+  &:active {
+    transform: translate(3px, 3px);
+  }
+`;
+
+const CTAshadow = styled.div`
+  position: absolute;
+  width: 150px;
+  height: 37px;
+  background-color: #C8ADC0;
+  border-radius: 3px;
+  top: 3px;
+  left: 3px;
+  z-index: -1;
 `;
 
 
@@ -93,15 +117,25 @@ const ScrollButton = styled.button`
   font-weight: 600;
   font-size: 14px;
   margin-top: 60px;
-  padding: 0;
+  padding: 0 6px 0 0;
   cursor: pointer;
 `;
 
+const move = keyframes`
+  0% {
+    transform: translate(0,1px) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(0,-3px) rotate(180deg);
+  }
+`;
+
 const Arrow = styled.img`
-  transform: rotate(180deg);
   width: 24px;
   vertical-align: middle;
   cursor: pointer;
+  animation: ${move} 1s ease-in-out infinite alternate;
 `;
 
 const Animation = styled.div`
@@ -209,7 +243,9 @@ export default class Home extends Component {
             Reflex motion is an animation library based in React that mirrors real-world, natural
             motion.
           </Subtitle>
-          <CTA>Get npm package</CTA>
+          <CTAcontainer>
+            <CTA>Get npm package</CTA><CTAshadow></CTAshadow>
+          </CTAcontainer>
           <div>
             <Link style={linkStyle} smooth="easeOutCubic" duration={1000} to="animationsCont" >
               <ScrollButton>Scroll down to see animations</ScrollButton>
