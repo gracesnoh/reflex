@@ -69,10 +69,14 @@ class CheckboxExamples extends Component {
         <Title>Todo List</Title>
         <CheckboxItem>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <CheckboxMainDemo></CheckboxMainDemo>
 =======
           <Checkbox></Checkbox>
 >>>>>>> started checkbox demos
+=======
+          <CheckboxMainDemo></CheckboxMainDemo>
+>>>>>>> Add props to FormInputDemo. Add example for checkbox
           Write Jeff's birthday card
         </CheckboxItem>
         <CheckboxItem>
