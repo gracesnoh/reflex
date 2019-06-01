@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
-    "lottie-web": "^5.4.4",
+    "lottie-web": "^5.5.4",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.2",
