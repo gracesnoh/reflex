@@ -41,7 +41,7 @@ const animationRule = css`
 const Line = styled.div`
   position: absolute;
   width: 100%;
-  height: 5px;
+  height: 4px;
   border-radius: 25px;
   transform-origin: left;
   background-color: black;
