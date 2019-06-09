@@ -6,7 +6,7 @@ import LineContainer from './line_container';
 
 const AnimationContainer = styled.div`
   position: relative;
-  width: 100px;
+  width: 60px;
   height: 100px;
   margin: 0 auto;
   transition: all .1s ease-in-out;

@@ -1,13 +1,13 @@
 import NotificationBell from './demos/NotificationBellDemo';
 import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
-import LoadingLinesDemo from './demos/LoadingLinesDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
 import SocialLineIcons from './SocialLineIcons';
 import ToggleDemo from './demos/ToggleDemo';
 import PlayPauseDemo from './demos/PlayPauseDemo';
 import HamburgerDemo from './demos/HamburgerDemo';
 import TabSwitchDemo from './demos/TabSwitchDemo';
+import LoadingLinesDemo from './demos/LoadingLinesDemo';
 
 
 export default [
@@ -19,7 +19,8 @@ export default [
   // NotificationBell,
   // CheckboxDemo,
   StarburstDemo,
-  // TabSwitchDemo
+  // TabSwitchDemo,
+  LoadingLinesDemo
 ];
 
 
