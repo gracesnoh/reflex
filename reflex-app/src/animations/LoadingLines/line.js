@@ -44,7 +44,7 @@ const Line = styled.div`
   height: 2px;
   border-radius: 25px;
   transform-origin: left;
-  background-color: #4F4F4F;
+  background-color: ${props => props.color || "#4F4F4F"};
   animation: ${props => ExpandContainerWithProps(props.scaleSizes)} 5s ease-out infinite;
 `
 export default Line;
