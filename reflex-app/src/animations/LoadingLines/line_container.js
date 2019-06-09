@@ -63,9 +63,9 @@ const SlideAcrossPageWithProps = (fadeTime) => keyframes`
   }
 `
 
-const animationRule = css`
-  ${props => SlideAcrossPageWithProps(props.fadeTime)} 4.5s linear infinite;
-`
+// const animationRule = css`
+//   ${props => SlideAcrossPageWithProps(props.fadeTime)} 5s ease-out infinite;
+// `
 
 const LineContainer = styled.div`
   position: absolute;
@@ -73,7 +73,7 @@ const LineContainer = styled.div`
   height: 100%;
   left: ${props => props.left || "0%"};
   top: ${props => props.top ? props.top : "0px"};
-  animation: ${props => props.clicked ? animationRule : ""};
+  animation: ${props => SlideAcrossPageWithProps(props.fadeTime)} 5s ease-out infinite;
   animation-fill-mode: forwards;
 `
 

@@ -34,9 +34,9 @@ const ExpandContainerWithProps = (containerExpandSizes) => keyframes`
   }
 `
 
-const animationRule = css`
-  ${props => ExpandContainerWithProps(props.scaleSizes)} 4.5s ease-out infinite;
-`
+// const animationRule = css`
+//   ${props => ExpandContainerWithProps(props.scaleSizes)} 5s ease-out infinite;
+// `
 
 const Line = styled.div`
   position: absolute;
@@ -45,7 +45,7 @@ const Line = styled.div`
   border-radius: 25px;
   transform-origin: left;
   background-color: #4F4F4F;
-  animation: ${props => props.clicked ? animationRule : ""};
+  animation: ${props => ExpandContainerWithProps(props.scaleSizes)} 5s ease-out infinite;
 `
 export default Line;
 
