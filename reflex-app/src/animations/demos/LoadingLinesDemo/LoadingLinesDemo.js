@@ -38,7 +38,7 @@ class LoadingExamples extends Component {
 }
 
 export default {
-  title: 'LoadingLines',
+  title: 'Loading Lines',
   mainDemo: LoadingLines,
   examples: LoadingExamples
 };
