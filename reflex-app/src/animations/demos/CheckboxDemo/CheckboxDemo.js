@@ -44,22 +44,26 @@ class CheckboxMainDemo extends Component {
 
 const List = styled.div`
   display: flex;
+  flex-direction: column;
   background-color: white;
   width: 290px;
   border-radius: 3px;
-  padding: 12px 18px;
+  padding: 18px;
   margin-bottom: 18px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);  
 `;
 
-const Title = styled.h4``;
+const Title = styled.h4`
+  margin-bottom: 18px;
+`;
 
 const CheckboxItem = styled.div`
-
+  display: flex;
 `;
 
 class CheckboxExamples extends Component {
   render() {
+
     return (
       <List>
         <Title>Todo List</Title>
@@ -74,6 +78,18 @@ class CheckboxExamples extends Component {
           <CheckboxMainDemo></CheckboxMainDemo>
 >>>>>>> Add props to FormInputDemo. Add example for checkbox
           Write Jeff's birthday card
+        </CheckboxItem>
+        <CheckboxItem>
+          <CheckboxMainDemo></CheckboxMainDemo>
+          Buy groceries
+        </CheckboxItem>
+        <CheckboxItem>
+          <CheckboxMainDemo></CheckboxMainDemo>
+          Make dinner reservations
+        </CheckboxItem>
+        <CheckboxItem>
+          <CheckboxMainDemo></CheckboxMainDemo>
+          Do laundry
         </CheckboxItem>
       </List>
     )

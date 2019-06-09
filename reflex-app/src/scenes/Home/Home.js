@@ -9,7 +9,7 @@ import arrow from './images/arrow-line.svg';
 import animations from '../../animations';
 import AnimationCard from '../../components/AnimationCard';
 
-import * as animationData from '../../animations/InteractiveBG/data.json';
+import * as animationData from '../../animations/LandingBG/data.json';
 
 const Wrapper = styled.div`
   margin: auto;
