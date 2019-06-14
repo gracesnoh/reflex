@@ -43,6 +43,7 @@ const NotificationBell = styled.div`
 
   ${Image} {
     animation: ${props => props.notify && css`${notifyShake} ease-out 0.68s`};
+    background-color: green;
   }
   
   ${Badge} { 
