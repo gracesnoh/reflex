@@ -9,7 +9,6 @@ const Badge = styled.div`
   height: 10px;
   border-radius: 10px;
   border: 2px solid #ffffff;
-  background-color: #FF5050;
-`;
+  `;
 
 export default Badge;
