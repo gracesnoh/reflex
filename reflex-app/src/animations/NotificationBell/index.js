@@ -38,8 +38,8 @@ const badgePopIn = keyframes`
 
 const NotificationBell = styled.div`
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
 
   ${Image} {
     animation: ${props => props.notify && css`${notifyShake} ease-out 0.68s`};

@@ -5,10 +5,10 @@ const Badge = styled.div`
   opacity: 0;
   top: 0;
   right: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  border: 2px solid #ffffff;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
   `;
 
 export default Badge;
