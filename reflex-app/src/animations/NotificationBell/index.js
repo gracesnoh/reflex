@@ -38,11 +38,13 @@ const badgePopIn = keyframes`
 
 const NotificationBell = styled.div`
   position: relative;
-  width: 36px;
-  height: 36px;
+  width: 24px;
+  height: 24px;
 
   ${Image} {
     animation: ${props => props.notify && css`${notifyShake} ease-out 0.68s`};
+    transform-origin: 50% 0;
+    fill: ${props => props.bellColor || '#4f4f4f'};
   }
   
   ${Badge} { 
@@ -50,7 +52,9 @@ const NotificationBell = styled.div`
      props.notify &&
      css`${badgePopIn} ease-in-out .1s forwards, 
      ${badgeDisappear} ease-in-out .1s 1s forwards;
-   `}
+   `};
+   background-color: ${props => props.badgeColor || "#FF5050"};
+   border-color: ${props => props.badgeBorderColor || "#ffffff"};
 `;
 
 NotificationBell.Image = Image;
