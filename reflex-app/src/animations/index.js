@@ -15,7 +15,7 @@ export default [
   PlayPauseDemo,
   FormInputSuccessDemo,
   // SocialLineIcons,
-  NotificationBell,
+  NotificationBellDemo,
   CheckboxDemo,
   StarburstDemo,
   // TabSwitchDemo,

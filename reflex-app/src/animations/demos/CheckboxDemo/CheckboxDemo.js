@@ -54,11 +54,12 @@ const List = styled.div`
 `;
 
 const Title = styled.h4`
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 `;
 
 const CheckboxItem = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 class CheckboxExamples extends Component {
@@ -68,15 +69,7 @@ class CheckboxExamples extends Component {
       <List>
         <Title>Todo List</Title>
         <CheckboxItem>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <CheckboxMainDemo></CheckboxMainDemo>
-=======
-          <Checkbox></Checkbox>
->>>>>>> started checkbox demos
-=======
-          <CheckboxMainDemo></CheckboxMainDemo>
->>>>>>> Add props to FormInputDemo. Add example for checkbox
           Write Jeff's birthday card
         </CheckboxItem>
         <CheckboxItem>
