@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled, {keyframes, css} from 'styled-components';
 import PropTypes from 'prop-types';
 
+import OpenCodeButton from '../OpenCodeButton';
+
 const scaleUp = keyframes`
   0% { 
     opacity: 0.5;
@@ -35,9 +37,11 @@ const Title = styled.div`
 `;
 
 const DemosContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 24px;
+`;
 
 const MainDemo = styled.div`
   display: flex;
@@ -46,7 +50,6 @@ const MainDemo = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
-  margin-right: 24px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0,0,0,.25);
 `;
@@ -65,6 +68,7 @@ const ExamplesHeader = styled.div`
   flex: 0 1 auto;
 `;
 
+const Left = styled.div``;
 
 //TODO: Should this be in scenes/Home since it's used there?
 export default class AnimationCard extends Component {
@@ -84,14 +88,17 @@ export default class AnimationCard extends Component {
       <Card id={title} isActive={isActive}>
         <Title id={title}>{title}</Title>
         <DemosContainer>
-          {onHover ?
-          <MainDemo
-            id={title}
-            onMouseEnter={() => this.setState({ hover: true })}
-            onMouseLeave={() => this.setState({ hover: false })}
-          >{mainDemo(this.state.hover)}</MainDemo>
-          :
-          <MainDemo>{React.createElement(mainDemo)}</MainDemo>}
+          <Left>
+            {onHover ?
+            <MainDemo
+              id={title}
+              onMouseEnter={() => this.setState({ hover: true })}
+              onMouseLeave={() => this.setState({ hover: false })}
+            >{mainDemo(this.state.hover)}</MainDemo>
+            :
+            <MainDemo>{React.createElement(mainDemo)}</MainDemo>}
+            <OpenCodeButton></OpenCodeButton>
+          </Left>
           <ExamplesContainer>
             <ExamplesHeader>Examples</ExamplesHeader>
             <div>
