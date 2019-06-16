@@ -64,7 +64,6 @@ const CheckboxItem = styled.div`
 
 class CheckboxExamples extends Component {
   render() {
-
     return (
       <List>
         <Title>Todo List</Title>
