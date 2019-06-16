@@ -50,7 +50,7 @@ const ExamplesContainer = styled.div`
 `;
 
 const Example = styled.div`
-  background-color: #4f4f4f;
+  background-color: #3F3B3B;
   border-radius: 3px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   margin-bottom: 18px;
@@ -80,12 +80,38 @@ const Icon = styled.svg`
   height: 24px;
 `;
 
+const IconWhite = styled(Icon)`
+  fill: #CCCCCC;
+  margin-right: 6px;
+`;
+
+const Profile = styled.div`
+  display: flex;
+  align-items: center;
+  padding-right: 18px;
+  border-right: 1px solid #4f4f4f;
+  color: #CCCCCC;
+`;
+
+const Notifications = styled.div`
+  padding-left: 18px;
+`;
+
 class NotificationExamples extends Component {
   render() {
     return (
       <ExamplesContainer>
         <Example>
-          <NotificationBellDemo bellColor="white" badgeBorderColor="#4f4f4f"></NotificationBellDemo>
+          <Profile>
+            <IconWhite viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet">
+              <title>user-line</title>
+              <path d="M30.61,24.52a17.16,17.16,0,0,0-25.22,0,1.51,1.51,0,0,0-.39,1v6A1.5,1.5,0,0,0,6.5,33h23A1.5,1.5,0,0,0,31,31.5v-6A1.51,1.51,0,0,0,30.61,24.52Z" class="clr-i-solid clr-i-solid-path-1"></path><circle cx="18" cy="10" r="7" class="clr-i-solid clr-i-solid-path-2"></circle>
+            </IconWhite>
+            <span>John Doe</span>
+          </Profile>
+          <Notifications>
+            <NotificationBellDemo bellColor="#CCCCCC" badgeBorderColor="#3F3B3B"></NotificationBellDemo>
+          </Notifications>
         </Example>
         <ExampleLight>
           <Group>
