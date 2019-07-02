@@ -17,7 +17,7 @@ class ToggleDemo extends Component {
 
   render() {
     return (
-      <Toggle ref={this.toggleRef}/>
+      <Toggle ref={this.toggleRef} size={this.props.size} />
     );
   }
 }
@@ -29,7 +29,7 @@ const ExamplesContainer = styled.div`
   `;
 
 const ExampleContainer = styled.div.attrs({
-  style: ({ background }) => ({ background: background})
+  style: ({ background }) => ({ background: background })
 })`
   display: flex;
   flex-direction: column;
@@ -59,12 +59,10 @@ const SettingRowContainer = styled.div.attrs({
   border-radius: 3px;
   height: 48px;
   margin-top: 1px;
+  padding: 0 24px;
 `;
 
-const SettingRowText = styled.div`
-  padding-left: 24px;
-`;
-
+const SettingRowText = styled.div``;
 
 const SettingRow= (background, text, isToggled) => (
   <SettingRowContainer background={background}>
@@ -72,7 +70,7 @@ const SettingRow= (background, text, isToggled) => (
       {text}
     </SettingRowText>
     <div>
-      <Toggle isToggled={isToggled}/>
+      <Toggle isToggled={isToggled} size="36px"/>
     </div>
   </SettingRowContainer>
 )
@@ -82,7 +80,6 @@ const HeaderText = styled.div.attrs({
 })`
   padding-left: 24px;
   padding-top: 18px;
-  color: #4F4F4F;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -93,7 +90,6 @@ const InputTitle = styled.h3`
   font-weight: 500;
   font-size: 10px;
   line-height: 10px;
-  color: white;
   margin-left: 24px;
 `;
 
@@ -106,8 +102,7 @@ const Input = styled.input`
   padding: 0.5em;
   font-size: 14px;
   line-height: 24px;
-  color: white;
-  background: #3F3B3B;
+  background: #FFFFFF;
   border: none;
   border-radius: 3px;
 `;
@@ -115,7 +110,7 @@ const Input = styled.input`
 const ToggleText = styled.h3`
   font-size: 11px;
   line-height: 10px;
-  color: white;
+  padding: 0 6px 6px 0;
 `;
 
 const ToggleContainer = styled.div`
@@ -129,7 +124,7 @@ class ToggleExamples extends Component {
   render() {
     return (
       <ExamplesContainer>
-        <ExampleContainer background={'#FAFAFA'} >
+        <ExampleContainer background={'#FAFAFA'}>
           <Header>
             <HeaderText color={'#4F4F4F'}>Settings</HeaderText>
           </Header>
@@ -137,21 +132,18 @@ class ToggleExamples extends Component {
           {SettingRow('#FFFFFF','Do Not Disturb')}
           {SettingRow('#FFFFFF','Multi-factor authentication', true)}
         </ExampleContainer>
-        <ExampleContainer background={'#4F4F4F'} >
+        <ExampleContainer background={'#F2F2F2'}>
           <Header>
-            <HeaderText color={'#FFFFFF'}>Sign in</HeaderText>
+            <HeaderText>Sign in</HeaderText>
           </Header>
           <InputTitle>Username</InputTitle>
           <Input defaultValue="graysnowww" type="text" />
           <InputTitle>Password</InputTitle>
-          <Input defaultValue="*******" type="password" />
+          <Input defaultValue="**********" type="password" />
           <ToggleContainer>
             <ToggleText>Remember me</ToggleText>
-            <div><Toggle isToggled={true} /></div>
+            <div><Toggle isToggled={true} size="36px" /></div>
           </ToggleContainer>
-
-
-
         </ExampleContainer>
       </ExamplesContainer>
     );

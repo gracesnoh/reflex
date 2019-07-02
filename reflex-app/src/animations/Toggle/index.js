@@ -5,9 +5,12 @@ import * as animationData from './data.json' ;
 
 const Button = styled.button`
   background: transparent;
-  width: 54px;
+  width: ${props => props.size || "42px"};
+  height: auto;
   border: none;
   outline: none;
+  cursor: pointer;
+  padding: 0;
 `;
 
 class Toggle extends PureComponent {
@@ -70,7 +73,7 @@ class Toggle extends PureComponent {
 
 
   render() {
-    return <Button onClick={this.handleOnClick} ref={this.toggleRef} />;
+    return <Button onClick={this.handleOnClick} ref={this.toggleRef} size={this.props.size} />;
   }
 }
 
