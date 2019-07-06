@@ -8,7 +8,7 @@ class FormInputMainDemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      inputVal: '',
       isEmailValid: false,
       isComplete: false,
     };
@@ -28,25 +28,25 @@ class FormInputMainDemo extends Component {
 
   handleFormInputOnChange(event) {
     this.setState({
-        email: event.target.value,
+        inputVal: event.target.value,
         isComplete: false
     })
   }
 
 
   render() {
-    const { email, isEmailValid, isComplete } = this.state;
+    const { inputVal, isEmailValid, isComplete } = this.state;
     return (
         <FormInput>
-          <FormInput.Label>Email Address</FormInput.Label>
+          <FormInput.Label>{this.props.inputLabel || 'Email Address'}</FormInput.Label>
           <FormInput.Image
             isComplete={isComplete}
             onSuccess={isEmailValid}
             onFailure={!isEmailValid}
             src={isEmailValid ? checkCircle : exclamationCircle }/>
             <FormInput.Input
-              type="email"
-              defaultValue={email}
+              type={this.props.inputType || 'email'}
+              defaultValue={inputVal}
               isComplete={isComplete}
               onSuccess={isEmailValid}
               onFailure={!isEmailValid}
@@ -61,4 +61,6 @@ class FormInputMainDemo extends Component {
 export default {
   title: 'Form Input',
   mainDemo: FormInputMainDemo,
+  examples: FormInputMainDemo,
+
 };
