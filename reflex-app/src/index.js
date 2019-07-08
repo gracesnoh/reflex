@@ -30,7 +30,7 @@ const theme = {
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://rsms.me/inter/inter-ui.css');
-    @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
 
     * {
       box-sizing: border-box;

@@ -1,13 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import githubLogo from './images/github.png';
 import githubLogoWhite from './images/github-white.png';
 import reflexLogo from './images/reflex-logo.png';
 import reflexLogoWhite from './images/reflex-logo-white.png';
 import hamburger from './images/bars-line.svg';
 import hamburgerWhite from './images/bars-line-white.svg';
+import Home from '../../scenes/Home';
+import GettingStarted from '../../scenes/GettingStarted';
 
 // TODO Make media queries into global styles
 const size = {
@@ -93,7 +95,29 @@ const Hamburger = styled.img`
 
 `;
 
-const NavItem = styled.a`
+const NavItem = styled(Link)`
+  padding: 12px 15px;
+  text-align: center;
+  // color: ${props => props.theme.purple};
+  color: #7567F7;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+
+  :hover {
+    background-color: rgba(117,103,247,.15)
+  }
+
+  @media ${device.mobileL} {
+    display: none;
+  }
+
+  ${props => props.mobileMenu && `
+    animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
+  `}
+`;
+
+const NavLink = styled.a`
   padding: 12px 15px;
   text-align: center;
   // color: ${props => props.theme.purple};
@@ -153,16 +177,29 @@ export default class NavigationBar extends Component {
   resize() {
     this.setState({isMobile: window.innerWidth <= 462});
   }
+  
+  renderRouter () {
+    return (
+      <Router>
+        <Switch>
+          <NavItem to="/gettingstarted" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
+
+          <Route path="/" component={Home} />
+          <Route path="/gettingstarted" component={GettingStarted} />
+        </Switch>
+      </Router>
+    );
+  } 
 
   renderDesktopRight() { 
     return (
-      <Fragment>
-        <NavItem href="" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
-        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
-        style={ this.state.isTop ? purpleStyle : whiteStyle }>
+      <div>
+        { this.renderRouter() }
+        <NavLink href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
+          style={ this.state.isTop ? purpleStyle : whiteStyle }>
           <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
-        </NavItem>
-      </Fragment>
+        </NavLink>
+      </div>
     );
   }
 
@@ -176,7 +213,7 @@ export default class NavigationBar extends Component {
     return (
       <Container>
         <Nav>
-          <Left href="">
+          <Left href="/">
             <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
           </Left>
           <Right>

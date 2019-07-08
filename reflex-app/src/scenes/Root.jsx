@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import Detail from './Detail';
+import GettingStarted from './GettingStarted';
 
 const ScreensRoot = () => (
   <Router>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route path="/:animationTitle" component={Detail} />
+      <Route path="/gettingstarted" component={GettingStarted} />
     </Switch>
   </Router>
 );
