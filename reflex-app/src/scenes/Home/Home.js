@@ -99,6 +99,10 @@ const TableOfContents = styled.div`
   a {
     color: rgba(255, 255, 255, .5);
   }
+
+  a:hover {
+    cursor: pointer;
+  }
   
   a.selected {
     color: white !important;
