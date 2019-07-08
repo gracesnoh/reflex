@@ -1,7 +1,6 @@
 import React, { Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import githubLogo from './images/github.png';
 import githubLogoWhite from './images/github-white.png';
 import reflexLogo from './images/reflex-logo.png';
@@ -95,7 +94,7 @@ const Hamburger = styled.img`
 
 `;
 
-const NavItem = styled(Link)`
+const NavItem = styled.a`
   padding: 12px 15px;
   text-align: center;
   // color: ${props => props.theme.purple};
@@ -177,29 +176,16 @@ export default class NavigationBar extends Component {
   resize() {
     this.setState({isMobile: window.innerWidth <= 462});
   }
-  
-  renderRouter () {
-    return (
-      <Router>
-        <Switch>
-          <NavItem to="/gettingstarted" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
-
-          <Route path="/" component={Home} />
-          <Route path="/gettingstarted" component={GettingStarted} />
-        </Switch>
-      </Router>
-    );
-  } 
 
   renderDesktopRight() { 
     return (
-      <div>
-        { this.renderRouter() }
-        <NavLink href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
+      <Fragment>
+        <NavItem href="/gettingstarted" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
+        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
           style={ this.state.isTop ? purpleStyle : whiteStyle }>
           <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
-        </NavLink>
-      </div>
+        </NavItem>
+      </Fragment>
     );
   }
 
