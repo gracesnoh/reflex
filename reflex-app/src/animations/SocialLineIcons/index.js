@@ -158,11 +158,17 @@ class SocialLineIcons extends PureComponent {
   constructor(props) {
     super(props);
     this.socialIconsRef = React.createRef();
+    this.handleOnClick = this.handleOnClick.bind(this);
   }
+
+  handleOnClick() {
+    if (this.props.onClick) {
+      this.props.onClick();
+  }}
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper onClick={this.handleOnClick}>
       <Facebook viewBox="0 0 60 70">
         <path d="M23.5,60V33.2h-9V22.5h9v-8.4C23.5,5,29.1,0,37.2,0c3.9,0,7.3,0.3,8.2,0.4V10h-5.6c-4.4,0-5.3,2.1-5.3,5.2v7.3
         h10l-1.4,10.7h-8.6V60H23.5z"/>

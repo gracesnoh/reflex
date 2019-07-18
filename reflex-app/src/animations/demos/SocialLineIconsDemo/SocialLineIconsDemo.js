@@ -25,7 +25,7 @@ class SocialLineIconsExamples extends Component {
 
   render() {
     return (
-      <div></div>
+      <div ></div>
     );
   }
 }
