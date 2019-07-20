@@ -52,7 +52,7 @@ class Toggle extends PureComponent {
      container: this.toggleRef.current,
      renderer: 'svg',
      autoplay: false,
-     animationData: animationData,
+     animationData: animationData.default,
      // rendererSettings: {
      //   progressiveLoad: true,
      // },

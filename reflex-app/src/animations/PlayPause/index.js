@@ -50,7 +50,7 @@ class PlayPause extends PureComponent {
      container: this.playPauseRef.current,
      renderer: 'svg',
      autoplay: false,
-     animationData: animationData,
+     animationData: animationData.default,
      rendererSettings: {
        progressiveLoad: true,
      },

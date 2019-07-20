@@ -5,10 +5,6 @@ import githubLogo from './images/github.png';
 import githubLogoWhite from './images/github-white.png';
 import reflexLogo from './images/reflex-logo.png';
 import reflexLogoWhite from './images/reflex-logo-white.png';
-import hamburger from './images/bars-line.svg';
-import hamburgerWhite from './images/bars-line-white.svg';
-import Home from '../../scenes/Home';
-import GettingStarted from '../../scenes/GettingStarted';
 
 // TODO Make media queries into global styles
 const size = {
@@ -22,16 +18,6 @@ export const device = {
   tablet: `(max-width: ${size.tablet})`,
   laptop: `(min-width: ${size.laptop})`,
 };
-
-const mobileSlideDown = keyframes`
-  0% {
-    transform: translateY(-100);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-`;
 
 const Container = styled.div`
   width: 100%;
@@ -83,17 +69,6 @@ const whiteStyle = {
   color: 'white'
 };
 
-const Hamburger = styled.img`
-  width: 16px;
-  height: auto;
-  visibility: hidden;
-
-  @media ${device.mobileL} {
-    visibility: visible;
-  }
-
-`;
-
 const NavItem = styled.a`
   padding: 12px 15px;
   text-align: center;
@@ -106,14 +81,6 @@ const NavItem = styled.a`
   :hover {
     background-color: rgba(117,103,247,.15)
   }
-
-  @media ${device.mobileL} {
-    display: none;
-  }
-
-  ${props => props.mobileMenu && `
-    animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
-  `}
 `;
 
 const NavLink = styled.a`
@@ -143,10 +110,6 @@ const GithubLogo = styled.img`
   height: auto;
   margin: -1px 6px 0 0;
   vertical-align: middle;
-
-  @media ${device.mobileL} {
-    display: none;
-  }
 `;
 
 // //TODO: Change to Pure Component?
@@ -155,16 +118,11 @@ export default class NavigationBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMobile: false,
-      showMobileMenu: false,
       isTop: true
     };
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.resize.bind(this));
-    this.resize();
-
     window.addEventListener('scroll', () => {
       const isTop = window.scrollY < 30;
       if (isTop !== this.state.isTop) {
@@ -172,29 +130,7 @@ export default class NavigationBar extends Component {
       }
     });
   }
-
-  resize() {
-    this.setState({isMobile: window.innerWidth <= 462});
-  }
-
-  renderDesktopRight() { 
-    return (
-      <Fragment>
-        <NavItem href="/gettingstarted" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
-        <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
-          style={ this.state.isTop ? purpleStyle : whiteStyle }>
-          <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
-        </NavItem>
-      </Fragment>
-    );
-  }
-
-  renderMobileRight = () => {
-    return (
-      <Hamburger onClick={() => {}} src={ this.state.isTop ? hamburger : hamburgerWhite } />
-    );
-  }
-
+  
   render() {
     return (
       <Container>
@@ -203,7 +139,11 @@ export default class NavigationBar extends Component {
             <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
           </Left>
           <Right>
-            {this.state.isMobile ? this.renderMobileRight() : this.renderDesktopRight() }
+            <NavItem href="" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
+            <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
+            style={ this.state.isTop ? purpleStyle : whiteStyle }>
+              <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
+            </NavItem>
           </Right>
         </Nav>
       </Container>
