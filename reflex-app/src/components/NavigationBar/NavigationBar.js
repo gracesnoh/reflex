@@ -69,6 +69,10 @@ const whiteStyle = {
   color: 'white'
 };
 
+const navBg = {
+  backgroundColor: 'rgba(117,103,247,.30)'
+}
+
 const NavItem = styled.a`
   padding: 12px 15px;
   text-align: center;
@@ -125,7 +129,7 @@ export default class NavigationBar extends Component {
   
   render() {
     return (
-      <Container>
+      <Container style={ this.state.isTop ? purpleStyle : navBg }>
         <Nav>
           <Left href="/">
             <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
