@@ -70,7 +70,7 @@ const whiteStyle = {
 };
 
 const navBg = {
-  backgroundColor: 'rgba(117,103,247,.30)'
+  backgroundColor: 'rgba(117,103,247,.50)'
 }
 
 const NavItem = styled.a`
