@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import githubLogo from './images/github.png';
@@ -83,6 +83,28 @@ const NavItem = styled.a`
   }
 `;
 
+const NavLink = styled.a`
+  padding: 12px 15px;
+  text-align: center;
+  // color: ${props => props.theme.purple};
+  color: #7567F7;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+
+  :hover {
+    background-color: rgba(117,103,247,.15)
+  }
+
+  @media ${device.mobileL} {
+    display: none;
+  }
+
+  ${props => props.mobileMenu && `
+    animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
+  `}
+`;
+
 const GithubLogo = styled.img`
   width: 16px;
   height: auto;
@@ -108,12 +130,12 @@ export default class NavigationBar extends Component {
       }
     });
   }
-
+  
   render() {
     return (
       <Container>
         <Nav>
-          <Left href="">
+          <Left href="/">
             <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
           </Left>
           <Right>
