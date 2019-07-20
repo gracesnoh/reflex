@@ -42,7 +42,7 @@ class Starburst extends PureComponent {
      container: this.starburstRef.current,
      renderer: 'svg',
      autoplay: false,
-     animationData: animationData,
+     animationData: animationData.default,
      rendererSettings: {
        progressiveLoad: true,
      },

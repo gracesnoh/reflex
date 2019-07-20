@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import styled, { keyframes } from 'styled-components';
 import lottie from "lottie-web";
 import { Link } from 'react-scroll';
-import VisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from 'react-visibility-sensor'
 import ScrollingColorBackground from 'react-scrolling-color-background';
 import arrow from './images/arrow-line.svg';
 
@@ -216,7 +216,7 @@ export default class Home extends Component {
      container: this.landingTopSectionRef.current,
      loop: true,
      autoplay: true,
-     animationData: animationData,
+     animationData: animationData.default,
      ...this.props.animationParams,
     };
 

@@ -44,7 +44,7 @@ class Hamburger extends PureComponent {
      container: this.burgerRef.current,
      renderer: 'svg',
      autoplay: false,
-     animationData: animationData,
+     animationData: animationData.default,
      rendererSettings: {
        progressiveLoad: true,
      },
