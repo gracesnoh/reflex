@@ -131,7 +131,7 @@ export default class NavigationBar extends Component {
             <ReflexLogo src={ this.state.isTop ? reflexLogo : reflexLogoWhite } alt="reflex-logo" id="yo"/>
           </Left>
           <Right>
-            <NavItem href="" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
+            <NavItem href="/gettingstarted" style={ this.state.isTop ? purpleStyle : whiteStyle }>Getting Started</NavItem>
             <NavItem href="https://github.com/gracesnoh/reflex" target="_blank" rel="noopener noreferrer"
             style={ this.state.isTop ? purpleStyle : whiteStyle }>
               <GithubLogo src={ this.state.isTop ? githubLogo : githubLogoWhite} alt="github-logo"/>View on Github
