@@ -1,18 +1,31 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
+const size = {
+  mobileL: '462px',
+}
+
+export const device = {
+  mobileL: `(max-width: ${size.mobileL})`,
+};
+
 const Wrapper = styled.div`
   margin: auto;
   max-width: 80vw;
   padding: 18px;
-  height: 100%;
+  overflow: hidden;
+  height: 100vh;
+
+  @media ${device.mobileL} {
+    max-width: 100vw;
+  }
 `;
 
 const Container = styled.div`
   display: flex;
-  height: 100vh;
   flex-flow: column wrap;
   justify-content: center;
+  height: 100%;
 `;
 
 const Title = styled.div`
@@ -21,7 +34,6 @@ const Title = styled.div`
   color: #FF52EE;
   margin-bottom: 36px;
   line-height: 1.5;
-  width: 36vw;
 `;
 
 const Text = styled.span`
