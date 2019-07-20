@@ -95,14 +95,6 @@ const NavLink = styled.a`
   :hover {
     background-color: rgba(117,103,247,.15)
   }
-
-  @media ${device.mobileL} {
-    display: none;
-  }
-
-  ${props => props.mobileMenu && `
-    animation: ${mobileSlideDown} 0.5s ease-in-out forwards;
-  `}
 `;
 
 const GithubLogo = styled.img`
