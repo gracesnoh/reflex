@@ -156,10 +156,10 @@ class HamburgerExamples extends Component {
             <Hamburger/>
           </HamburgerBox>
           <HamburgerBox background={'#4F4F4F'}>
-            <Hamburger/>
+            <Hamburger color="white"/>
           </HamburgerBox>
           <HamburgerBox background={'#111111'}>
-            <Hamburger/>
+            <Hamburger color="white"/>
           </HamburgerBox>
           <HamburgerBox background={'#FFFFFF'}>
             <Hamburger/>

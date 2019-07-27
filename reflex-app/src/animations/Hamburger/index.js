@@ -10,6 +10,10 @@ const Button = styled.button.attrs(({width}) => ({
   border: none;
   cursor: pointer;
   width: ${props => props.width};
+
+  path {
+    fill: ${props => props.color || "#4F4F4F"};
+  }
 `;
 
 class Hamburger extends PureComponent {
@@ -60,7 +64,7 @@ class Hamburger extends PureComponent {
   }
 
   render() {
-    return <Button width={this.props.width} onClick={this.handleOnClick} ref={this.burgerRef} />;
+    return <Button color={this.props.color} width={this.props.width} onClick={this.handleOnClick} ref={this.burgerRef} />;
   }
 }
 
