@@ -135,8 +135,9 @@ class HamburgerExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isMenuClicked: false,
-      isMenuExpanded: false
+      isMenuOpen: false,
+      // isMenuClicked: false,
+      // isMenuExpanded: false
     }; 
 
     this.handleOnClick = this.handleOnClick.bind(this)
@@ -144,8 +145,9 @@ class HamburgerExamples extends Component {
 
   handleOnClick() {
     this.setState({
-      isMenuClicked: true,
-      isMenuExpanded: !this.state.isMenuExpanded
+      isMenuOpen: !this.state.isMenuOpen,
+      // isMenuClicked: true,
+      // isMenuExpanded: !this.state.isMenuExpanded
     })
   }
   render() {
@@ -167,8 +169,9 @@ class HamburgerExamples extends Component {
         </Grid>
         <Feed>
           <HamburgerWrapper>
-            <Hamburger width="40px" onClick={this.handleOnClick}/>
+            <Hamburger width="40px" open={this.state.isMenuOpen} onClick={this.handleOnClick}/>
           </HamburgerWrapper>
+          <Menu open={this.state.isMenuOpen}></Menu>
           <HeaderContainer>
             <Title>Good Morning!</Title>
             <Date>Sunday, May 5</Date>
@@ -180,6 +183,10 @@ class HamburgerExamples extends Component {
       </ExamplesContainer>
     );
   }
+}
+
+class Menu extends React.Component {
+  constructor(props){}
 }
 
 export default {
