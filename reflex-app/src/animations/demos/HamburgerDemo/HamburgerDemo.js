@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import Hamburger from '../../Hamburger';
 import feedPlaceholder from './images/feed-placeholder.png';
@@ -107,16 +107,6 @@ const testAnimation = keyframes`
     }
 `
 
-const Menu = styled.div`
-  right: 0;
-  background: black;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  position: absolute;
-  
-`;
-
 const HamburgerWrapper = styled.div`
   position: absolute;
   right: 12px;
@@ -129,15 +119,11 @@ const HeaderContainer = styled.div`
   flex-direction: column;
 `;
 
-// const HamburgerTest = Hamburger.attrs(({width}) => ({ width: width }));
-
 class HamburgerExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isMenuOpen: false,
-      // isMenuClicked: false,
-      // isMenuExpanded: false
     }; 
 
     this.handleOnClick = this.handleOnClick.bind(this)
@@ -146,8 +132,6 @@ class HamburgerExamples extends Component {
   handleOnClick() {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen,
-      // isMenuClicked: true,
-      // isMenuExpanded: !this.state.isMenuExpanded
     })
   }
   render() {
@@ -178,15 +162,54 @@ class HamburgerExamples extends Component {
           </HeaderContainer>
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
-          {this.state.isMenuClicked &&  <Menu isToggled={this.state.isMenuExpanded}> test </Menu>}
         </Feed>
       </ExamplesContainer>
     );
   }
 }
 
+const MobileMenu = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  top: ${props => props.open ? 0 : '600px'};
+  transition: top 500ms ease-in-out 500ms;
+  left: 0;
+  padding: 24px;
+`;
+
+const Item = styled.div`
+  height: 36px;
+  cursor: default;
+`;
+
 class Menu extends React.Component {
-  constructor(props){}
+  constructor(props){
+    super(props);
+    this.state = {
+      open: false,
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.open !== this.state.open){
+      this.setState({open:nextProps.open});
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <MobileMenu open={this.state.open}>
+          <Item>Home</Item>
+          <Item>Profile</Item>
+          <Item>Messages</Item>
+          <Item>Settings</Item>
+        </MobileMenu>
+      </Fragment>
+    )
+  }
 }
 
 export default {
