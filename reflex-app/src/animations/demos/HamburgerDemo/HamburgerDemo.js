@@ -41,10 +41,7 @@ const ExamplesContainer = styled.div`
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 12px;
+  display: flex;
 `;
 
 const HamburgerBox = styled.div.attrs({
@@ -58,23 +55,18 @@ const HamburgerBox = styled.div.attrs({
   align-items: center; 
   justify-content: center;
   position: relative;
+  margin-right: 12px;
 `;
 
 const Feed = styled.div`
   position: relative;
   background-color: #F2F2F2;
-  margin-top: 18px;
+  margin-bottom: 18px;
   border-radius: 3px;
   height: 230px;
   width: 250px;
   padding: 18px 24px;
   overflow: hidden;
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const Title = styled.span`
@@ -92,20 +84,6 @@ const Skeleton = styled.img`
   height: auto;
   margin-top: 12px;
 `;
-
-const testAnimation = keyframes`
-    0% {
-      opacity: 0;
-      top: 250px;
-      //transform:  translate(0px, 250px)  ; // This achieves the same effect 
-    }
-    100% {
-      opacity: 1;
-      top: 0px;
-      //transform:  translate(0px,0px)  ;
-      
-    }
-`
 
 const HamburgerWrapper = styled.div`
   position: absolute;
@@ -137,20 +115,6 @@ class HamburgerExamples extends Component {
   render() {
     return (
       <ExamplesContainer>
-        <Grid>
-          <HamburgerBox background={'#FFFFFF'}>
-            <Hamburger/>
-          </HamburgerBox>
-          <HamburgerBox background={'#4F4F4F'}>
-            <Hamburger color="white"/>
-          </HamburgerBox>
-          <HamburgerBox background={'#111111'}>
-            <Hamburger color="white"/>
-          </HamburgerBox>
-          <HamburgerBox background={'#FFFFFF'}>
-            <Hamburger/>
-          </HamburgerBox>
-        </Grid>
         <Feed>
           <HamburgerWrapper>
             <Hamburger width="40px" open={this.state.isMenuOpen} onClick={this.handleOnClick}/>
@@ -163,6 +127,18 @@ class HamburgerExamples extends Component {
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
         </Feed>
+
+        <Grid>
+          <HamburgerBox background={'#FFFFFF'}>
+            <Hamburger/>
+          </HamburgerBox>
+          <HamburgerBox background={'#4F4F4F'}>
+            <Hamburger color="white"/>
+          </HamburgerBox>
+          <HamburgerBox background={'#111111'}>
+            <Hamburger color="white"/>
+          </HamburgerBox>
+        </Grid>
       </ExamplesContainer>
     );
   }

@@ -97,7 +97,7 @@ const CTAshadow = styled.div`
   position: absolute;
   width: 150px;
   height: 37px;
-  background-color: #C8ADC0;
+  background-color: rgba(30,30,30,.30);
   border-radius: 3px;
   top: 3px;
   left: 3px;
