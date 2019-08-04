@@ -10,10 +10,9 @@ Download the npm package to get started.
 
 To use an animation, import it into your file first.
 
-<code>
+```javascript
 import Toggle from 'reflex-motion';
   
 <Toggle/>
-</code>
-
+```
 
