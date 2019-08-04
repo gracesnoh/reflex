@@ -6,7 +6,9 @@ Reflex Motion is a set of animated React web components that incorporate natural
 ## Usage
 Download the npm package to get started.
 
-<code>npm i install reflex-motion</code>
+```
+npm i install reflex-motion
+```
 
 To use an animation, import it into your file first.
 
