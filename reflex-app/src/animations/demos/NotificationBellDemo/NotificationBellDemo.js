@@ -32,6 +32,7 @@ class NotificationBellDemo extends Component {
       <NotificationBell
         onMouseOver={this.handleOnMouseOver}
         onMouseOut={this.handleOnMouseOut}
+        onPress={this.handleOnMouseOver}
         notify={notify}
         bellColor={this.props.bellColor}
         badgeColor={this.props.badgeColor}
