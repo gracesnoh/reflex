@@ -2,7 +2,7 @@ import NotificationBellDemo from './demos/NotificationBellDemo';
 import FormInputSuccessDemo from './demos/FormInputDemo';
 import StarburstDemo from './demos/StarburstDemo';
 import CheckboxDemo from './demos/CheckboxDemo';
-import SocialLineIcons from './SocialLineIcons';
+import SocialLineIconsDemo from './demos/SocialLineIconsDemo';
 import ToggleDemo from './demos/ToggleDemo';
 import PlayPauseDemo from './demos/PlayPauseDemo';
 import HamburgerDemo from './demos/HamburgerDemo';
@@ -14,7 +14,7 @@ export default [
   ToggleDemo,
   PlayPauseDemo,
   // FormInputSuccessDemo,
-  // SocialLineIcons,
+  SocialLineIconsDemo,
   NotificationBellDemo,
   CheckboxDemo,
   StarburstDemo,
