@@ -1,31 +1,37 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import SocialLineIcons from '../../SocialLineIcons';
+import { FBLineIcon, TWLineIcon, MDLineIcon, IGLineIcon } from '../../SocialLineIcons';
+// import TWLineIcon from '../../SocialLineIcons';
+// import MDLineIcon from '../../SocialLineIcons';
+// import IGLineIcon from '../../SocialLineIcons';
+
+const Demo = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 6px;
+`;
 
 class SocialLineIconsDemo extends Component {
   constructor(props) {
     super(props);
-    this.socialIconsRef = React.createRef();
-  }
-
-  componentDidUpdate() {
-    if (this.props.hover) {
-      this.socialIconsRef.current.handleOnClick()
-    }
   }
 
   render() {
     return (
-      <SocialLineIcons ref={this.socialIconsRef}/>
+      <Demo>
+        <FBLineIcon/>
+        <TWLineIcon/>
+        <MDLineIcon/>
+        <IGLineIcon/>
+      </Demo>
     );
   }
 }
 
 class SocialLineIconsExamples extends Component {
-
   render() {
     return (
-      <div ></div>
+      <div>Sup</div>
     );
   }
 }
