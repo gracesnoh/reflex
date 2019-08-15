@@ -76,21 +76,6 @@ const navBg = {
 const NavItem = styled.a`
   padding: 12px 15px;
   text-align: center;
-  // color: ${props => props.theme.purple};
-  color: #7567F7;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 3px;
-
-  :hover {
-    background-color: rgba(117,103,247,.15)
-  }
-`;
-
-const NavLink = styled.a`
-  padding: 12px 15px;
-  text-align: center;
-  // color: ${props => props.theme.purple};
   color: #7567F7;
   font-size: 14px;
   font-weight: 500;

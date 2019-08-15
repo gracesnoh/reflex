@@ -137,7 +137,7 @@ class ToggleExamples extends Component {
             <HeaderText>Sign in</HeaderText>
           </Header>
           <InputTitle>Username</InputTitle>
-          <Input defaultValue="graysnowww" type="text" />
+          <Input defaultValue="drake" type="text" />
           <InputTitle>Password</InputTitle>
           <Input defaultValue="**********" type="password" />
           <ToggleContainer>

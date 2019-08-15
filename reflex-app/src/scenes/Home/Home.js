@@ -97,7 +97,7 @@ const CTAshadow = styled.div`
   position: absolute;
   width: 150px;
   height: 37px;
-  background-color: #C8ADC0;
+  background-color: rgba(30,30,30,.30);
   border-radius: 3px;
   top: 3px;
   left: 3px;
@@ -153,6 +153,7 @@ const AnimationContainer = styled.div`
     width: 100%;
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
   }
 `;
 
@@ -190,6 +191,10 @@ const Animation = styled.div`
   z-index: -1;
   top: 0;
   left: 0;
+
+  @media ${device.tablet} {
+    display: none;
+  }
 `;
 
 const colorTransitionStyle = {
