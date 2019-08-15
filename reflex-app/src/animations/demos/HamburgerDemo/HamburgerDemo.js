@@ -43,7 +43,7 @@ const ExamplesContainer = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap:
+  grid-gap: 12px;
 `;
 
 const HamburgerBox = styled.div.attrs({

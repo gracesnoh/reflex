@@ -61,7 +61,7 @@ const Subtitle = styled.div`
   color: #FF52EE; //CONSTANT
   margin-bottom: 48px;
   line-height: 1.5;
-  width: 36vw;
+  width: 40vw;
 
   @media ${device.tablet} {
     width: 100%;
@@ -291,8 +291,7 @@ export default class Home extends Component {
           <section style={{ height: '20px'}} data-background-color='rgb(234, 77, 237)'  className='js-color-stop' />
           <Title> Reflex </Title>
           <Subtitle>
-            Reflex motion is an animation library based in React that mirrors real-world, natural
-            motion.
+          Reflex Motion is a set of animated React web components that incorporate natural and fluid motion. 
           </Subtitle>
           <CTAcontainer>
             <CTA>Get npm package</CTA><CTAshadow></CTAshadow>

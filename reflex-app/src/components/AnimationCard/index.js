@@ -18,21 +18,15 @@ export const device = {
 
 const scaleUp = keyframes`
   0% { 
-    opacity: 0.5;
+    opacity: 1;
     transform: scale(1);
     -webkit-transform: scale(1);
-
-    @media ${device.tablet} {
-      transform: scale(1.05);
-      -webkit-transform: scale(1.05);
-    }
-
    }
 
   100% { 
     opacity: 1; 
-    transform: scale(1.05);
-    -webkit-transform: scale(1.05);
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
     
 `;
 
@@ -40,7 +34,7 @@ const Card = styled.div`
   min-height: 360px;
   border-radius: 5px;
   margin: 60px 0;
-  opacity: 0.5;
+  opacity: 1;
   
   animation: ${({ isActive }) => isActive && 
     css`${scaleUp} .5s forwards;
