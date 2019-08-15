@@ -153,6 +153,7 @@ const AnimationContainer = styled.div`
     width: 100%;
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
   }
 `;
 

@@ -41,7 +41,9 @@ const ExamplesContainer = styled.div`
 `;
 
 const Grid = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap:
 `;
 
 const HamburgerBox = styled.div.attrs({
@@ -55,7 +57,6 @@ const HamburgerBox = styled.div.attrs({
   align-items: center; 
   justify-content: center;
   position: relative;
-  margin-right: 12px;
 `;
 
 const Feed = styled.div`
@@ -67,6 +68,12 @@ const Feed = styled.div`
   width: 250px;
   padding: 18px 24px;
   overflow: hidden;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Title = styled.span`
@@ -127,7 +134,6 @@ class HamburgerExamples extends Component {
           <Skeleton src={feedPlaceholder}/>
           <Skeleton src={feedPlaceholder}/>
         </Feed>
-
         <Grid>
           <HamburgerBox background={'#FFFFFF'}>
             <Hamburger/>

@@ -58,6 +58,10 @@ const Title = styled.div`
 const DemosContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
+
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 const MainDemo = styled.div`
@@ -78,7 +82,7 @@ const ExamplesContainer = styled.div`
   flex: 0 1 auto;
   margin: 0 0 0 24px;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     margin: 24px 0 0 0;
   }
 `;
