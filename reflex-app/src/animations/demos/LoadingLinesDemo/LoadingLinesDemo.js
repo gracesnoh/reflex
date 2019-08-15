@@ -12,11 +12,13 @@ const Box = styled.div`
   height: 180px;
   background-color: ${props => props.color || "white" }
   display: flex;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
   border-radius: 3px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   margin-bottom: 18px;
+  color: white;
 `;
 
 class LoadingExamples extends Component {
@@ -27,11 +29,9 @@ class LoadingExamples extends Component {
   render() {
     return (
       <ExamplesContainer>
-        <Box>
-          <LoadingLines></LoadingLines>
-        </Box>
         <Box color="#4f4f4f">
           <LoadingLines color="white"></LoadingLines>
+          Loading...
         </Box>
       </ExamplesContainer>
     )
