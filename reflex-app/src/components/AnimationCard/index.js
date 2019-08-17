@@ -16,29 +16,27 @@ export const device = {
   laptop: `(min-width: ${size.laptop})`,
 };
 
-const scaleUp = keyframes`
-  0% { 
-    opacity: 1;
-    transform: scale(1);
-    -webkit-transform: scale(1);
-   }
+// const scaleUp = keyframes`
+//   0% { 
+//     opacity: 1;
+//     transform: scale(1);
+//     -webkit-transform: scale(1);
+//    }
 
-  100% { 
-    opacity: 1; 
-    transform: scale(1.03);
-    -webkit-transform: scale(1.03);
+//   100% { 
+//     opacity: 1; 
+//     transform: scale(1.03);
+//     -webkit-transform: scale(1.03);
     
-`;
+// `;
 
 const Card = styled.div`
   min-height: 360px;
   border-radius: 5px;
   margin: 60px 0;
   opacity: 1;
-  
-  animation: ${({ isActive }) => isActive && 
-    css`${scaleUp} .5s forwards;
-    `}
+  transform: ${({ isActive }) => isActive ? 'scale(1.03)' : 'scale(1)'};
+  transition: transform .5s;
 `;
 
 const Title = styled.div`
